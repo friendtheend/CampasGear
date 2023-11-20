@@ -6,6 +6,11 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9F05D4012B0B333900462E1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D3FD2B0B333900462E1C /* ViewController.swift */; };
+		9F05D4032B0B333900462E1C /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D4002B0B333900462E1C /* MainScreenView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9F05D3A52B0B243E00462E1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -31,6 +36,8 @@
 		9F05D3EF2B0B2E5B00462E1C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9F05D3F62B0B2E9600462E1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F05D3F72B0B2E9600462E1C /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		9F05D3FD2B0B333900462E1C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F05D4002B0B333900462E1C /* MainScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,7 @@
 		9F05D38A2B0B243D00462E1C = {
 			isa = PBXGroup;
 			children = (
+				9F05D3FC2B0B333900462E1C /* Main Screen */,
 				9F05D3F52B0B2E9600462E1C /* Login */,
 				9F05D3ED2B0B2E5B00462E1C /* SignUp */,
 				9F05D3942B0B243D00462E1C /* Products */,
@@ -93,6 +101,16 @@
 				9F05D3F72B0B2E9600462E1C /* LoginScreenView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9F05D3FC2B0B333900462E1C /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9F05D3FD2B0B333900462E1C /* ViewController.swift */,
+				9F05D4002B0B333900462E1C /* MainScreenView.swift */,
+			);
+			name = "Main Screen";
+			path = "../5520/WA6_<LU>_<8157>/WA6/Main Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F05D4032B0B333900462E1C /* MainScreenView.swift in Sources */,
+				9F05D4012B0B333900462E1C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +465,7 @@
 		9F05D3BC2B0B243F00462E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -466,6 +487,7 @@
 		9F05D3BD2B0B243F00462E1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -487,6 +509,7 @@
 		9F05D3BF2B0B243F00462E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -507,6 +530,7 @@
 		9F05D3C02B0B243F00462E1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
