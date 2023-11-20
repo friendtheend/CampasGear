@@ -6,16 +6,6 @@
 	objectVersion = 56;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		9F05D3972B0B243D00462E1C /* finalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D3962B0B243D00462E1C /* finalApp.swift */; };
-		9F05D3992B0B243D00462E1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D3982B0B243D00462E1C /* ContentView.swift */; };
-		9F05D39B2B0B243E00462E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F05D39A2B0B243E00462E1C /* Assets.xcassets */; };
-		9F05D39F2B0B243E00462E1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F05D39E2B0B243E00462E1C /* Preview Assets.xcassets */; };
-		9F05D3A92B0B243E00462E1C /* finalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D3A82B0B243E00462E1C /* finalTests.swift */; };
-		9F05D3B32B0B243F00462E1C /* finalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D3B22B0B243F00462E1C /* finalUITests.swift */; };
-		9F05D3B52B0B243F00462E1C /* finalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05D3B42B0B243F00462E1C /* finalUITestsLaunchTests.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		9F05D3A52B0B243E00462E1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -35,16 +25,12 @@
 
 /* Begin PBXFileReference section */
 		9F05D3932B0B243D00462E1C /* final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = final.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F05D3962B0B243D00462E1C /* finalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalApp.swift; sourceTree = "<group>"; };
-		9F05D3982B0B243D00462E1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9F05D39A2B0B243E00462E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F05D39C2B0B243E00462E1C /* final.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = final.entitlements; sourceTree = "<group>"; };
-		9F05D39E2B0B243E00462E1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F05D3A42B0B243E00462E1C /* finalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F05D3A82B0B243E00462E1C /* finalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalTests.swift; sourceTree = "<group>"; };
 		9F05D3AE2B0B243F00462E1C /* finalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = finalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F05D3B22B0B243F00462E1C /* finalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalUITests.swift; sourceTree = "<group>"; };
-		9F05D3B42B0B243F00462E1C /* finalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9F05D3EE2B0B2E5B00462E1C /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
+		9F05D3EF2B0B2E5B00462E1C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9F05D3F62B0B2E9600462E1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9F05D3F72B0B2E9600462E1C /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +61,8 @@
 		9F05D38A2B0B243D00462E1C = {
 			isa = PBXGroup;
 			children = (
-				9F05D3952B0B243D00462E1C /* final */,
-				9F05D3A72B0B243E00462E1C /* finalTests */,
-				9F05D3B12B0B243F00462E1C /* finalUITests */,
+				9F05D3F52B0B2E9600462E1C /* Login */,
+				9F05D3ED2B0B2E5B00462E1C /* SignUp */,
 				9F05D3942B0B243D00462E1C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,41 +77,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F05D3952B0B243D00462E1C /* final */ = {
+		9F05D3ED2B0B2E5B00462E1C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				9F05D3962B0B243D00462E1C /* finalApp.swift */,
-				9F05D3982B0B243D00462E1C /* ContentView.swift */,
-				9F05D39A2B0B243E00462E1C /* Assets.xcassets */,
-				9F05D39C2B0B243E00462E1C /* final.entitlements */,
-				9F05D39D2B0B243E00462E1C /* Preview Content */,
+				9F05D3EF2B0B2E5B00462E1C /* SignUpViewController.swift */,
+				9F05D3EE2B0B2E5B00462E1C /* SignUpScreenView.swift */,
 			);
-			path = final;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
-		9F05D39D2B0B243E00462E1C /* Preview Content */ = {
+		9F05D3F52B0B2E9600462E1C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				9F05D39E2B0B243E00462E1C /* Preview Assets.xcassets */,
+				9F05D3F62B0B2E9600462E1C /* LoginViewController.swift */,
+				9F05D3F72B0B2E9600462E1C /* LoginScreenView.swift */,
 			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		9F05D3A72B0B243E00462E1C /* finalTests */ = {
-			isa = PBXGroup;
-			children = (
-				9F05D3A82B0B243E00462E1C /* finalTests.swift */,
-			);
-			path = finalTests;
-			sourceTree = "<group>";
-		};
-		9F05D3B12B0B243F00462E1C /* finalUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9F05D3B22B0B243F00462E1C /* finalUITests.swift */,
-				9F05D3B42B0B243F00462E1C /* finalUITestsLaunchTests.swift */,
-			);
-			path = finalUITests;
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F05D39F2B0B243E00462E1C /* Preview Assets.xcassets in Resources */,
-				9F05D39B2B0B243E00462E1C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F05D3992B0B243D00462E1C /* ContentView.swift in Sources */,
-				9F05D3972B0B243D00462E1C /* finalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +230,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F05D3A92B0B243E00462E1C /* finalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +237,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F05D3B32B0B243F00462E1C /* finalUITests.swift in Sources */,
-				9F05D3B52B0B243F00462E1C /* finalUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +445,6 @@
 		9F05D3BC2B0B243F00462E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -508,7 +466,6 @@
 		9F05D3BD2B0B243F00462E1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -530,7 +487,6 @@
 		9F05D3BF2B0B243F00462E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -551,7 +507,6 @@
 		9F05D3C02B0B243F00462E1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
