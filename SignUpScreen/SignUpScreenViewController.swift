@@ -18,7 +18,7 @@ class SignUpScreenController: UIViewController {
 //    
 //    let database = Firestore.firestore()
 //    
-//    let childProgressView = ProgressSpinnerViewController()
+    let childProgressView = ProgressSpinnerViewController()
     
     override func loadView() {
         view = SignUpScreen
@@ -34,20 +34,21 @@ class SignUpScreenController: UIViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
-
+        
+        SignUpScreen.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
+        
     }
 
-
+    @objc func onRegisterTapped(){
+        //MARK: creating a new user on Firebase...
+        showActivityIndicator()
+    }
     //MARK: Hide Keyboard...
     @objc func hideKeyboardOnTap(){
         //MARK: removing the keyboard from screen...
         view.endEditing(true)
     }
     
-    @objc func onRegisterTapped(){
-        //MARK: creating a new user on Firebase...
-        //registerNewAccount()
-    }
     
 }
 

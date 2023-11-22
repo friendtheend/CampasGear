@@ -15,6 +15,9 @@
 		2AFB9D4A2B0E8BDC00E5E7AB /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2AFB9D492B0E8BDC00E5E7AB /* FirebaseFirestoreSwift */; };
 		2AFB9D4C2B0E8BDC00E5E7AB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2AFB9D4B2B0E8BDC00E5E7AB /* FirebaseStorage */; };
 		2AFB9D4E2B0E8BDC00E5E7AB /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AFB9D4D2B0E8BDC00E5E7AB /* FirebaseStorageCombine-Community */; };
+		2AFB9D522B0EB3FA00E5E7AB /* ProgressSpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D502B0EB3F900E5E7AB /* ProgressSpinnerViewController.swift */; };
+		2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D512B0EB3F900E5E7AB /* ProgressSpinnerDelegate.swift */; };
+		2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D562B0EB5A300E5E7AB /* GlobalProgressSpinner.swift */; };
 		9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */; };
 		9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */; };
 		9F0994AD2B0D9F0000FE2848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994AC2B0D9F0000FE2848 /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2AFB9D502B0EB3F900E5E7AB /* ProgressSpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerViewController.swift; sourceTree = "<group>"; };
+		2AFB9D512B0EB3F900E5E7AB /* ProgressSpinnerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerDelegate.swift; sourceTree = "<group>"; };
+		2AFB9D562B0EB5A300E5E7AB /* GlobalProgressSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProgressSpinner.swift; sourceTree = "<group>"; };
 		9F0994A52B0D9F0000FE2848 /* final pj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "final pj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,9 +104,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AFB9D4F2B0EB3F900E5E7AB /* Progress Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				2AFB9D502B0EB3F900E5E7AB /* ProgressSpinnerViewController.swift */,
+				2AFB9D512B0EB3F900E5E7AB /* ProgressSpinnerDelegate.swift */,
+				2AFB9D562B0EB5A300E5E7AB /* GlobalProgressSpinner.swift */,
+			);
+			path = "Progress Indicator";
+			sourceTree = "<group>";
+		};
 		9F09949C2B0D9F0000FE2848 = {
 			isa = PBXGroup;
 			children = (
+				2AFB9D4F2B0EB3F900E5E7AB /* Progress Indicator */,
 				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
 				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
 				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
@@ -315,10 +332,13 @@
 			files = (
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,
 				9F0994AD2B0D9F0000FE2848 /* ViewController.swift in Sources */,
+				2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */,
 				9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */,
 				9F0994DD2B0DD49500FE2848 /* SignUpScreenView.swift in Sources */,
 				9F0994DF2B0DD4AC00FE2848 /* SignUpScreenViewController.swift in Sources */,
+				2AFB9D522B0EB3FA00E5E7AB /* ProgressSpinnerViewController.swift in Sources */,
 				9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */,
+				2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
