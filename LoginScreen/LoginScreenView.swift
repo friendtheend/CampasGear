@@ -40,6 +40,7 @@ class LoginScreenView: UIView {
         titleNotes.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(titleNotes)
     }
+    
     func setupLabelUserName(){
         labelUserName = UILabel()
         labelUserName.text = "Username"

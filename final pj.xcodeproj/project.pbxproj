@@ -18,7 +18,7 @@
 		9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994D92B0D9F5200FE2848 /* LoginScreenView.swift */; };
 		9F0994DD2B0DD49500FE2848 /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994DC2B0DD49500FE2848 /* SignUpScreenView.swift */; };
 		9F0994DF2B0DD4AC00FE2848 /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994DE2B0DD4AC00FE2848 /* SignUpScreenViewController.swift */; };
-		9F0994F52B0DDDCC00FE2848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0994F32B0DDDCC00FE2848 /* Main.storyboard */; };
+		9F0995102B0DF52100FE2848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F09950E2B0DF52100FE2848 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		9F0994D92B0D9F5200FE2848 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 		9F0994DC2B0DD49500FE2848 /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
 		9F0994DE2B0DD4AC00FE2848 /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
-		9F0994F42B0DDDCC00FE2848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../WA3_<LU>_<8157>/WA3_<LU>_<8157>/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		9F09950F2B0DF52100FE2848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */,
 				9F0994B12B0D9F0100FE2848 /* Assets.xcassets */,
 				9F0994B32B0D9F0100FE2848 /* LaunchScreen.storyboard */,
-				9F0994F32B0DDDCC00FE2848 /* Main.storyboard */,
+				9F09950E2B0DF52100FE2848 /* Main.storyboard */,
 				9F0994B62B0D9F0100FE2848 /* Info.plist */,
 			);
 			path = "final pj";
@@ -258,7 +258,7 @@
 			files = (
 				9F0994B52B0D9F0100FE2848 /* LaunchScreen.storyboard in Resources */,
 				9F0994B22B0D9F0100FE2848 /* Assets.xcassets in Resources */,
-				9F0994F52B0DDDCC00FE2848 /* Main.storyboard in Resources */,
+				9F0995102B0DF52100FE2848 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,14 +333,13 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		9F0994F32B0DDDCC00FE2848 /* Main.storyboard */ = {
+		9F09950E2B0DF52100FE2848 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F0994F42B0DDDCC00FE2848 /* Base */,
+				9F09950F2B0DF52100FE2848 /* Base */,
 			);
 			name = Main.storyboard;
-			path = "final pj";
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
