@@ -12,7 +12,8 @@ class SignUpScreenView: UIView {
     var textFieldUserName: UITextField!
     var textFieldPassword: UITextField!
     var textFieldVerifyPassword:UITextField!
-    var textFieldSchool:UITextField!//new
+    var labelSelectSchool: UILabel!
+    var pickerViewSchool:UIPickerView!//new
     var textFieldEmail: UITextField!
     var textFieldPhone: UITextField!//new
     var textFieldAddress: UITextField!//new
@@ -29,7 +30,8 @@ class SignUpScreenView: UIView {
         setupTextFieldVerifyPassword()
         setuptextFieldAddress()
         setuptextFieldPhone()
-        setuptextFieldSchool()
+        setupLabelSchool()
+        setupPickerViewSchool()
         
         initConstraints()
     }
@@ -56,13 +58,17 @@ class SignUpScreenView: UIView {
         self.addSubview(textFieldUserName)
     }
     
-    func setuptextFieldSchool(){
-        textFieldSchool = UITextField()
-        textFieldSchool.placeholder = "School"
-        textFieldSchool.keyboardType = .default
-        textFieldSchool.borderStyle = .roundedRect
-        textFieldSchool.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(textFieldSchool)
+    func setupLabelSchool() {
+        labelSelectSchool = UILabel()
+        labelSelectSchool.text = "Select a School"
+        labelSelectSchool.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelSelectSchool)
+    }
+    
+    func setupPickerViewSchool(){
+        pickerViewSchool = UIPickerView()
+        pickerViewSchool.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(pickerViewSchool)
     }
     
     func setuptextFieldPhone(){
@@ -138,12 +144,16 @@ class SignUpScreenView: UIView {
             textFieldVerifyPassword.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             textFieldVerifyPassword.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldSchool.topAnchor.constraint(equalTo: textFieldVerifyPassword.bottomAnchor, constant: 16),
-            textFieldSchool.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            textFieldSchool.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            labelSelectSchool.topAnchor.constraint(equalTo: textFieldVerifyPassword.bottomAnchor, constant: 16),
+            labelSelectSchool.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            labelSelectSchool.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            
+            pickerViewSchool.topAnchor.constraint(equalTo: labelSelectSchool.bottomAnchor, constant: 16),
+            pickerViewSchool.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            pickerViewSchool.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
 
             textFieldEmail.topAnchor.constraint(equalTo: 
-                textFieldSchool.bottomAnchor, constant: 16),
+                pickerViewSchool.bottomAnchor, constant: 16),
             textFieldEmail.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             textFieldEmail.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             

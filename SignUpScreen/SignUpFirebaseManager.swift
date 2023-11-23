@@ -58,11 +58,11 @@ extension SignUpScreenController{
         }
         
         // get school
-        guard let unwrappedSchool = SignUpScreen.textFieldSchool.text else {
-            showAlertText(text: "error")
-            return
-        }
-        guard !unwrappedSchool.isEmpty else {
+//        guard let unwrappedSchool = SignUpScreen.textFieldSchool.text else {
+//            showAlertText(text: "error")
+//            return
+//        }
+        guard !selectedSchool.isEmpty else {
             showAlertText(text: "School can't be empty!")
             return
         }
@@ -108,7 +108,7 @@ extension SignUpScreenController{
                             "userName": unwrappedName,
                             "userId": uid,
                             "phoneNum": unwrappedPhoneNum,
-                            "school": unwrappedSchool,
+                            "school": self.selectedSchool,
                             "address": unwrappedAddress
      
                            ]) { error in

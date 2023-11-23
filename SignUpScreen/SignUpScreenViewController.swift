@@ -20,6 +20,8 @@ class SignUpScreenController: UIViewController {
     
     let childProgressView = ProgressSpinnerViewController()
     
+    var selectedSchool = schoolList[0]
+    
     override func loadView() {
         view = SignUpScreen
     }
@@ -36,6 +38,9 @@ class SignUpScreenController: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
         
         SignUpScreen.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
+        
+        SignUpScreen.pickerViewSchool.delegate = self
+        SignUpScreen.pickerViewSchool.dataSource = self
         
     }
 
