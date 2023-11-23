@@ -6,18 +6,18 @@
 //
 
 import UIKit
-//import FirebaseAuth
-//import FirebaseFirestore
-//import FirebaseFirestoreSwift
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class SignUpScreenController: UIViewController {
 
     let SignUpScreen = SignUpScreenView()
     
-//    var currentUser:FirebaseAuth.User?
-//    
-//    let database = Firestore.firestore()
-//    
+    var currentUser:FirebaseAuth.User?
+    
+    let database = Firestore.firestore()
+    
     let childProgressView = ProgressSpinnerViewController()
     
     override func loadView() {
@@ -41,7 +41,7 @@ class SignUpScreenController: UIViewController {
 
     @objc func onRegisterTapped(){
         //MARK: creating a new user on Firebase...
-        showActivityIndicator()
+        registerNewAccount()
     }
     //MARK: Hide Keyboard...
     @objc func hideKeyboardOnTap(){
