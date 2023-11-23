@@ -19,9 +19,13 @@
 		2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D512B0EB3F900E5E7AB /* ProgressSpinnerDelegate.swift */; };
 		2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D562B0EB5A300E5E7AB /* GlobalProgressSpinner.swift */; };
 		2AFB9D5B2B0ED09400E5E7AB /* SignUpFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D5A2B0ED09400E5E7AB /* SignUpFirebaseManager.swift */; };
+		2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D5E2B0FC47700E5E7AB /* GlobalAlert.swift */; };
+		2AFB9D662B0FC62D00E5E7AB /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D632B0FC62B00E5E7AB /* ContactsTableViewCell.swift */; };
+		2AFB9D672B0FC62D00E5E7AB /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D642B0FC62C00E5E7AB /* MainScreenView.swift */; };
+		2AFB9D682B0FC62D00E5E7AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D652B0FC62D00E5E7AB /* MainViewController.swift */; };
 		9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */; };
 		9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */; };
-		9F0994AD2B0D9F0000FE2848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994AC2B0D9F0000FE2848 /* ViewController.swift */; };
+		9F0994AD2B0D9F0000FE2848 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994AC2B0D9F0000FE2848 /* LogInViewController.swift */; };
 		9F0994B22B0D9F0100FE2848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0994B12B0D9F0100FE2848 /* Assets.xcassets */; };
 		9F0994B52B0D9F0100FE2848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0994B32B0D9F0100FE2848 /* LaunchScreen.storyboard */; };
 		9F0994C02B0D9F0200FE2848 /* final_pjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994BF2B0D9F0200FE2848 /* final_pjTests.swift */; };
@@ -56,10 +60,14 @@
 		2AFB9D512B0EB3F900E5E7AB /* ProgressSpinnerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerDelegate.swift; sourceTree = "<group>"; };
 		2AFB9D562B0EB5A300E5E7AB /* GlobalProgressSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProgressSpinner.swift; sourceTree = "<group>"; };
 		2AFB9D5A2B0ED09400E5E7AB /* SignUpFirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirebaseManager.swift; sourceTree = "<group>"; };
+		2AFB9D5E2B0FC47700E5E7AB /* GlobalAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAlert.swift; sourceTree = "<group>"; };
+		2AFB9D632B0FC62B00E5E7AB /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		2AFB9D642B0FC62C00E5E7AB /* MainScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		2AFB9D652B0FC62D00E5E7AB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9F0994A52B0D9F0000FE2848 /* final pj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "final pj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F0994AC2B0D9F0000FE2848 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F0994AC2B0D9F0000FE2848 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		9F0994B12B0D9F0100FE2848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F0994B42B0D9F0100FE2848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F0994B62B0D9F0100FE2848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,10 +124,30 @@
 			path = "Progress Indicator";
 			sourceTree = "<group>";
 		};
-		9F09949C2B0D9F0000FE2848 = {
+		2AFB9D5D2B0FC45500E5E7AB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				2AFB9D4F2B0EB3F900E5E7AB /* Progress Indicator */,
+				2AFB9D5E2B0FC47700E5E7AB /* GlobalAlert.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2AFB9D602B0FC5D100E5E7AB /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AFB9D632B0FC62B00E5E7AB /* ContactsTableViewCell.swift */,
+				2AFB9D642B0FC62C00E5E7AB /* MainScreenView.swift */,
+				2AFB9D652B0FC62D00E5E7AB /* MainViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		9F09949C2B0D9F0000FE2848 = {
+			isa = PBXGroup;
+			children = (
+				2AFB9D602B0FC5D100E5E7AB /* MainScreen */,
+				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
 				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
 				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
 				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
@@ -173,7 +201,7 @@
 		9F0994D82B0D9F1400FE2848 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9F0994AC2B0D9F0000FE2848 /* ViewController.swift */,
+				9F0994AC2B0D9F0000FE2848 /* LogInViewController.swift */,
 				9F0994D92B0D9F5200FE2848 /* LoginScreenView.swift */,
 			);
 			path = LoginScreen;
@@ -334,14 +362,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,
-				9F0994AD2B0D9F0000FE2848 /* ViewController.swift in Sources */,
+				9F0994AD2B0D9F0000FE2848 /* LogInViewController.swift in Sources */,
 				2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */,
 				9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */,
+				2AFB9D662B0FC62D00E5E7AB /* ContactsTableViewCell.swift in Sources */,
 				9F0994DD2B0DD49500FE2848 /* SignUpScreenView.swift in Sources */,
 				9F0994DF2B0DD4AC00FE2848 /* SignUpScreenViewController.swift in Sources */,
 				2AFB9D522B0EB3FA00E5E7AB /* ProgressSpinnerViewController.swift in Sources */,
+				2AFB9D672B0FC62D00E5E7AB /* MainScreenView.swift in Sources */,
+				2AFB9D682B0FC62D00E5E7AB /* MainViewController.swift in Sources */,
 				9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */,
 				2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */,
+				2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */,
 				2AFB9D5B2B0ED09400E5E7AB /* SignUpFirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

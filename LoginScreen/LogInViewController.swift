@@ -6,9 +6,9 @@
 //
 
 import UIKit
-//import FirebaseCore
-//import FirebaseAuth
-//import FirebaseFirestore
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
 
 class LogInViewController: UIViewController {
         
@@ -72,7 +72,7 @@ class LogInViewController: UIViewController {
                         showAlertText(text:"please enter valid email~~")
                     }
                     //数据库登录
-                   // self.signInToFirebase(email: email, password: password)
+                    self.signInToFirebase(email: email, password: password)
                     
                 }else{
                     showAlertText(text:"please enter all information")
@@ -80,6 +80,22 @@ class LogInViewController: UIViewController {
             }
         }
         
+    func signInToFirebase(email: String, password: String){
+           //MARK: can you display progress indicator here?
+           //MARK: authenticating the user...
+           showActivityIndicator()
+           Auth.auth().signIn(withEmail: email, password: password, completion: {(result, error) in
+                self.hideActivityIndicator()
+               if error == nil{
+                   print("sign in successful")
+                    let mainScreen = MainViewController()
+                   self.navigationController?.setViewControllers([mainScreen], animated: true)
+
+               }else{
+                   self.showAlertText(text:"password or user name fail. Please try again~")
+               }
+           })
+       }
 
         
         func isValidEmail(_ email: String) -> Bool {
@@ -88,15 +104,7 @@ class LogInViewController: UIViewController {
             return emailPred.evaluate(with: email)
         }
         
-        func showAlertText(text:String){
-            let alert = UIAlertController(
-                title: "Error",
-                message: "\(text)",
-                preferredStyle: .alert
-            )
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true)
-        }
+
         
     }
 
