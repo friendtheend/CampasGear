@@ -18,6 +18,7 @@ class SignUpScreenView: UIView {
     var textFieldAddress: UITextField!//new
     var buttonRegister: UIButton!
     
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = .white
