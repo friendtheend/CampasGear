@@ -68,7 +68,9 @@ extension SignUpScreenController{
                 let imagesRepo = storageRef.child("imagesUsers")
                 let imageRef = imagesRepo.child("\(NSUUID().uuidString).jpg")
                 
+                showActivityIndicator()
                 let uploadTask = imageRef.putData(jpegData, completion: {(metadata, error) in
+                    self.hideActivityIndicator()
                     if error == nil{
                         imageRef.downloadURL(completion: {(url, error) in
                             if error == nil{
@@ -77,6 +79,7 @@ extension SignUpScreenController{
                             }
                         })
                     } else {
+                        self.hideActivityIndicator()
                         print(error)
                     }
                 })
@@ -88,20 +91,5 @@ extension SignUpScreenController{
         }
     }
     
-    func setNameAndPhotoOfTheUserInFirebaseAuth(name: String, email: String, photoURL: URL?){
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = name
-        changeRequest?.photoURL = photoURL
-        
-        print("\(photoURL)")
-        changeRequest?.commitChanges(completion: {(error) in
-            if error != nil{
-                print("Error occured: \(String(describing: error))")
-            }else{
-                self.hideActivityIndicator()
-                self.navigationController?.popViewController(animated: true)
-            }
-        })
-    }
 }
 

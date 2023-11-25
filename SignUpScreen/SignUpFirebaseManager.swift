@@ -109,9 +109,8 @@ extension SignUpScreenController{
                             "userId": uid,
                             "phoneNum": unwrappedPhoneNum,
                             "school": self.selectedSchool,
-                            "address": unwrappedAddress
                             "address": unwrappedAddress,
-                            "imageUrl": self.profilePhotoURL
+                            "imageUrl": self.profilePhotoURL?.absoluteString ?? ""  // Convert URL to String
      
                            ]) { error in
                                self.hideActivityIndicator()
