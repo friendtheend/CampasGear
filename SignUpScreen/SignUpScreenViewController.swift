@@ -51,7 +51,16 @@ class SignUpScreenController: UIViewController {
         SignUpScreen.pickerViewSchool.delegate = self
         SignUpScreen.pickerViewSchool.dataSource = self
         
+        hideKeyboardOnTapOutside()
+        
     }
+    
+    func hideKeyboardOnTapOutside(){
+            //MARK: recognizing the taps on the app screen, not the keyboard...
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+            view.addGestureRecognizer(tapRecognizer)
+        }
+        
     
     func getMenuImagePicker() -> UIMenu{
         let menuItems = [
@@ -92,6 +101,7 @@ class SignUpScreenController: UIViewController {
         //MARK: creating a new user on Firebase with photo...
         uploadProfilePhotoToStorage()
     }
+    
     //MARK: Hide Keyboard...
     @objc func hideKeyboardOnTap(){
         //MARK: removing the keyboard from screen...
