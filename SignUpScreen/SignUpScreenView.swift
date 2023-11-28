@@ -8,17 +8,17 @@
 import UIKit
 
 class SignUpScreenView: UIView {
+    
     var buttonTakePhoto: UIButton!
     var textFieldUserName: UITextField!
     var textFieldPassword: UITextField!
     var textFieldVerifyPassword:UITextField!
     var labelSelectSchool: UILabel!
-    var pickerViewSchool:UIPickerView!//new
+    var pickerViewSchool:UIPickerView!
     var textFieldEmail: UITextField!
-    var textFieldPhone: UITextField!//new
-    var textFieldAddress: UITextField!//new
+    var textFieldPhone: UITextField!
+    var textFieldAddress: UITextField!
     var buttonRegister: UIButton!
-    
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -171,6 +171,8 @@ class SignUpScreenView: UIView {
             buttonRegister.topAnchor.constraint(equalTo:
                 textFieldAddress.bottomAnchor, constant: 32),
             buttonRegister.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            
         ])
     }
     

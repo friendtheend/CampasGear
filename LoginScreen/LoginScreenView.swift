@@ -9,6 +9,7 @@ import UIKit
 
 class LoginScreenView: UIView {
 
+    var imageLogo:UIImageView!
     var titleNotes:UILabel!
     var labelUserName:UILabel!
     var labelPassword:UILabel!
@@ -22,6 +23,7 @@ class LoginScreenView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
         
+        setupImageLogo()
         setupTitleNotes()
         setupLabelUserName()
         setupLabelPassword()
@@ -33,6 +35,14 @@ class LoginScreenView: UIView {
         
         initConstraints()
     }
+    
+    func setupImageLogo(){
+        imageLogo = UIImageView(image: UIImage(named: "Logo"))
+        imageLogo.contentMode = .scaleAspectFit
+        imageLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(imageLogo)
+    }
+    
     func setupTitleNotes(){
         titleNotes = UILabel()
         titleNotes.text = "CampusGear"
@@ -93,7 +103,12 @@ class LoginScreenView: UIView {
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-            titleNotes.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,constant: 40),
+            imageLogo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -50),
+            imageLogo.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            imageLogo.widthAnchor.constraint(equalToConstant: 120),
+            imageLogo.heightAnchor.constraint(equalToConstant: 120),
+            
+            titleNotes.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 10),
             titleNotes.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
             labelUserName.topAnchor.constraint(equalTo: titleNotes.bottomAnchor,constant: 42),

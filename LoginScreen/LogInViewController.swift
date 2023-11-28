@@ -31,12 +31,6 @@ class LogInViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            //logo摆放
-            let imageView = UIImageView(image: UIImage(named: "Logo"))
-                imageView.frame = CGRect(x: 138, y: 70, width: 120, height: 120)
-                imageView.contentMode = .scaleAspectFit
-                view.addSubview(imageView)
-            
             navigationController?.navigationBar.prefersLargeTitles = true
 
             LoginScreen.buttonSignup.addTarget(self, action: #selector(buttonSignup), for: .touchUpInside)
