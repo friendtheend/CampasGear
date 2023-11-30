@@ -20,6 +20,7 @@ class MainScreenView: UIView{
     var buttonMyprofile:UIButton!//临时代替下方的导航栏
     var buttonCreate:UIButton!//临时
 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
