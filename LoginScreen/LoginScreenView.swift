@@ -53,7 +53,7 @@ class LoginScreenView: UIView {
     
     func setupLabelUserName(){
         labelUserName = UILabel()
-        labelUserName.text = "Username"
+        labelUserName.text = "Email"
         labelUserName.font = UIFont.boldSystemFont(ofSize: 16)
         labelUserName.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelUserName)

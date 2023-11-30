@@ -26,8 +26,7 @@ class SignUpScreenView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
 
-        setupContentWrapper() //new
-
+        setupContentWrapper()
         setupButtonTakePhoto()
         setuptextFieldName()
         setuptextFieldEmail()

@@ -16,6 +16,9 @@ class MainScreenView: UIView{
     var buttonBook: UIButton!
     var buttonBeauty: UIButton!
     var buttonOther: UIButton!
+    
+    var buttonMyprofile:UIButton!//临时代替下方的导航栏
+    var buttonCreate:UIButton!//临时
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +31,8 @@ class MainScreenView: UIView{
         setupButtonBook()
         setupButtonBeauty()
         setupButtonOther()
+        setupButtonMyprofile()
+        setupButtonCreate()
         
         initConstraints()
     }
@@ -86,6 +91,20 @@ class MainScreenView: UIView{
         self.addSubview(buttonOther)
     }
     
+    func setupButtonMyprofile(){
+        buttonMyprofile = UIButton(type: .system)
+        buttonMyprofile.setTitle("My Profile", for: .normal)
+        buttonMyprofile.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        buttonMyprofile.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonMyprofile)
+    }
+    func setupButtonCreate(){
+        buttonCreate = UIButton(type: .system)
+        buttonCreate.setTitle("Create product", for: .normal)
+        buttonCreate.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        buttonCreate.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonCreate)
+    }
     
     func initConstraints(){
         let spacing: CGFloat = 16 // 设置按钮之间的间距
@@ -117,6 +136,12 @@ class MainScreenView: UIView{
             tableViewProductLists.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
 //            tableViewProductLists.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
 //            tableViewProductLists.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,constant: -8),
+            
+            buttonMyprofile.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
+            buttonMyprofile.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -90),
+            
+            buttonCreate.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
+
       ])
     }
     

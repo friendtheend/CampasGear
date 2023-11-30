@@ -9,133 +9,131 @@ import UIKit
 
 class CreateProductView: UIView {
 
-    var imageLogo:UIImageView!
-    var titleNotes:UILabel!
-    var labelUserName:UILabel!
-    var labelPassword:UILabel!
-    var textFieldName:UITextField!
-    var textFieldPassword:UITextField!
-    var registerLabel:UILabel!
-    var buttonLogin:UIButton!
-    var buttonSignup:UIButton!
+    var contentWrapper: UIScrollView! //new
     
-    override init(frame: CGRect) {
+    var buttonTakePhoto: UIButton!
+    var textFieldTitle: UITextField!
+    var textFieldDescribe: UITextField!
+    var textFieldPrice:UITextField!
+    var textFieldContactInfo: UITextField!
+    var buttonSave: UIButton!
+    
+    override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = .white
-        
-        setupImageLogo()
-        setupTitleNotes()
-        setupLabelUserName()
-        setupLabelPassword()
-        setupTextFieldName()
-        setupTextFieldPassword()
-        setupRegisterLabel()
-        setupButtonLogin()
-        setupButtonSignup()
+
+        setupContentWrapper()
+        setupButtonTakePhoto()
+        setuptextFieldTitle()
+        setuptextFieldDescribe()
+        setupTextFieldPrice()
+        setupButtonSave()
+        setupTextFieldContactInfo()
         
         initConstraints()
     }
     
-    func setupImageLogo(){
-        imageLogo = UIImageView(image: UIImage(named: "Logo"))
-        imageLogo.contentMode = .scaleAspectFit
-        imageLogo.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(imageLogo)
+    func setupContentWrapper(){
+        contentWrapper = UIScrollView()
+        contentWrapper.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(contentWrapper)
     }
     
-    func setupTitleNotes(){
-        titleNotes = UILabel()
-        titleNotes.text = "CampusGear"
-        titleNotes.font = UIFont.boldSystemFont(ofSize: 35)
-        titleNotes.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(titleNotes)
+    func setupButtonTakePhoto(){
+        buttonTakePhoto = UIButton(type: .system)
+        buttonTakePhoto.setTitle("", for: .normal)
+        buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal) 
+        //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        buttonTakePhoto.contentHorizontalAlignment = .fill
+        buttonTakePhoto.contentVerticalAlignment = .fill
+        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+        buttonTakePhoto.showsMenuAsPrimaryAction = true
+        buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(buttonTakePhoto)
     }
     
-    func setupLabelUserName(){
-        labelUserName = UILabel()
-        labelUserName.text = "Email"
-        labelUserName.font = UIFont.boldSystemFont(ofSize: 16)
-        labelUserName.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(labelUserName)
-
+    func setuptextFieldTitle(){
+        textFieldTitle = UITextField()
+        textFieldTitle.placeholder = "Title"
+        textFieldTitle.keyboardType = .default
+        textFieldTitle.borderStyle = .roundedRect
+        textFieldTitle.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(textFieldTitle)
     }
-    func setupLabelPassword(){
-        labelPassword = UILabel()
-        labelPassword.text = "Password"
-        labelPassword.font = UIFont.boldSystemFont(ofSize: 16)
-        labelPassword.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(labelPassword)
+    
+    
+    func setuptextFieldDescribe(){
+        textFieldDescribe = UITextField()
+        textFieldDescribe.placeholder = "Describe your product"
+        textFieldDescribe.keyboardType = .emailAddress
+        textFieldDescribe.borderStyle = .roundedRect
+        textFieldDescribe.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(textFieldDescribe)
     }
-    func setupTextFieldName(){
-        textFieldName = UITextField()
-        textFieldName.borderStyle = .roundedRect
-        textFieldName.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(textFieldName)
+    
+    func setupTextFieldPrice(){
+        textFieldPrice = UITextField()
+        textFieldPrice.placeholder = "Set your pirce"
+        textFieldPrice.isSecureTextEntry = true
+        textFieldPrice.borderStyle = .roundedRect
+        textFieldPrice.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(textFieldPrice)
     }
-    func setupTextFieldPassword(){
-        textFieldPassword = UITextField()
-        textFieldPassword.borderStyle = .roundedRect
-        textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(textFieldPassword)
+    
+    func setupTextFieldContactInfo(){
+        textFieldContactInfo = UITextField()
+        textFieldContactInfo.borderStyle = .roundedRect
+        textFieldContactInfo.isSecureTextEntry = true
+        textFieldContactInfo.placeholder = "Contact info"
+        textFieldContactInfo.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(textFieldContactInfo)
     }
-    func setupRegisterLabel(){
-        registerLabel = UILabel()
-        registerLabel.text = "Do not have a account?"
-        registerLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        registerLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(registerLabel)
-    }
-    func setupButtonLogin(){
-        buttonLogin = UIButton(type: .system)
-        buttonLogin.setTitle("Login", for: .normal)
-        buttonLogin.titleLabel?.font = .boldSystemFont(ofSize: 23)
-        buttonLogin.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(buttonLogin)
-    }
-    func setupButtonSignup(){
-        buttonSignup = UIButton(type: .system)
-        buttonSignup.setTitle("Sign Up", for: .normal)
-        buttonSignup.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        buttonSignup.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(buttonSignup)
+    
+    func setupButtonSave(){
+        buttonSave = UIButton(type: .system)
+        buttonSave.setTitle("Save", for: .normal)
+        buttonSave.titleLabel?.font = .boldSystemFont(ofSize: 21)
+        buttonSave.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(buttonSave)
     }
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-            imageLogo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -50),
-            imageLogo.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            imageLogo.widthAnchor.constraint(equalToConstant: 120),
-            imageLogo.heightAnchor.constraint(equalToConstant: 120),
+
+            contentWrapper.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            contentWrapper.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            contentWrapper.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
+            contentWrapper.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor), //new
             
-            titleNotes.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 10),
-            titleNotes.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            buttonTakePhoto.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 32),
+            buttonTakePhoto.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            buttonTakePhoto.widthAnchor.constraint(equalToConstant: 100),
+            buttonTakePhoto.heightAnchor.constraint(equalToConstant: 100),
             
-            labelUserName.topAnchor.constraint(equalTo: titleNotes.bottomAnchor,constant: 42),
-            labelUserName.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            textFieldTitle.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
+            textFieldTitle.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            textFieldTitle.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldName.topAnchor.constraint(equalTo: labelUserName.bottomAnchor),
-            textFieldName.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            textFieldName.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            textFieldDescribe.topAnchor.constraint(equalTo: textFieldTitle.bottomAnchor, constant: 16),
+            textFieldDescribe.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            textFieldDescribe.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            textFieldDescribe.heightAnchor.constraint(equalToConstant: 100),
             
-            labelPassword.topAnchor.constraint(equalTo: textFieldName.bottomAnchor,constant: 26),
-            labelPassword.leadingAnchor.constraint(equalTo: labelUserName.leadingAnchor),
+            textFieldPrice.topAnchor.constraint(equalTo: textFieldDescribe.bottomAnchor,constant: 16),
+            textFieldPrice.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            textFieldPrice.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldPassword.topAnchor.constraint(equalTo: labelPassword.bottomAnchor),
-            textFieldPassword.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            textFieldPassword.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            textFieldContactInfo.topAnchor.constraint(equalTo: textFieldPrice.bottomAnchor,constant: 16),
+            textFieldContactInfo.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            textFieldContactInfo.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            buttonLogin.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor,constant: 43),
-            buttonLogin.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            
-            registerLabel.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor,constant: 52),
-            registerLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor,constant: 60),
-            
-            buttonSignup.topAnchor.constraint(equalTo: buttonLogin.bottomAnchor,constant: 46),
-            buttonSignup.leadingAnchor.constraint(equalTo: registerLabel.trailingAnchor,constant: 15)
-            
+            buttonSave.topAnchor.constraint(equalTo: textFieldContactInfo.bottomAnchor, constant: 32),
+            buttonSave.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            buttonSave.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
+        
         ])
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

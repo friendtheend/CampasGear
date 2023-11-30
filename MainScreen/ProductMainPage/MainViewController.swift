@@ -14,6 +14,8 @@ import Foundation
 
 class MainViewController: UIViewController {
     
+    let notificationCenter = NotificationCenter.default
+    
     let database = Firestore.firestore()
     
     var selectedSchool = schoolList[0]
@@ -36,12 +38,26 @@ class MainViewController: UIViewController {
         mainScreen.pickerSchool.delegate = self
         mainScreen.pickerSchool.dataSource = self
         
+        mainScreen.buttonCreate.addTarget(self, action: #selector(buttonCreate), for: .touchUpInside)
+        mainScreen.buttonMyprofile.addTarget(self, action: #selector(buttonMyprofile), for: .touchUpInside)
+        
 //        //Cell实现
 //        mainScreen.tableViewProductLists.delegate = self
 //        mainScreen.tableViewProductLists.dataSource = self
 
 //        mainScreen.tableViewProductLists.separatorStyle = .none
     }
+    
+    @objc func buttonMyprofile(){
+        let myprofileScreen = MyProfileViewController()
+        self.navigationController?.pushViewController(myprofileScreen, animated: true)
+    }
+    
+    @objc func buttonCreate(){
+        let createProductScreen = CreateProductViewController()
+        self.navigationController?.pushViewController(createProductScreen, animated: true)
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         handleAuth = Auth.auth().addStateDidChangeListener{ auth, user in
