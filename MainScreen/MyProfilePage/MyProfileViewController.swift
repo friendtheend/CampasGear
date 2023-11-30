@@ -35,18 +35,18 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        MyProfileScreen.buttonTakePhoto.menu = getMenuImagePicker()
+        MyProfileScreen.buttonEdit.menu = getMenuImagePicker()
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        MyProfileScreen.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
+        MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
         title = "My Profile"
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
         
-        MyProfileScreen.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
-        
+        //MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(buttonMyPost), for: .touchUpInside)
+        MyProfileScreen.buttonEdit.addTarget(self, action: #selector(buttonEdit), for: .touchUpInside)
         //MyProfileScreen.pickerViewSchool.delegate = self
        // MyProfileScreen.pickerViewSchool.dataSource = self
         
@@ -60,6 +60,16 @@ class MyProfileViewController: UIViewController {
             view.addGestureRecognizer(tapRecognizer)
         }
         
+    
+    @objc func buttonEdit(){
+        let editprofileScreen = EditProfileViewController()
+        self.navigationController?.pushViewController(editprofileScreen, animated: true)
+    }
+    
+//    @objc func buttonMyPost(){
+//        let createProductScreen = CreateProductViewController()
+//        self.navigationController?.pushViewController(createProductScreen, animated: true)
+//    }
     
     func getMenuImagePicker() -> UIMenu{
         let menuItems = [

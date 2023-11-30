@@ -11,32 +11,21 @@ class MyProfileView: UIView {
 
     var contentWrapper: UIScrollView! //new
     
-    var buttonTakePhoto: UIButton!
-    var textFieldUserName: UITextField!
-    var textFieldPassword: UITextField!
-    var textFieldVerifyPassword:UITextField!
-    var labelSelectSchool: UILabel!
-    var pickerViewSchool:UIPickerView!
-    var textFieldEmail: UITextField!
-    var textFieldPhone: UITextField!
-    var textFieldAddress: UITextField!
-    var buttonRegister: UIButton!
+    var imagePic:UIImageView!
+    var buttonEdit: UIButton!
+    var labelUsername: UILabel!
+    var buttonMyPost: UIButton!
     
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = .white
 
         setupContentWrapper()
-        setupButtonTakePhoto()
-        setuptextFieldName()
-        setuptextFieldEmail()
-        setupTextFieldPassword()
-        setupButtonRegister()
-        setupTextFieldVerifyPassword()
-        setuptextFieldAddress()
-        setuptextFieldPhone()
+        
+        setupImagePic()
+        setupButtonMyPost()
+        setupButtonEdit()
         setupLabelSchool()
-        setupPickerViewSchool()
         
         initConstraints()
     }
@@ -47,93 +36,35 @@ class MyProfileView: UIView {
         self.addSubview(contentWrapper)
     }
     
-    func setupButtonTakePhoto(){
-        buttonTakePhoto = UIButton(type: .system)
-        buttonTakePhoto.setTitle("", for: .normal)
-        buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal) //firebase调取当前头像
-        //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        buttonTakePhoto.contentHorizontalAlignment = .fill
-        buttonTakePhoto.contentVerticalAlignment = .fill
-        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
-        buttonTakePhoto.showsMenuAsPrimaryAction = true
-        buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(buttonTakePhoto)
+    func setupImagePic(){
+        imagePic = UIImageView(image: UIImage(named: "Logo"))
+        imagePic.contentMode = .scaleAspectFit
+        imagePic.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(imagePic)
     }
     
-    func setuptextFieldName(){
-        textFieldUserName = UITextField()
-        textFieldUserName.placeholder = "Username"
-        textFieldUserName.keyboardType = .default
-        textFieldUserName.borderStyle = .roundedRect
-        textFieldUserName.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldUserName)
+    func setupButtonMyPost(){
+        buttonMyPost = UIButton(type: .system)
+        buttonMyPost.setTitle("My Post", for: .normal)
+        buttonMyPost.titleLabel?.font = .boldSystemFont(ofSize: 21)
+        buttonMyPost.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(buttonMyPost)
     }
     
     func setupLabelSchool() {
-        labelSelectSchool = UILabel()
-        labelSelectSchool.text = "Select a School"
-        labelSelectSchool.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(labelSelectSchool)
+        labelUsername = UILabel()
+        labelUsername.text = "username"
+        labelUsername.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelUsername)
     }
+
     
-    func setupPickerViewSchool(){
-        pickerViewSchool = UIPickerView()
-        pickerViewSchool.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(pickerViewSchool)
-    }
-    
-    func setuptextFieldPhone(){
-        textFieldPhone = UITextField()
-        textFieldPhone.placeholder = "Phone"
-        textFieldPhone.keyboardType = .default
-        textFieldPhone.borderStyle = .roundedRect
-        textFieldPhone.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldPhone)
-    }
-    
-    func setuptextFieldEmail(){
-        textFieldEmail = UITextField()
-        textFieldEmail.placeholder = "Email"
-        textFieldEmail.keyboardType = .emailAddress
-        textFieldEmail.borderStyle = .roundedRect
-        textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldEmail)
-    }
-    
-    func setuptextFieldAddress(){
-        textFieldAddress = UITextField()
-        textFieldAddress.placeholder = "Address"
-        textFieldAddress.keyboardType = .emailAddress
-        textFieldAddress.borderStyle = .roundedRect
-        textFieldAddress.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldAddress)
-    }
-    
-    func setupTextFieldPassword(){
-        textFieldPassword = UITextField()
-        textFieldPassword.placeholder = "Password"
-        textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.borderStyle = .roundedRect
-        textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldPassword)
-    }
-    
-    func setupTextFieldVerifyPassword(){
-        textFieldVerifyPassword = UITextField()
-        textFieldVerifyPassword.borderStyle = .roundedRect
-//        textFieldVerifyPassword.textContentType = .password
-        textFieldVerifyPassword.isSecureTextEntry = true
-        textFieldVerifyPassword.placeholder = "Repeat Enter Password "
-        textFieldVerifyPassword.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldVerifyPassword)
-    }
-    
-    func setupButtonRegister(){
-        buttonRegister = UIButton(type: .system)
-        buttonRegister.setTitle("Save", for: .normal)
-        buttonRegister.titleLabel?.font = .boldSystemFont(ofSize: 21)
-        buttonRegister.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(buttonRegister)
+    func setupButtonEdit(){
+        buttonEdit = UIButton(type: .system)
+        buttonEdit.setTitle("Edit My Profile", for: .normal)
+        buttonEdit.titleLabel?.font = .boldSystemFont(ofSize: 21)
+        buttonEdit.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(buttonEdit)
     }
     
     func initConstraints(){
@@ -144,50 +75,21 @@ class MyProfileView: UIView {
             contentWrapper.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
             contentWrapper.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor), //new
             
-            buttonTakePhoto.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 32),
-            buttonTakePhoto.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            buttonTakePhoto.widthAnchor.constraint(equalToConstant: 100),
-            buttonTakePhoto.heightAnchor.constraint(equalToConstant: 100),
+            imagePic.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 32),
+            imagePic.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 20),
+            imagePic.widthAnchor.constraint(equalToConstant: 100),
+            imagePic.heightAnchor.constraint(equalToConstant: 100),
             
-            textFieldUserName.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
-            textFieldUserName.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldUserName.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            labelUsername.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 65),
+            labelUsername.leadingAnchor.constraint(equalTo: imagePic.leadingAnchor,constant: 120),
+            labelUsername.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldPassword.topAnchor.constraint(equalTo: textFieldUserName.bottomAnchor, constant: 16),
-            textFieldPassword.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldPassword.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            buttonEdit.topAnchor.constraint(equalTo: imagePic.bottomAnchor, constant: 50),
+            buttonEdit.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 25),
             
-            textFieldVerifyPassword.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor,constant: 16),
-            textFieldVerifyPassword.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldVerifyPassword.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-            
-            labelSelectSchool.topAnchor.constraint(equalTo: textFieldVerifyPassword.bottomAnchor, constant: 16),
-            labelSelectSchool.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            labelSelectSchool.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-            
-            pickerViewSchool.topAnchor.constraint(equalTo: labelSelectSchool.bottomAnchor, constant: -5),
-            pickerViewSchool.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            pickerViewSchool.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-
-            textFieldEmail.topAnchor.constraint(equalTo:
-                pickerViewSchool.bottomAnchor, constant: -5),
-            textFieldEmail.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldEmail.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-            
-            textFieldPhone.topAnchor.constraint(equalTo:
-                textFieldEmail.bottomAnchor, constant: 16),
-            textFieldPhone.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldPhone.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-            
-            textFieldAddress.topAnchor.constraint(equalTo:
-                textFieldPhone.bottomAnchor, constant: 16),
-            textFieldAddress.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldAddress.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-            
-            buttonRegister.topAnchor.constraint(equalTo:
-                textFieldAddress.bottomAnchor, constant: 32),
-            buttonRegister.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            buttonRegister.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
+            buttonMyPost.topAnchor.constraint(equalTo: buttonEdit.bottomAnchor, constant: 32),
+            buttonMyPost.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 25),
+            buttonMyPost.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
             
             
         ])

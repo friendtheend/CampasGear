@@ -44,6 +44,8 @@
 		9F78E1802B17CAF200951A95 /* CreateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E17F2B17CAF200951A95 /* CreateProductView.swift */; };
 		9F78E1822B17CB0600951A95 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1812B17CB0600951A95 /* MyProfileViewController.swift */; };
 		9F78E1842B17CB2B00951A95 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1832B17CB2B00951A95 /* CreateProductViewController.swift */; };
+		9F78E1892B193DC900951A95 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1882B193DC900951A95 /* EditProfileView.swift */; };
+		9F78E18B2B193DDB00951A95 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E18A2B193DDB00951A95 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		9F78E17F2B17CAF200951A95 /* CreateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductView.swift; sourceTree = "<group>"; };
 		9F78E1812B17CB0600951A95 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		9F78E1832B17CB2B00951A95 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
+		9F78E1882B193DC900951A95 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		9F78E18A2B193DDB00951A95 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,8 @@
 		9F78E1862B17E1FF00951A95 /* EditProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9F78E1882B193DC900951A95 /* EditProfileView.swift */,
+				9F78E18A2B193DDB00951A95 /* EditProfileViewController.swift */,
 			);
 			path = EditProfileScreen;
 			sourceTree = "<group>";
@@ -462,10 +468,12 @@
 				2AFB9D522B0EB3FA00E5E7AB /* ProgressSpinnerViewController.swift in Sources */,
 				2AFB9D672B0FC62D00E5E7AB /* MainScreenView.swift in Sources */,
 				2AFB9D682B0FC62D00E5E7AB /* MainViewController.swift in Sources */,
+				9F78E1892B193DC900951A95 /* EditProfileView.swift in Sources */,
 				9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */,
 				2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */,
 				9F78E17A2B17C82A00951A95 /* MainScreenController.swift in Sources */,
 				2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */,
+				9F78E18B2B193DDB00951A95 /* EditProfileViewController.swift in Sources */,
 				2AFB9D5B2B0ED09400E5E7AB /* SignUpFirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
