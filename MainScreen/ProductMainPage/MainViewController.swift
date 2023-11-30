@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     
     let database = Firestore.firestore()
     
+    var selectedSchool = schoolList[0]
+    
     var handleAuth: AuthStateDidChangeListenerHandle?
     
     var currentUser:FirebaseAuth.User?
@@ -28,17 +30,17 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        title = "Main Screen"
         navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
         
-//        //MARK: patching table view delegate and data source...
-//        mainScreen.tableViewChatLists.delegate = self
-//        mainScreen.tableViewChatLists.dataSource = self
-//        
-//        //MARK: removing the separator line...
-//        mainScreen.tableViewChatLists.separatorStyle = .none
+        mainScreen.pickerSchool.delegate = self
+        mainScreen.pickerSchool.dataSource = self
+        
+//        //Cell实现
+//        mainScreen.tableViewProductLists.delegate = self
+//        mainScreen.tableViewProductLists.dataSource = self
+
+//        mainScreen.tableViewProductLists.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
