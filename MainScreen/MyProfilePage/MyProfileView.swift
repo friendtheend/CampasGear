@@ -15,6 +15,7 @@ class MyProfileView: UIView {
     var buttonEdit: UIButton!
     var labelUsername: UILabel!
     var buttonMyPost: UIButton!
+    var buttonRightArrow: UIButton!
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -23,6 +24,7 @@ class MyProfileView: UIView {
         setupContentWrapper()
         
         setupImagePic()
+        setupButtonRightArrow()
         setupButtonMyPost()
         setupButtonEdit()
         setupLabelSchool()
@@ -40,7 +42,7 @@ class MyProfileView: UIView {
         imagePic = UIImageView(image: UIImage(named: "Logo"))
         imagePic.contentMode = .scaleAspectFit
         imagePic.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(imagePic)
+        contentWrapper.addSubview(imagePic)
     }
     
     func setupButtonMyPost(){
@@ -67,6 +69,15 @@ class MyProfileView: UIView {
         contentWrapper.addSubview(buttonEdit)
     }
     
+    func setupButtonRightArrow() {
+            buttonRightArrow = UIButton(type: .system)
+            buttonRightArrow.setImage(UIImage(systemName: "arrow.right"), for: .normal) // Using a system image for the right arrow
+            buttonRightArrow.translatesAutoresizingMaskIntoConstraints = false
+            contentWrapper.addSubview(buttonRightArrow)
+            
+            //buttonRightArrow.addTarget(self, action: #selector(rightArrowTapped), for: .touchUpInside) // Adding an action
+        }
+    
     func initConstraints(){
         NSLayoutConstraint.activate([
 
@@ -82,7 +93,13 @@ class MyProfileView: UIView {
             
             labelUsername.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 65),
             labelUsername.leadingAnchor.constraint(equalTo: imagePic.leadingAnchor,constant: 120),
-            labelUsername.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            //labelUsername.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            
+            buttonRightArrow.centerYAnchor.constraint(equalTo: labelUsername.centerYAnchor),
+            buttonRightArrow.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            //buttonRightArrow.trailingAnchor.constraint(equalTo: contentWrapper.trailingAnchor, constant: -20),
+            buttonRightArrow.widthAnchor.constraint(equalToConstant: 30),
+            buttonRightArrow.heightAnchor.constraint(equalToConstant: 30),
             
             buttonEdit.topAnchor.constraint(equalTo: imagePic.bottomAnchor, constant: 50),
             buttonEdit.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 25),

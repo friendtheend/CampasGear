@@ -47,12 +47,25 @@ class MyProfileViewController: UIViewController {
         
         //MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(buttonMyPost), for: .touchUpInside)
         MyProfileScreen.buttonEdit.addTarget(self, action: #selector(buttonEdit), for: .touchUpInside)
+        MyProfileScreen.buttonRightArrow.addTarget(self, action: #selector(buttonRightArrow), for: .touchUpInside)
         //MyProfileScreen.pickerViewSchool.delegate = self
        // MyProfileScreen.pickerViewSchool.dataSource = self
         
         hideKeyboardOnTapOutside()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let urlString = GlobalData.shared.userInfo?.imageUrl {
+            Utilities.downloadImage(from: urlString) { image in
+                self.MyProfileScreen.imagePic.image = image
+            }
+        }
+
+        MyProfileScreen.labelUsername.text = GlobalData.shared.userInfo?.userName
+    }
+
     
     func hideKeyboardOnTapOutside(){
             //MARK: recognizing the taps on the app screen, not the keyboard...
@@ -61,6 +74,10 @@ class MyProfileViewController: UIViewController {
         }
         
     
+    @objc func buttonRightArrow(){
+        let editprofileScreen = EditProfileViewController()
+        self.navigationController?.pushViewController(editprofileScreen, animated: true)
+    }
     @objc func buttonEdit(){
         let editprofileScreen = EditProfileViewController()
         self.navigationController?.pushViewController(editprofileScreen, animated: true)

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+class GlobalData {
+    static let shared = GlobalData()
+    var userInfo: UserInfo?
+    private init() {}
+}
