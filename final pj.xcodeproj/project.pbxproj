@@ -53,9 +53,6 @@
 		9F78E1902B195ABD00951A95 /* ShowProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E18F2B195ABD00951A95 /* ShowProfileViewController.swift */; };
 		9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1912B19966400951A95 /* ProductDetailView.swift */; };
 		9F78E1942B19969200951A95 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1932B19969200951A95 /* ProductDetailViewController.swift */; };
-		9F78E1962B19AFF800951A95 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1952B19AFF800951A95 /* MyPostTableViewCell.swift */; };
-		9F78E1982B19B00C00951A95 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1972B19B00C00951A95 /* MyPostView.swift */; };
-		9F78E19A2B19B01E00951A95 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1992B19B01E00951A95 /* MyPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,9 +116,6 @@
 		9F78E18F2B195ABD00951A95 /* ShowProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileViewController.swift; sourceTree = "<group>"; };
 		9F78E1912B19966400951A95 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		9F78E1932B19969200951A95 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		9F78E1952B19AFF800951A95 /* MyPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewCell.swift; sourceTree = "<group>"; };
-		9F78E1972B19B00C00951A95 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
-		9F78E1992B19B01E00951A95 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,9 +322,6 @@
 		9F78E1872B17E21100951A95 /* MyPostScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9F78E1952B19AFF800951A95 /* MyPostTableViewCell.swift */,
-				9F78E1972B19B00C00951A95 /* MyPostView.swift */,
-				9F78E1992B19B01E00951A95 /* MyPostViewController.swift */,
 			);
 			path = MyPostScreen;
 			sourceTree = "<group>";
@@ -488,12 +479,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F78E19A2B19B01E00951A95 /* MyPostViewController.swift in Sources */,
 				9F78E17E2B17CAE100951A95 /* MyProfileView.swift in Sources */,
 				9F78E1802B17CAF200951A95 /* CreateProductView.swift in Sources */,
 				2A2DC3AA2B19AACE0001F164 /* Utilities.swift in Sources */,
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,
-				9F78E1982B19B00C00951A95 /* MyPostView.swift in Sources */,
 				9F0994AD2B0D9F0000FE2848 /* LogInViewController.swift in Sources */,
 				9F78E1822B17CB0600951A95 /* MyProfileViewController.swift in Sources */,
 				9F78E1842B17CB2B00951A95 /* CreateProductViewController.swift in Sources */,
@@ -501,7 +490,6 @@
 				2AFB9D6D2B0FD40600E5E7AB /* SchoolList.swift in Sources */,
 				2A2DC3A62B195CAA0001F164 /* GlobalData.swift in Sources */,
 				9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */,
-				9F78E1962B19AFF800951A95 /* MyPostTableViewCell.swift in Sources */,
 				9F78E1752B172F1700951A95 /* MainScreenPickerViewManager.swift in Sources */,
 				2AFB9D662B0FC62D00E5E7AB /* ProductTableViewCell.swift in Sources */,
 				9F78E18E2B195AAE00951A95 /* ShowProfileView.swift in Sources */,
