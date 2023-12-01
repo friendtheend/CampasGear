@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Check if a user is signed in
         if Auth.auth().currentUser != nil {
             // User is signed in, show MainViewController
-            let mainViewController = MainViewController()
-            let navigationController = UINavigationController(rootViewController: mainViewController)
+            let mainScreenController = MainScreenController()
+            let navigationController = UINavigationController(rootViewController: mainScreenController)
             window.rootViewController = navigationController
         } else {
             // No user is signed in, show LoginViewController

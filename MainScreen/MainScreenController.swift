@@ -16,35 +16,34 @@ class MainScreenController: UITabBarController, UITabBarControllerDelegate {
         let tabMainPage = UINavigationController(rootViewController: MainViewController())
         let tabMainBarItem = UITabBarItem(
             title: "Home",
-            image: UIImage(systemName: "r.square")?.withRenderingMode(.alwaysOriginal),
-            selectedImage: UIImage(systemName: "r.square.fill")
+            image: UIImage(systemName: "h.square")?.withRenderingMode(.alwaysOriginal),
+            selectedImage: UIImage(systemName: "h.square.fill")
         )
         tabMainPage.tabBarItem = tabMainBarItem
-        tabMainPage.title = "Red"
+        tabMainPage.title = "Home"
         
         //MARK: setting up green tab bar...
-//        let tabCreateProduct = UINavigationController(rootViewController: CreateProductViewController())
-//        let tabGreenBarItem = UITabBarItem(
-//            title: "Green",
-//            image: UIImage(systemName: "g.square")?.withRenderingMode(.alwaysOriginal),
-//            selectedImage: UIImage(systemName: "g.square.fill")
-//        )
-//        tabCreateProduct.tabBarItem = tabGreenBarItem
-//        tabCreateProduct.title = "Green"
+        let tabCreateProduct = UINavigationController(rootViewController: CreateProductViewController())
+        let tabGreenBarItem = UITabBarItem(
+            title: "+",
+            image: UIImage(systemName: "n.square")?.withRenderingMode(.alwaysOriginal),
+            selectedImage: UIImage(systemName: "n.square.fill")
+        )
+        tabCreateProduct.tabBarItem = tabGreenBarItem
+        tabCreateProduct.title = "Post your product"
         
         //MARK: setting up blue tab bar...
         let tabMyProfile = UINavigationController(rootViewController: MyProfileViewController())
         let tabMyProfileBarItem = UITabBarItem(
             title: "Me",
-            image: UIImage(systemName: "b.square")?.withRenderingMode(.alwaysOriginal),
-            selectedImage: UIImage(systemName: "b.square.fill")
+            image: UIImage(systemName: "m.square")?.withRenderingMode(.alwaysOriginal),
+            selectedImage: UIImage(systemName: "m.square.fill")
         )
         tabMyProfile.tabBarItem = tabMyProfileBarItem
-        tabMyProfile.title = "Blue"
+        tabMyProfile.title = "Me"
 
         //MARK: setting up this view controller as the Tab Bar Controller...
-        //self.viewControllers = [tabMainPage, tabCreateProduct, tabMyProfile]
-        self.viewControllers = [tabMainPage, tabMyProfile]
+        self.viewControllers = [tabMainPage, tabCreateProduct, tabMyProfile]
     }
     
     override func viewDidLoad() {

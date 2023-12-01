@@ -37,9 +37,7 @@ class MainViewController: UIViewController {
         
         mainScreen.pickerSchool.delegate = self
         mainScreen.pickerSchool.dataSource = self
-        
-        mainScreen.buttonCreate.addTarget(self, action: #selector(buttonCreate), for: .touchUpInside)
-        mainScreen.buttonMyprofile.addTarget(self, action: #selector(buttonMyprofile), for: .touchUpInside)
+
         //mainScreen.buttonOther.addTarget(self, action: #selector(buttonOther), for: .touchUpInside)
         
 //        //Cell实现
@@ -49,16 +47,7 @@ class MainViewController: UIViewController {
 //        mainScreen.tableViewProductLists.separatorStyle = .none
     }
     
-    @objc func buttonMyprofile(){
-        let myprofileScreen = MyProfileViewController()
-        self.navigationController?.pushViewController(myprofileScreen, animated: true)
-    }
-    
-    @objc func buttonCreate(){
-        let createProductScreen = CreateProductViewController()
-        self.navigationController?.pushViewController(createProductScreen, animated: true)
-    }
-    
+
     //借用按钮 来临时测试product detail界面
 //    @objc func buttonOther(){
 //        let ProductDetailScreen = ProductDetailViewController()

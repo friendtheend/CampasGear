@@ -75,8 +75,8 @@ class MyProfileViewController: UIViewController {
         
     
     @objc func buttonRightArrow(){
-        let editprofileScreen = EditProfileViewController()
-        self.navigationController?.pushViewController(editprofileScreen, animated: true)
+        let showprofileScreen = ShowProfileViewController()
+        self.navigationController?.pushViewController(showprofileScreen, animated: true)
     }
     @objc func buttonEdit(){
         let editprofileScreen = EditProfileViewController()
