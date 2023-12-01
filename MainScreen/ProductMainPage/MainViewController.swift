@@ -40,6 +40,7 @@ class MainViewController: UIViewController {
         
         mainScreen.buttonCreate.addTarget(self, action: #selector(buttonCreate), for: .touchUpInside)
         mainScreen.buttonMyprofile.addTarget(self, action: #selector(buttonMyprofile), for: .touchUpInside)
+        //mainScreen.buttonOther.addTarget(self, action: #selector(buttonOther), for: .touchUpInside)
         
 //        //Cell实现
 //        mainScreen.tableViewProductLists.delegate = self
@@ -57,6 +58,12 @@ class MainViewController: UIViewController {
         let createProductScreen = CreateProductViewController()
         self.navigationController?.pushViewController(createProductScreen, animated: true)
     }
+    
+    //借用按钮 来临时测试product detail界面
+//    @objc func buttonOther(){
+//        let ProductDetailScreen = ProductDetailViewController()
+//        self.navigationController?.pushViewController(ProductDetailScreen, animated: true)
+//    }
 
     
     override func viewWillAppear(_ animated: Bool) {

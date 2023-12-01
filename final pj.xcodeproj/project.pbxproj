@@ -48,6 +48,8 @@
 		9F78E18B2B193DDB00951A95 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E18A2B193DDB00951A95 /* EditProfileViewController.swift */; };
 		9F78E18E2B195AAE00951A95 /* ShowProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E18D2B195AAE00951A95 /* ShowProfileView.swift */; };
 		9F78E1902B195ABD00951A95 /* ShowProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E18F2B195ABD00951A95 /* ShowProfileViewController.swift */; };
+		9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1912B19966400951A95 /* ProductDetailView.swift */; };
+		9F78E1942B19969200951A95 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E1932B19969200951A95 /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		9F78E18A2B193DDB00951A95 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9F78E18D2B195AAE00951A95 /* ShowProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileView.swift; sourceTree = "<group>"; };
 		9F78E18F2B195ABD00951A95 /* ShowProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileViewController.swift; sourceTree = "<group>"; };
+		9F78E1912B19966400951A95 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		9F78E1932B19969200951A95 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +295,8 @@
 		9F78E1852B17E1AB00951A95 /* ProductDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9F78E1912B19966400951A95 /* ProductDetailView.swift */,
+				9F78E1932B19969200951A95 /* ProductDetailViewController.swift */,
 			);
 			path = ProductDetailScreen;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				2AFB9D662B0FC62D00E5E7AB /* ProductTableViewCell.swift in Sources */,
 				9F78E18E2B195AAE00951A95 /* ShowProfileView.swift in Sources */,
 				9F0994DD2B0DD49500FE2848 /* SignUpScreenView.swift in Sources */,
+				9F78E1942B19969200951A95 /* ProductDetailViewController.swift in Sources */,
 				9F0994DF2B0DD4AC00FE2848 /* SignUpScreenViewController.swift in Sources */,
 				2AFB9D6A2B0FD2E700E5E7AB /* SignUpPickerViewManager.swift in Sources */,
 				3E6F4AE12B0FE05B000A0160 /* SignUpPhotoManager.swift in Sources */,
@@ -488,6 +495,7 @@
 				2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */,
 				9F78E1902B195ABD00951A95 /* ShowProfileViewController.swift in Sources */,
 				9F78E17A2B17C82A00951A95 /* MainScreenController.swift in Sources */,
+				9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */,
 				2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */,
 				9F78E18B2B193DDB00951A95 /* EditProfileViewController.swift in Sources */,
 				2AFB9D5B2B0ED09400E5E7AB /* SignUpFirebaseManager.swift in Sources */,
