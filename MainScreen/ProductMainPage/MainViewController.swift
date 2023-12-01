@@ -37,6 +37,8 @@ class MainViewController: UIViewController {
         
         mainScreen.pickerSchool.delegate = self
         mainScreen.pickerSchool.dataSource = self
+        
+        hideKeyboardOnTapOutside()
 
         //mainScreen.buttonOther.addTarget(self, action: #selector(buttonOther), for: .touchUpInside)
         
@@ -153,6 +155,16 @@ class MainViewController: UIViewController {
 //        chatScreen.currentUser = self.currentUser
 //        self.navigationController?.pushViewController(chatScreen, animated: true)
 //    }
+    @objc func hideKeyboardOnTap(){
+        //MARK: removing the keyboard from screen...
+        view.endEditing(true)
+    }
+    
+    func hideKeyboardOnTapOutside(){
+        //MARK: recognizing the taps on the app screen, not the keyboard...
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+        view.addGestureRecognizer(tapRecognizer)
+    }
     
     @objc func onLogOutBarButtonTapped(){
         let logoutAlert = UIAlertController(title: "Logging out!", message: "Are you sure want to log out?", preferredStyle: .alert)

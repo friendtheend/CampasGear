@@ -52,7 +52,6 @@ class CreateProductViewController: UIViewController {
        // MyProfileScreen.pickerViewSchool.dataSource = self
         
         hideKeyboardOnTapOutside()
-        
     }
     
     func hideKeyboardOnTapOutside(){

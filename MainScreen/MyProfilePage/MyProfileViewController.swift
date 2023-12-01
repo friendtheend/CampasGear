@@ -38,14 +38,14 @@ class MyProfileViewController: UIViewController {
         MyProfileScreen.buttonEdit.menu = getMenuImagePicker()
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
+        
         title = "My Profile"
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
         
-        //MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(buttonMyPost), for: .touchUpInside)
+        MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(buttonMyPost), for: .touchUpInside)
         MyProfileScreen.buttonEdit.addTarget(self, action: #selector(buttonEdit), for: .touchUpInside)
         MyProfileScreen.buttonRightArrow.addTarget(self, action: #selector(buttonRightArrow), for: .touchUpInside)
         //MyProfileScreen.pickerViewSchool.delegate = self
@@ -83,10 +83,10 @@ class MyProfileViewController: UIViewController {
         self.navigationController?.pushViewController(editprofileScreen, animated: true)
     }
     
-//    @objc func buttonMyPost(){
-//        let createProductScreen = CreateProductViewController()
-//        self.navigationController?.pushViewController(createProductScreen, animated: true)
-//    }
+    @objc func buttonMyPost(){
+        let myPostScreen = MyPostViewController()
+        self.navigationController?.pushViewController(myPostScreen, animated: true)
+    }
     
     func getMenuImagePicker() -> UIMenu{
         let menuItems = [
@@ -133,6 +133,7 @@ class MyProfileViewController: UIViewController {
         //MARK: removing the keyboard from screen...
         view.endEditing(true)
     }
+    
     
     
 }

@@ -44,7 +44,6 @@ class ShowProfileViewController: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
         
     
-        
         hideKeyboardOnTapOutside()
         
     }

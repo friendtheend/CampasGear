@@ -9,7 +9,7 @@ import UIKit
 
 class EditProfileView: UIView {
 
-    var contentWrapper: UIScrollView! //new
+    var contentWrapper: UIScrollView! 
     
     var buttonTakePhoto: UIButton!
     var textFieldUserName: UITextField!

@@ -25,6 +25,7 @@ class ProductDetailViewController: UIViewController {
             tapRecognizer.cancelsTouchesInView = false
             view.addGestureRecognizer(tapRecognizer)
 
+            hideKeyboardOnTapOutside()
         }
 
 
@@ -34,6 +35,11 @@ class ProductDetailViewController: UIViewController {
             view.endEditing(true)
         }
         
+        func hideKeyboardOnTapOutside(){
+            //MARK: recognizing the taps on the app screen, not the keyboard...
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+            view.addGestureRecognizer(tapRecognizer)
+        }
         
         
         
