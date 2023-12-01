@@ -23,6 +23,7 @@ class SignUpScreenController: UIViewController {
     let childProgressView = ProgressSpinnerViewController()
     
     var selectedSchool = schoolList[0]
+    
     var pickedImage:UIImage?
     
     let storage = Storage.storage()

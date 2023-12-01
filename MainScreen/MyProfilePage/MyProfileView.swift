@@ -15,6 +15,7 @@ class MyProfileView: UIView {
     var buttonEdit: UIButton!
     var labelUsername: UILabel!
     var buttonMyPost: UIButton!
+    var buttonMyProfile: UIButton!
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -26,6 +27,7 @@ class MyProfileView: UIView {
         setupButtonMyPost()
         setupButtonEdit()
         setupLabelSchool()
+        setupButtonMyProfile()
         
         initConstraints()
     }
@@ -67,6 +69,14 @@ class MyProfileView: UIView {
         contentWrapper.addSubview(buttonEdit)
     }
     
+    func setupButtonMyProfile(){
+        buttonMyProfile = UIButton(type: .system)
+        buttonMyProfile.setTitle("->", for: .normal)
+        buttonMyProfile.titleLabel?.font = .boldSystemFont(ofSize: 32)
+        buttonMyProfile.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(buttonMyProfile)
+    }
+    
     func initConstraints(){
         NSLayoutConstraint.activate([
 
@@ -77,8 +87,8 @@ class MyProfileView: UIView {
             
             imagePic.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 32),
             imagePic.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 20),
-            imagePic.widthAnchor.constraint(equalToConstant: 100),
-            imagePic.heightAnchor.constraint(equalToConstant: 100),
+            imagePic.widthAnchor.constraint(equalToConstant: 120),
+            imagePic.heightAnchor.constraint(equalToConstant: 120),
             
             labelUsername.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 65),
             labelUsername.leadingAnchor.constraint(equalTo: imagePic.leadingAnchor,constant: 120),
@@ -91,6 +101,8 @@ class MyProfileView: UIView {
             buttonMyPost.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 25),
             buttonMyPost.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
             
+            buttonMyProfile.topAnchor.constraint(equalTo: labelUsername.topAnchor, constant: 10),
+            buttonMyProfile.leadingAnchor.constraint(equalTo: imagePic.leadingAnchor,constant: 115),
             
         ])
     }

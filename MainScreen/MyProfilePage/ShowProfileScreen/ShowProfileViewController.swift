@@ -1,8 +1,8 @@
 //
-//  MyProfileViewController.swift
+//  ShowProfileViewController.swift
 //  final pj
 //
-//  Created by 林允儿老公专属Mac on 2023/11/29.
+//  Created by 林允儿老公专属Mac on 2023/11/30.
 //
 
 import UIKit
@@ -12,8 +12,8 @@ import FirebaseStorage
 import FirebaseFirestoreSwift
 import PhotosUI
 
-class MyProfileViewController: UIViewController {
-    let MyProfileScreen = MyProfileView()
+class ShowProfileViewController: UIViewController {
+    let showProfileScreen = ShowProfileView()
     
     var currentUser:FirebaseAuth.User?
     
@@ -29,26 +29,21 @@ class MyProfileViewController: UIViewController {
     var profilePhotoURL:URL?
     
     override func loadView() {
-        view = MyProfileScreen
+        view = showProfileScreen
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        MyProfileScreen.buttonEdit.menu = getMenuImagePicker()
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "My Profile"
+        //title = "My Profile"
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
         
-        //MyProfileScreen.buttonMyPost.addTarget(self, action: #selector(buttonMyPost), for: .touchUpInside)
-        MyProfileScreen.buttonEdit.addTarget(self, action: #selector(buttonEdit), for: .touchUpInside)
-        MyProfileScreen.buttonMyProfile.addTarget(self, action: #selector(buttonMyProfile), for: .touchUpInside)
-        //MyProfileScreen.pickerViewSchool.delegate = self
-       // MyProfileScreen.pickerViewSchool.dataSource = self
+    
         
         hideKeyboardOnTapOutside()
         
@@ -60,21 +55,6 @@ class MyProfileViewController: UIViewController {
             view.addGestureRecognizer(tapRecognizer)
         }
         
-    
-    @objc func buttonEdit(){
-        let editprofileScreen = EditProfileViewController()
-        self.navigationController?.pushViewController(editprofileScreen, animated: true)
-    }
-    
-    @objc func buttonMyProfile(){
-        let showprofileScreen = ShowProfileViewController()
-        self.navigationController?.pushViewController(showprofileScreen, animated: true)
-    }
-    
-//    @objc func buttonMyPost(){
-//        let createProductScreen = CreateProductViewController()
-//        self.navigationController?.pushViewController(createProductScreen, animated: true)
-//    }
     
     func getMenuImagePicker() -> UIMenu{
         let menuItems = [
@@ -124,4 +104,3 @@ class MyProfileViewController: UIViewController {
     
     
 }
-
