@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2DC3A62B195CAA0001F164 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC3A52B195CAA0001F164 /* GlobalData.swift */; };
+		2A2DC3A82B195DD00001F164 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC3A72B195DD00001F164 /* UserInfo.swift */; };
+		2A2DC3AA2B19AACE0001F164 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC3A92B19AACE0001F164 /* Utilities.swift */; };
 		2AFB9D3F2B0E8B4100E5E7AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */; };
 		2AFB9D422B0E8BDC00E5E7AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AFB9D412B0E8BDC00E5E7AB /* FirebaseAuth */; };
 		2AFB9D442B0E8BDC00E5E7AB /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AFB9D432B0E8BDC00E5E7AB /* FirebaseAuthCombine-Community */; };
@@ -73,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2DC3A52B195CAA0001F164 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		2A2DC3A72B195DD00001F164 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		2A2DC3A92B19AACE0001F164 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2AFB9D502B0EB3F900E5E7AB /* ProgressSpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerViewController.swift; sourceTree = "<group>"; };
 		2AFB9D512B0EB3F900E5E7AB /* ProgressSpinnerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +171,8 @@
 			children = (
 				2AFB9D4F2B0EB3F900E5E7AB /* Progress Indicator */,
 				2AFB9D5E2B0FC47700E5E7AB /* GlobalAlert.swift */,
+				2A2DC3A52B195CAA0001F164 /* GlobalData.swift */,
+				2A2DC3A92B19AACE0001F164 /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFB9D6C2B0FD40600E5E7AB /* SchoolList.swift */,
+				2A2DC3A72B195DD00001F164 /* UserInfo.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -482,6 +491,7 @@
 				9F78E19A2B19B01E00951A95 /* MyPostViewController.swift in Sources */,
 				9F78E17E2B17CAE100951A95 /* MyProfileView.swift in Sources */,
 				9F78E1802B17CAF200951A95 /* CreateProductView.swift in Sources */,
+				2A2DC3AA2B19AACE0001F164 /* Utilities.swift in Sources */,
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,
 				9F78E1982B19B00C00951A95 /* MyPostView.swift in Sources */,
 				9F0994AD2B0D9F0000FE2848 /* LogInViewController.swift in Sources */,
@@ -489,6 +499,7 @@
 				9F78E1842B17CB2B00951A95 /* CreateProductViewController.swift in Sources */,
 				2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */,
 				2AFB9D6D2B0FD40600E5E7AB /* SchoolList.swift in Sources */,
+				2A2DC3A62B195CAA0001F164 /* GlobalData.swift in Sources */,
 				9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */,
 				9F78E1962B19AFF800951A95 /* MyPostTableViewCell.swift in Sources */,
 				9F78E1752B172F1700951A95 /* MainScreenPickerViewManager.swift in Sources */,
@@ -510,6 +521,7 @@
 				9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */,
 				2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */,
 				9F78E18B2B193DDB00951A95 /* EditProfileViewController.swift in Sources */,
+				2A2DC3A82B195DD00001F164 /* UserInfo.swift in Sources */,
 				2AFB9D5B2B0ED09400E5E7AB /* SignUpFirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

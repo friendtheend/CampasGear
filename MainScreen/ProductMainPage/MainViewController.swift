@@ -91,29 +91,21 @@ class MainViewController: UIViewController {
                 
                 self.navigationItem.rightBarButtonItems = [barIcon, barText]
                     
-//                self.database.collection("users").whereField("name", isNotEqualTo:self.currentUser?.displayName! ).getDocuments() { (querySnapshot, err) in
-//                  if let err = err {
-//                    print("Error getting documents: \(err)")
-//                  } else {
-//                      self.contactsList.removeAll()
-//                      for document in querySnapshot!.documents {
-//                        
-//                          do{
-//                              let contact  = try document.data(as: Contact.self)
-//                              self.contactsList.append(contact)
-//                           
-//                          }catch{
-//                              print(error)
-//                          }
-//                    }
-//                      
-//                      print("print the contacts list     !")
-//                      self.mainScreen.tableViewChatLists.reloadData()
-//                  }
-//                }
-                
-                self.currentUser = user
-   
+                self.database.collection("users").document(user!.uid).getDocument { (documentSnapshot, error) in
+                    if let error = error {
+                        print("Error fetching document: \(error)")
+                    } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
+                        // Extract user data from documentSnapshot
+                        if let data = documentSnapshot.data() {
+                            let userInfo = UserInfo(dictionary: data)
+                            GlobalData.shared.userInfo = userInfo
+                            //print("userinfo:", GlobalData.shared.userInfo)
+                        }
+                    } else {
+                        print("Document does not exist")
+                    }
+                }
+
             }
             
         }
