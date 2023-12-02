@@ -19,9 +19,9 @@ class LogInViewController: UIViewController {
 //    
 //    let database = Firestore.firestore()
 //    
-//    var handleAuth: AuthStateDidChangeListenerHandle?
+    var handleAuth: AuthStateDidChangeListenerHandle?
 //    
-//    var currentUser:FirebaseAuth.User?
+    var currentUser:FirebaseAuth.User?
 
         
         override func loadView() {

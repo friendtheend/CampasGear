@@ -58,6 +58,8 @@
 		9F78E1A02B1A73B700951A95 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */; };
 		BCFA0DB82B1ACDDF003945C3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB72B1ACDDF003945C3 /* Product.swift */; };
 		BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */; };
+		BCFA0DBC2B1ADA18003945C3 /* ValidationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */; };
+		BCFA0DBE2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewCell.swift; sourceTree = "<group>"; };
 		BCFA0DB72B1ACDDF003945C3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoManager.swift; sourceTree = "<group>"; };
+		BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlerts.swift; sourceTree = "<group>"; };
+		BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductFirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,9 +188,9 @@
 		2AFB9D602B0FC5D100E5E7AB /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9F78E1772B17C72700951A95 /* PostNewProductPage */,
 				9F78E1792B17C82A00951A95 /* MainScreenController.swift */,
 				9F78E1782B17C74500951A95 /* MyProfilePage */,
-				9F78E1772B17C72700951A95 /* CreateProductPage */,
 				9F78E1762B17C6FF00951A95 /* ProductMainPage */,
 			);
 			path = MainScreen;
@@ -239,6 +243,7 @@
 				9F0994B32B0D9F0100FE2848 /* LaunchScreen.storyboard */,
 				9F09950E2B0DF52100FE2848 /* Main.storyboard */,
 				9F0994B62B0D9F0100FE2848 /* Info.plist */,
+				BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */,
 			);
 			path = "final pj";
 			sourceTree = "<group>";
@@ -292,14 +297,15 @@
 			path = ProductMainPage;
 			sourceTree = "<group>";
 		};
-		9F78E1772B17C72700951A95 /* CreateProductPage */ = {
+		9F78E1772B17C72700951A95 /* PostNewProductPage */ = {
 			isa = PBXGroup;
 			children = (
 				9F78E17F2B17CAF200951A95 /* CreateProductView.swift */,
 				9F78E1832B17CB2B00951A95 /* CreateProductViewController.swift */,
 				BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */,
+				BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */,
 			);
-			path = CreateProductPage;
+			path = PostNewProductPage;
 			sourceTree = "<group>";
 		};
 		9F78E1782B17C74500951A95 /* MyProfilePage */ = {
@@ -495,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F78E17E2B17CAE100951A95 /* MyProfileView.swift in Sources */,
+				BCFA0DBC2B1ADA18003945C3 /* ValidationAlerts.swift in Sources */,
 				9F78E1802B17CAF200951A95 /* CreateProductView.swift in Sources */,
 				2A2DC3AA2B19AACE0001F164 /* Utilities.swift in Sources */,
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,
@@ -518,6 +525,7 @@
 				3E6F4AE12B0FE05B000A0160 /* SignUpPhotoManager.swift in Sources */,
 				2AFB9D522B0EB3FA00E5E7AB /* ProgressSpinnerViewController.swift in Sources */,
 				2AFB9D672B0FC62D00E5E7AB /* MainScreenView.swift in Sources */,
+				BCFA0DBE2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift in Sources */,
 				2AFB9D682B0FC62D00E5E7AB /* MainViewController.swift in Sources */,
 				9F78E1892B193DC900951A95 /* EditProfileView.swift in Sources */,
 				9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */,
