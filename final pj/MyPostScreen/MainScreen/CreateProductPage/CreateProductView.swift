@@ -42,8 +42,8 @@ class CreateProductView: UIView {
     func setupButtonTakePhoto(){
         buttonTakePhoto = UIButton(type: .system)
         buttonTakePhoto.setTitle("", for: .normal)
-        buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal) 
-        //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        buttonTakePhoto.setImage(UIImage(systemName: "camera.fill"), for: .normal) 
+
         buttonTakePhoto.contentHorizontalAlignment = .fill
         buttonTakePhoto.contentVerticalAlignment = .fill
         buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
@@ -74,7 +74,6 @@ class CreateProductView: UIView {
     func setupTextFieldPrice(){
         textFieldPrice = UITextField()
         textFieldPrice.placeholder = "Set your pirce"
-        textFieldPrice.isSecureTextEntry = true
         textFieldPrice.borderStyle = .roundedRect
         textFieldPrice.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(textFieldPrice)
@@ -83,7 +82,6 @@ class CreateProductView: UIView {
     func setupTextFieldContactInfo(){
         textFieldContactInfo = UITextField()
         textFieldContactInfo.borderStyle = .roundedRect
-        textFieldContactInfo.isSecureTextEntry = true
         textFieldContactInfo.placeholder = "Contact info"
         textFieldContactInfo.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(textFieldContactInfo)

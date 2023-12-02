@@ -93,12 +93,12 @@ class CreateProductViewController: UIViewController {
 
     @objc func onSaveTapped(){
         //MARK: creating a new user on Firebase with photo...
-        let title = createProductScreen.textFieldTitle.text,
-        let describe = createProductScreen.textFieldDescribe.text,
-        let price = createProductScreen.textFieldPrice.text,
-        let contactInfo = createProductScreen.textFieldContactInfo,
-        
-        
+//        let title = createProductScreen.textFieldTitle.text,
+//        let describe = createProductScreen.textFieldDescribe.text,
+//        let price = createProductScreen.textFieldPrice.text,
+//        let contactInfo = createProductScreen.textFieldContactInfo,
+//        
+//        
         
         
     }
