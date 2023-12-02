@@ -156,22 +156,13 @@ class MainViewController: UIViewController {
         logoutAlert.addAction(UIAlertAction(title: "Yes, log out!", style: .default, handler: {(_) in
                 do{
                     try Auth.auth().signOut()
+                    self.dismiss(animated: true, completion: nil)
                 }catch{
                     print("Error occured!")
                 }
-            let loginViewController = LogInViewController()
-            self.navigationController?.setViewControllers([loginViewController], animated: true)
             })
         )
         logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        // Check if the device is iPad
-//        if let popoverController = logoutAlert.popoverPresentationController {
-//            popoverController.sourceView = self.view // The view containing the anchor rectangle for the popover.
-//            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0) // The rectangle in the specified view in which to anchor the popover.
-//            popoverController.permittedArrowDirections = [] // No arrow directions
-//        }
-
         
         self.present(logoutAlert, animated: true)
     }

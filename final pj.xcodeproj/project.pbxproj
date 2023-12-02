@@ -185,15 +185,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2AFB9D602B0FC5D100E5E7AB /* MainScreen */ = {
+		2AFB9D602B0FC5D100E5E7AB /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
-				9F78E1772B17C72700951A95 /* PostNewProductPage */,
+				9F78E1852B17E1AB00951A95 /* ProductDetailScreen */,
 				9F78E1792B17C82A00951A95 /* MainScreenController.swift */,
-				9F78E1782B17C74500951A95 /* MyProfilePage */,
 				9F78E1762B17C6FF00951A95 /* ProductMainPage */,
 			);
-			path = MainScreen;
+			path = "Home Screen";
 			sourceTree = "<group>";
 		};
 		2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */ = {
@@ -229,12 +228,9 @@
 		9F0994A72B0D9F0000FE2848 /* final pj */ = {
 			isa = PBXGroup;
 			children = (
-				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
-				2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */,
-				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
-				9F78E1872B17E21100951A95 /* MyPostScreen */,
-				9F78E1862B17E1FF00951A95 /* EditProfileScreen */,
-				9F78E1852B17E1AB00951A95 /* ProductDetailScreen */,
+				2AFB9D602B0FC5D100E5E7AB /* Home Screen */,
+				9F78E1772B17C72700951A95 /* Post Product Screen */,
+				9F78E1872B17E21100951A95 /* Me Screen */,
 				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
 				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
 				9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */,
@@ -244,6 +240,9 @@
 				9F09950E2B0DF52100FE2848 /* Main.storyboard */,
 				9F0994B62B0D9F0100FE2848 /* Info.plist */,
 				BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */,
+				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
+				2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */,
+				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
 			);
 			path = "final pj";
 			sourceTree = "<group>";
@@ -297,7 +296,7 @@
 			path = ProductMainPage;
 			sourceTree = "<group>";
 		};
-		9F78E1772B17C72700951A95 /* PostNewProductPage */ = {
+		9F78E1772B17C72700951A95 /* Post Product Screen */ = {
 			isa = PBXGroup;
 			children = (
 				9F78E17F2B17CAF200951A95 /* CreateProductView.swift */,
@@ -305,7 +304,7 @@
 				BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */,
 				BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */,
 			);
-			path = PostNewProductPage;
+			path = "Post Product Screen";
 			sourceTree = "<group>";
 		};
 		9F78E1782B17C74500951A95 /* MyProfilePage */ = {
@@ -336,15 +335,16 @@
 			path = EditProfileScreen;
 			sourceTree = "<group>";
 		};
-		9F78E1872B17E21100951A95 /* MyPostScreen */ = {
+		9F78E1872B17E21100951A95 /* Me Screen */ = {
 			isa = PBXGroup;
 			children = (
-				2AFB9D602B0FC5D100E5E7AB /* MainScreen */,
+				9F78E1782B17C74500951A95 /* MyProfilePage */,
+				9F78E1862B17E1FF00951A95 /* EditProfileScreen */,
 				9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */,
 				9F78E19B2B1A738600951A95 /* MyPostView.swift */,
 				9F78E19D2B1A739800951A95 /* MyPostViewController.swift */,
 			);
-			path = MyPostScreen;
+			path = "Me Screen";
 			sourceTree = "<group>";
 		};
 		9F78E18C2B195A8600951A95 /* ShowProfileScreen */ = {
