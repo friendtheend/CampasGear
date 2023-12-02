@@ -102,19 +102,22 @@ class CreateProductViewController: UIViewController {
         let price = createProductScreen.textFieldPrice.text,
            let contactInfo = createProductScreen.textFieldContactInfo.text{
             if title.isEmpty{
-                ValidationAlerts.showErrorAlert(self,  "title can not be empty")
+                Alerts.showErrorAlert(self,  "title can not be empty")
             }else if (describe.isEmpty){
-                ValidationAlerts.showErrorAlert(self,  "describe can not be empty")
+                Alerts.showErrorAlert(self,  "describe can not be empty")
             }else if(price.isEmpty){
-                ValidationAlerts.showErrorAlert(self,  "price can not be empty")
+                Alerts.showErrorAlert(self,  "price can not be empty")
             }else if(contactInfo.isEmpty){
-                ValidationAlerts.showErrorAlert(self,  "contact info can not be empty")
+                Alerts.showErrorAlert(self,  "contact info can not be empty")
             }else if(imagePath.isEmpty){
-                ValidationAlerts.showErrorAlert(self,  "image info can not be empty")
+                Alerts.showErrorAlert(self,  "image info can not be empty")
             }else{
                 print("here")
-                let newProduct = product(title: title, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath)
-                storeNewProduct(product: newProduct)
+                print("uid",uid)
+                if let UID = self.uid{
+                    let newProduct = product(title: title, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: UID, hasSold: false)
+                    storeNewProduct(product: newProduct)
+                }
             }
         }
         

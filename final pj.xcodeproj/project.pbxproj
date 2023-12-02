@@ -58,7 +58,7 @@
 		9F78E1A02B1A73B700951A95 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */; };
 		BCFA0DB82B1ACDDF003945C3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB72B1ACDDF003945C3 /* Product.swift */; };
 		BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */; };
-		BCFA0DBC2B1ADA18003945C3 /* ValidationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */; };
+		BCFA0DBC2B1ADA18003945C3 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */; };
 		BCFA0DBE2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +128,7 @@
 		9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewCell.swift; sourceTree = "<group>"; };
 		BCFA0DB72B1ACDDF003945C3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoManager.swift; sourceTree = "<group>"; };
-		BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlerts.swift; sourceTree = "<group>"; };
+		BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductFirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,7 +230,7 @@
 			children = (
 				2AFB9D602B0FC5D100E5E7AB /* Home Screen */,
 				9F78E1772B17C72700951A95 /* Post Product Screen */,
-				9F78E1872B17E21100951A95 /* Me Screen */,
+				9F78E1872B17E21100951A95 /*  My Profile Screen */,
 				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
 				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
 				9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */,
@@ -239,7 +239,7 @@
 				9F0994B32B0D9F0100FE2848 /* LaunchScreen.storyboard */,
 				9F09950E2B0DF52100FE2848 /* Main.storyboard */,
 				9F0994B62B0D9F0100FE2848 /* Info.plist */,
-				BCFA0DBB2B1ADA18003945C3 /* ValidationAlerts.swift */,
+				BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */,
 				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
 				2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */,
 				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
@@ -335,7 +335,7 @@
 			path = EditProfileScreen;
 			sourceTree = "<group>";
 		};
-		9F78E1872B17E21100951A95 /* Me Screen */ = {
+		9F78E1872B17E21100951A95 /*  My Profile Screen */ = {
 			isa = PBXGroup;
 			children = (
 				9F78E1782B17C74500951A95 /* MyProfilePage */,
@@ -344,7 +344,7 @@
 				9F78E19B2B1A738600951A95 /* MyPostView.swift */,
 				9F78E19D2B1A739800951A95 /* MyPostViewController.swift */,
 			);
-			path = "Me Screen";
+			path = " My Profile Screen";
 			sourceTree = "<group>";
 		};
 		9F78E18C2B195A8600951A95 /* ShowProfileScreen */ = {
@@ -501,7 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F78E17E2B17CAE100951A95 /* MyProfileView.swift in Sources */,
-				BCFA0DBC2B1ADA18003945C3 /* ValidationAlerts.swift in Sources */,
+				BCFA0DBC2B1ADA18003945C3 /* Alerts.swift in Sources */,
 				9F78E1802B17CAF200951A95 /* CreateProductView.swift in Sources */,
 				2A2DC3AA2B19AACE0001F164 /* Utilities.swift in Sources */,
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,

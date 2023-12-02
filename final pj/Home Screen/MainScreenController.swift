@@ -9,6 +9,8 @@ import UIKit
 
 class MainScreenController: UITabBarController, UITabBarControllerDelegate {
 
+    var uid:String?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -23,14 +25,16 @@ class MainScreenController: UITabBarController, UITabBarControllerDelegate {
         tabMainPage.title = "Home"
         
         //MARK: setting up green tab bar...
-        let tabCreateProduct = UINavigationController(rootViewController: CreateProductViewController())
+        let postScreen = CreateProductViewController()
+        let tabCreateProduct = UINavigationController(rootViewController: postScreen)
+        postScreen.uid = self.uid
         let tabGreenBarItem = UITabBarItem(
             title: "+",
             image: UIImage(systemName: "n.square")?.withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(systemName: "n.square.fill")
         )
         tabCreateProduct.tabBarItem = tabGreenBarItem
-        tabCreateProduct.title = "Post your product"
+        tabCreateProduct.title = "Post"
         
         //MARK: setting up blue tab bar...
         let tabMyProfile = UINavigationController(rootViewController: MyProfileViewController())

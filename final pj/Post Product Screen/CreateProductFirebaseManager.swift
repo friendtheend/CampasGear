@@ -11,21 +11,25 @@ import Foundation
 extension CreateProductViewController{
     
     func storeNewProduct(product:product){
-        
-        let productData: [String: Any] = [
-            "title": product.title,
-            "photoPath":product.imagePath,
-            "describe": product.describe,
-            "price": product.price,
-            "contactInfo":product.contactInfo,
-        ]
         if let userID = self.uid {
             
+            let productData: [String: Any] = [
+                "title": product.title,
+                "describe": product.describe,
+                "price": product.price,
+                "contactInfo":product.contactInfo,
+                "imagePath":product.imagePath,
+                "seller":userID,
+                "hasSold":false
+            ]
+            
             let refDoc = self.database.collection("users").document(userID)
-            refDoc.collection("products").document().setData(productData, merge: true) { error in
+            let productCollection = refDoc.collection("userProducts")
+            productCollection.document().setData(productData, merge: true) { error in
                 if let error = error {
                     print("Error writing document: \(error)")
                 } else {
+                    Alerts.createSuccess(self, "successfully post")
                     print("Document successfully written!")
                 }
             }

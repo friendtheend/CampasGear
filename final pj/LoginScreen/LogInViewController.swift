@@ -84,7 +84,8 @@ class LogInViewController: UIViewController {
                    print("sign in successful")
                    
                    let mainScreen = MainScreenController()
-                          mainScreen.modalPresentationStyle = .fullScreen
+                   mainScreen.modalPresentationStyle = .fullScreen
+                   mainScreen.uid = result?.user.uid
                    self.present(mainScreen, animated: true, completion: nil)
 
                }else{
