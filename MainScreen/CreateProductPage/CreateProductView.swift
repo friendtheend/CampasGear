@@ -12,6 +12,7 @@ class CreateProductView: UIView {
     var contentWrapper: UIScrollView! //new
     
     var buttonTakePhoto: UIButton!
+    var pickerViewType:UIPickerView!
     var textFieldTitle: UITextField!
     var textFieldDescribe: UITextField!
     var textFieldPrice:UITextField!
@@ -25,6 +26,7 @@ class CreateProductView: UIView {
         setupContentWrapper()
         setupButtonTakePhoto()
         setuptextFieldTitle()
+        setupPickerViewType()
         setuptextFieldDescribe()
         setupTextFieldPrice()
         setupButtonSave()
@@ -61,6 +63,11 @@ class CreateProductView: UIView {
         contentWrapper.addSubview(textFieldTitle)
     }
     
+    func setupPickerViewType(){
+        pickerViewType = UIPickerView()
+        pickerViewType.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(pickerViewType)
+    }
     
     func setuptextFieldDescribe(){
         textFieldDescribe = UITextField()
@@ -112,7 +119,11 @@ class CreateProductView: UIView {
             textFieldTitle.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldTitle.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldDescribe.topAnchor.constraint(equalTo: textFieldTitle.bottomAnchor, constant: 16),
+            pickerViewType.topAnchor.constraint(equalTo: textFieldTitle.bottomAnchor, constant: -3),
+            pickerViewType.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            pickerViewType.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            
+            textFieldDescribe.topAnchor.constraint(equalTo: pickerViewType.bottomAnchor, constant: -3),
             textFieldDescribe.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldDescribe.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             textFieldDescribe.heightAnchor.constraint(equalToConstant: 100),
