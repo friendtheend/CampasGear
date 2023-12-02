@@ -36,20 +36,16 @@ class CreateProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Post your product"
+        navigationController?.navigationBar.prefersLargeTitles = true
+       
         createProductScreen.buttonTakePhoto.menu = getMenuImagePicker()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        createProductScreen.buttonSave.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
-        title = "Post your product"
+        createProductScreen.buttonSave.addTarget(self, action: #selector(onSaveTapped), for: .touchUpInside)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
-        
-        createProductScreen.buttonSave.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
-        
-        //MyProfileScreen.pickerViewSchool.delegate = self
-       // MyProfileScreen.pickerViewSchool.dataSource = self
         
         hideKeyboardOnTapOutside()
     }
@@ -78,7 +74,7 @@ class CreateProductViewController: UIViewController {
         let cameraController = UIImagePickerController()
         cameraController.sourceType = .camera
         cameraController.allowsEditing = true
-       // cameraController.delegate = self
+        cameraController.delegate = self
         present(cameraController, animated: true)
     }
     
@@ -91,13 +87,20 @@ class CreateProductViewController: UIViewController {
         
         let photoPicker = PHPickerViewController(configuration: configuration)
         
-       // photoPicker.delegate = self
+        photoPicker.delegate = self
         present(photoPicker, animated: true, completion: nil)
     }
 
-    @objc func onRegisterTapped(){
+    @objc func onSaveTapped(){
         //MARK: creating a new user on Firebase with photo...
-      //  uploadProfilePhotoToStorage()
+        let title = createProductScreen.textFieldTitle.text,
+        let describe = createProductScreen.textFieldDescribe.text,
+        let price = createProductScreen.textFieldPrice.text,
+        let contactInfo = createProductScreen.textFieldContactInfo,
+        
+        
+        
+        
     }
     
     //MARK: Hide Keyboard...

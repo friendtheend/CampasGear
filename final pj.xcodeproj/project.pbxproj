@@ -56,6 +56,8 @@
 		9F78E19C2B1A738600951A95 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19B2B1A738600951A95 /* MyPostView.swift */; };
 		9F78E19E2B1A739800951A95 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19D2B1A739800951A95 /* MyPostViewController.swift */; };
 		9F78E1A02B1A73B700951A95 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */; };
+		BCFA0DB82B1ACDDF003945C3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB72B1ACDDF003945C3 /* Product.swift */; };
+		BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		9F78E19B2B1A738600951A95 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		9F78E19D2B1A739800951A95 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 		9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewCell.swift; sourceTree = "<group>"; };
+		BCFA0DB72B1ACDDF003945C3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 			children = (
 				2AFB9D6C2B0FD40600E5E7AB /* SchoolList.swift */,
 				2A2DC3A72B195DD00001F164 /* UserInfo.swift */,
+				BCFA0DB72B1ACDDF003945C3 /* Product.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -200,15 +205,6 @@
 		9F09949C2B0D9F0000FE2848 = {
 			isa = PBXGroup;
 			children = (
-				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
-				2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */,
-				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
-				2AFB9D602B0FC5D100E5E7AB /* MainScreen */,
-				9F78E1872B17E21100951A95 /* MyPostScreen */,
-				9F78E1862B17E1FF00951A95 /* EditProfileScreen */,
-				9F78E1852B17E1AB00951A95 /* ProductDetailScreen */,
-				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
-				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
 				9F0994A72B0D9F0000FE2848 /* final pj */,
 				9F0994BE2B0D9F0200FE2848 /* final pjTests */,
 				9F0994C82B0D9F0200FE2848 /* final pjUITests */,
@@ -229,6 +225,14 @@
 		9F0994A72B0D9F0000FE2848 /* final pj */ = {
 			isa = PBXGroup;
 			children = (
+				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
+				2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */,
+				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
+				9F78E1872B17E21100951A95 /* MyPostScreen */,
+				9F78E1862B17E1FF00951A95 /* EditProfileScreen */,
+				9F78E1852B17E1AB00951A95 /* ProductDetailScreen */,
+				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
+				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
 				9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */,
 				9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */,
 				9F0994B12B0D9F0100FE2848 /* Assets.xcassets */,
@@ -293,6 +297,7 @@
 			children = (
 				9F78E17F2B17CAF200951A95 /* CreateProductView.swift */,
 				9F78E1832B17CB2B00951A95 /* CreateProductViewController.swift */,
+				BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */,
 			);
 			path = CreateProductPage;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 		9F78E1872B17E21100951A95 /* MyPostScreen */ = {
 			isa = PBXGroup;
 			children = (
+				2AFB9D602B0FC5D100E5E7AB /* MainScreen */,
 				9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */,
 				9F78E19B2B1A738600951A95 /* MyPostView.swift */,
 				9F78E19D2B1A739800951A95 /* MyPostViewController.swift */,
@@ -516,7 +522,9 @@
 				9F78E1892B193DC900951A95 /* EditProfileView.swift in Sources */,
 				9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */,
 				2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */,
+				BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */,
 				9F78E1902B195ABD00951A95 /* ShowProfileViewController.swift in Sources */,
+				BCFA0DB82B1ACDDF003945C3 /* Product.swift in Sources */,
 				9F78E17A2B17C82A00951A95 /* MainScreenController.swift in Sources */,
 				9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */,
 				2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */,

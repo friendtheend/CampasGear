@@ -39,22 +39,7 @@ class MainViewController: UIViewController {
         mainScreen.pickerSchool.dataSource = self
         
         hideKeyboardOnTapOutside()
-
-        //mainScreen.buttonOther.addTarget(self, action: #selector(buttonOther), for: .touchUpInside)
-        
-//        //Cell实现
-//        mainScreen.tableViewProductLists.delegate = self
-//        mainScreen.tableViewProductLists.dataSource = self
-
-//        mainScreen.tableViewProductLists.separatorStyle = .none
     }
-    
-
-    //借用按钮 来临时测试product detail界面
-//    @objc func buttonOther(){
-//        let ProductDetailScreen = ProductDetailViewController()
-//        self.navigationController?.pushViewController(ProductDetailScreen, animated: true)
-//    }
 
     
     override func viewWillAppear(_ animated: Bool) {
