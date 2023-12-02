@@ -60,6 +60,8 @@
 		BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */; };
 		BCFA0DBC2B1ADA18003945C3 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */; };
 		BCFA0DBE2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */; };
+		BCFA0DC52B1BC1EB003945C3 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DC42B1BC1EB003945C3 /* Configs.swift */; };
+		BCFA0DC72B1BC400003945C3 /* ImageViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DC62B1BC400003945C3 /* ImageViewUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoManager.swift; sourceTree = "<group>"; };
 		BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductFirebaseManager.swift; sourceTree = "<group>"; };
+		BCFA0DC42B1BC1EB003945C3 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		BCFA0DC62B1BC400003945C3 /* ImageViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +234,7 @@
 			children = (
 				2AFB9D602B0FC5D100E5E7AB /* Home Screen */,
 				9F78E1772B17C72700951A95 /* Post Product Screen */,
-				9F78E1872B17E21100951A95 /*  My Profile Screen */,
+				9F78E1872B17E21100951A95 /* My Profile Screen */,
 				9F0994DB2B0DA29A00FE2848 /* SignUpScreen */,
 				9F0994D82B0D9F1400FE2848 /* LoginScreen */,
 				9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */,
@@ -243,6 +247,8 @@
 				2AFB9D5D2B0FC45500E5E7AB /* Utilities */,
 				2AFB9D6B2B0FD3EF00E5E7AB /* Data Models */,
 				2AFB9D3E2B0E8B4100E5E7AB /* GoogleService-Info.plist */,
+				BCFA0DC42B1BC1EB003945C3 /* Configs.swift */,
+				BCFA0DC62B1BC400003945C3 /* ImageViewUtils.swift */,
 			);
 			path = "final pj";
 			sourceTree = "<group>";
@@ -288,8 +294,7 @@
 		9F78E1762B17C6FF00951A95 /* ProductMainPage */ = {
 			isa = PBXGroup;
 			children = (
-				2AFB9D632B0FC62B00E5E7AB /* ProductTableViewCell.swift */,
-				2AFB9D642B0FC62C00E5E7AB /* MainScreenView.swift */,
+				BCFA0DC32B1BBCD0003945C3 /* View */,
 				2AFB9D652B0FC62D00E5E7AB /* MainViewController.swift */,
 				9F78E1742B172F1700951A95 /* MainScreenPickerViewManager.swift */,
 			);
@@ -299,7 +304,7 @@
 		9F78E1772B17C72700951A95 /* Post Product Screen */ = {
 			isa = PBXGroup;
 			children = (
-				9F78E17F2B17CAF200951A95 /* CreateProductView.swift */,
+				BCFA0DC22B1BBCBC003945C3 /* View */,
 				9F78E1832B17CB2B00951A95 /* CreateProductViewController.swift */,
 				BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */,
 				BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */,
@@ -335,7 +340,7 @@
 			path = EditProfileScreen;
 			sourceTree = "<group>";
 		};
-		9F78E1872B17E21100951A95 /*  My Profile Screen */ = {
+		9F78E1872B17E21100951A95 /* My Profile Screen */ = {
 			isa = PBXGroup;
 			children = (
 				9F78E1782B17C74500951A95 /* MyProfilePage */,
@@ -344,7 +349,7 @@
 				9F78E19B2B1A738600951A95 /* MyPostView.swift */,
 				9F78E19D2B1A739800951A95 /* MyPostViewController.swift */,
 			);
-			path = " My Profile Screen";
+			path = "My Profile Screen";
 			sourceTree = "<group>";
 		};
 		9F78E18C2B195A8600951A95 /* ShowProfileScreen */ = {
@@ -354,6 +359,23 @@
 				9F78E18F2B195ABD00951A95 /* ShowProfileViewController.swift */,
 			);
 			path = ShowProfileScreen;
+			sourceTree = "<group>";
+		};
+		BCFA0DC22B1BBCBC003945C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F78E17F2B17CAF200951A95 /* CreateProductView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCFA0DC32B1BBCD0003945C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2AFB9D642B0FC62C00E5E7AB /* MainScreenView.swift */,
+				2AFB9D632B0FC62B00E5E7AB /* ProductTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +547,7 @@
 				3E6F4AE12B0FE05B000A0160 /* SignUpPhotoManager.swift in Sources */,
 				2AFB9D522B0EB3FA00E5E7AB /* ProgressSpinnerViewController.swift in Sources */,
 				2AFB9D672B0FC62D00E5E7AB /* MainScreenView.swift in Sources */,
+				BCFA0DC52B1BC1EB003945C3 /* Configs.swift in Sources */,
 				BCFA0DBE2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift in Sources */,
 				2AFB9D682B0FC62D00E5E7AB /* MainViewController.swift in Sources */,
 				9F78E1892B193DC900951A95 /* EditProfileView.swift in Sources */,
@@ -537,6 +560,7 @@
 				9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */,
 				2AFB9D5F2B0FC47700E5E7AB /* GlobalAlert.swift in Sources */,
 				9F78E18B2B193DDB00951A95 /* EditProfileViewController.swift in Sources */,
+				BCFA0DC72B1BC400003945C3 /* ImageViewUtils.swift in Sources */,
 				2A2DC3A82B195DD00001F164 /* UserInfo.swift in Sources */,
 				2AFB9D5B2B0ED09400E5E7AB /* SignUpFirebaseManager.swift in Sources */,
 			);

@@ -20,9 +20,13 @@ class MainViewController: UIViewController {
     
     var selectedSchool = schoolList[0]
     
+    var productList = [product]()
+    
     var handleAuth: AuthStateDidChangeListenerHandle?
     
     var currentUser:FirebaseAuth.User?
+    
+    var uid: String?
 
     let mainScreen = MainScreenView()
     
@@ -38,108 +42,120 @@ class MainViewController: UIViewController {
         mainScreen.pickerSchool.delegate = self
         mainScreen.pickerSchool.dataSource = self
         
+        mainScreen.tableViewProductLists.delegate = self
+        mainScreen.tableViewProductLists.dataSource = self
+        
+        mainScreen.tableViewProductLists.separatorStyle = .none
+
+        getProducts()
+        
+        //MARK: user is logged in...
+        let barIcon = UIBarButtonItem(
+            image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"),
+            style: .plain,
+            target: self,
+            action: #selector(self.onLogOutBarButtonTapped)
+        )
+        let barText = UIBarButtonItem(
+            title: "Logout",
+            style: .plain,
+            target: self,
+            action: #selector(self.onLogOutBarButtonTapped)
+        )
+        
+        self.navigationItem.rightBarButtonItems = [barIcon, barText]
+        
         hideKeyboardOnTapOutside()
     }
 
-    
-    override func viewWillAppear(_ animated: Bool) {
-        handleAuth = Auth.auth().addStateDidChangeListener{ auth, user in
-            if user == nil{
-                print("user is empty")
-                
-            }else{
-                print("user not empty")
-                self.currentUser = user
-                
-                //MARK: user is logged in...
-                let barIcon = UIBarButtonItem(
-                    image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"),
-                    style: .plain,
-                    target: self,
-                    action: #selector(self.onLogOutBarButtonTapped)
-                )
-                let barText = UIBarButtonItem(
-                    title: "Logout",
-                    style: .plain,
-                    target: self,
-                    action: #selector(self.onLogOutBarButtonTapped)
-                )
-                
-                self.navigationItem.rightBarButtonItems = [barIcon, barText]
-                    
-                self.database.collection("users").document(user!.uid).getDocument { (documentSnapshot, error) in
-                    if let error = error {
-                        print("Error fetching document: \(error)")
-                    } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
-                        // Extract user data from documentSnapshot
-                        if let data = documentSnapshot.data() {
-                            let userInfo = UserInfo(dictionary: data)
-                            GlobalData.shared.userInfo = userInfo
-                            //print("userinfo:", GlobalData.shared.userInfo)
-                        }
-                    } else {
-                        print("Document does not exist")
-                    }
-                }
-
-            }
-            
-        }
-        
-    }
-//    func getAndReloadMessage(){
-//        
-//        print(self.chatIdentifier,"here")
-////        开始对数据库进行查询 查看这两个人是否有聊天记录
-//        
-//        let refDoc = self.database.collection("chats").document(self.chatIdentifier!).collection("chatDetail")
-//        refDoc.getDocuments { (querySnapshot, error) in
-//            if let error = error {
-//                // 处理错误
-//                print("Error getting documents: \(error)")
-//            } else {
-//                // 检查是否有文档
-//                if let snapshot = querySnapshot, !snapshot.isEmpty {
-////                    下面是有文档的情况
-//                    print("Documents found in chatDetail collection.")
-//                    for document in snapshot.documents {
-//                        print("\(document.documentID) => \(document.data())")
-//                        do{
-//                            let info  = try document.data(as: ChatMessage.self)
-//                            self.chatSession.append(info)
-//                         
-//                        }catch{
-//                            print(error)
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        handleAuth = Auth.auth().addStateDidChangeListener{ auth, user in
+//            if user == nil{
+//                print("user is empty")
+//
+//            }else{
+//                print("user not empty")
+//                self.currentUser = user
+//
+//                //MARK: user is logged in...
+//                let barIcon = UIBarButtonItem(
+//                    image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"),
+//                    style: .plain,
+//                    target: self,
+//                    action: #selector(self.onLogOutBarButtonTapped)
+//                )
+//                let barText = UIBarButtonItem(
+//                    title: "Logout",
+//                    style: .plain,
+//                    target: self,
+//                    action: #selector(self.onLogOutBarButtonTapped)
+//                )
+//
+//                self.navigationItem.rightBarButtonItems = [barIcon, barText]
+//
+//                self.database.collection("users").document(user!.uid).getDocument { (documentSnapshot, error) in
+//                    if let error = error {
+//                        print("Error fetching document: \(error)")
+//                    } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
+//                        // Extract user data from documentSnapshot
+//                        if let data = documentSnapshot.data() {
+//                            let userInfo = UserInfo(dictionary: data)
+//                            GlobalData.shared.userInfo = userInfo
+//                            //print("userinfo:", GlobalData.shared.userInfo)
 //                        }
-//                        
-//                        print(self.chatSession,"have this in message list")
-//                        let chatScreen = ChatDetailController()
-//                        chatScreen.chatSession=self.chatSession
-//                        print(print(chatScreen.chatSession,"have this in message list in detail page"))
-//                        
-//                    
-//                    }
-//                } else {
-////                    下面是没有文档的情况，创建新的聊天文档
-//                    print("No chats found in chatDetail collection.")
-//    
-//                    self.database.collection("chats").document(self.chatIdentifier!).setData([:]) { error in
-//                        if let error = error {
-//                            print("Error creating new chat session: \(error)")
-//                        } else {
-//                            print("New chat session created successfully with ID: \(self.chatIdentifier)")
-//                        }
+//                    } else {
+//                        print("Document does not exist")
 //                    }
 //                }
+
 //            }
+//
 //        }
-//        
-////        处理完数据库 进入到新的页面
-//        let chatScreen = ChatDetailController()
-//        chatScreen.chatIdentifier=self.chatIdentifier
-//        chatScreen.currentUser = self.currentUser
-//        self.navigationController?.pushViewController(chatScreen, animated: true)
+//
 //    }
+    
+    func getProducts(){
+            let refDoc = self.database.collection("users")
+            refDoc.getDocuments{ (userSnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    if let userSnapshot = userSnapshot {
+                        for userDocument in userSnapshot.documents {
+                            // 获取用户 ID
+                            let userId = userDocument.documentID
+                            
+                            // 遍历该用户的 "userProducts" 集合中的所有商品
+                            self.database.collection("users").document(userId).collection("userProducts").getDocuments { (productSnapshot, productError) in
+                                
+                                if let productError = productError {
+                                    print("Error getting products for user \(userId): \(productError)")
+                                } else {
+                                    if let productSnapshot = productSnapshot {
+                                        for productDocument in productSnapshot.documents {
+                                            do {
+                                                // 这里处理每个产品的信息
+                                                let productInfo = try productDocument.data(as: product.self)
+                                                self.productList.append(productInfo)
+                                                self.mainScreen.tableViewProductLists.reloadData()
+                                                print(self.productList,"have this in product list")
+                                                
+                                            } catch {
+                                                print("Error deserializing product: \(error)")
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        
+        
+}
     @objc func hideKeyboardOnTap(){
         //MARK: removing the keyboard from screen...
         view.endEditing(true)
@@ -169,18 +185,29 @@ class MainViewController: UIViewController {
     
 }
 
-//extension MainViewController: UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return contactsList.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewContactsID, for: indexPath) as! ContactsTableViewCell
-//        cell.labelName.text = contactsList[indexPath.row].name
-//        return cell
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return productList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewProductsID, for: indexPath) as! ProductTableViewCell
+        
+        let productInfo = productList[indexPath.row]
+        print(productInfo,"ainfo")
+        cell.labelDescription.text = "hello"
+        cell.labelPrice.text = String(productInfo.price)
+        cell.labelProductTitle.text = productInfo.title
+       
+        if let url = URL(string: productInfo.imagePath) {
+            cell.imageProduct.loadRemoteImage(from: url)
+        } else {
+            cell.imageProduct.image = UIImage(systemName: "person.circle")
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let otherId = contactsList[indexPath.row].userId
 //        if let uwId = self.currentUser?.uid{
 ////            这里是通过sort双方的uid 创建一个独一无二的chatIdentifier，通过这个chatIdentifier可以查看双方的聊天记录
@@ -189,6 +216,6 @@ class MainViewController: UIViewController {
 //            self.chatIdentifier = sortedIds.joined(separator: "_")
 //            self.getAndReloadMessage()
 //                }
-//        }
-// 
-//}
+        }
+ 
+}

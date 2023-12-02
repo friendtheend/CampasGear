@@ -112,15 +112,12 @@ class CreateProductViewController: UIViewController {
             }else if(imagePath.isEmpty){
                 Alerts.showErrorAlert(self,  "image info can not be empty")
             }else{
-                print("here")
-                print("uid",uid)
                 if let UID = self.uid{
                     let newProduct = product(title: title, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: UID, hasSold: false)
                     storeNewProduct(product: newProduct)
                 }
             }
         }
-        
     }
     
   

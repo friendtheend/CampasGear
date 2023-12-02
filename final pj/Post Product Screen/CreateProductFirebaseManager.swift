@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 extension CreateProductViewController{
@@ -30,6 +31,13 @@ extension CreateProductViewController{
                     print("Error writing document: \(error)")
                 } else {
                     Alerts.createSuccess(self, "successfully post")
+                    
+                    //MARK: delete user entered product info...
+                    self.createProductScreen.textFieldTitle.text = ""
+                    self.createProductScreen.textFieldDescribe.text = ""
+                    self.createProductScreen.textFieldPrice.text = ""
+                    self.createProductScreen.textFieldContactInfo.text = ""
+                    self.createProductScreen.buttonTakePhoto.setImage(UIImage(systemName: "camera.fill"), for: .normal)
                     print("Document successfully written!")
                 }
             }
@@ -37,45 +45,5 @@ extension CreateProductViewController{
         } else {
            print("uid empty")
         }
-
-        
-        
     }
-    
-//    func uploadProfilePhotoToStorage(){
-//           var profilePhotoURL:URL?
-//
-//           //MARK: Upload the profile photo if there is any...
-//           if let image = pickedImage{
-//               if let jpegData = image.jpegData(compressionQuality: 80){
-//                   let storageRef = storage.reference()
-//                   let imagesRepo = storageRef.child("imagesUsers")
-//
-//                   //MARK: path in storage for this image
-//                   let imageRef = imagesRepo.child("\(NSUUID().uuidString).jpg")
-//
-//                   let uploadTask = imageRef.putData(jpegData, completion: {(metadata, error) in
-//                       if error == nil{
-//                           imageRef.downloadURL(completion: {(url, error) in
-//                               if error == nil{
-//                                   profilePhotoURL = url
-//                                   self.registerNewAccount(photoURL: profilePhotoURL)
-//                               }
-//                           })
-//                       }
-//                   })
-//               }
-//           }else{
-//               registerNewAccount(photoURL: profilePhotoURL)
-//           }
-//       }
-//
-//
-
-
-
-    
-
-
-   
 }
