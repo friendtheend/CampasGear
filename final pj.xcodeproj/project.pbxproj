@@ -56,7 +56,6 @@
 		9F78E19C2B1A738600951A95 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19B2B1A738600951A95 /* MyPostView.swift */; };
 		9F78E19E2B1A739800951A95 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19D2B1A739800951A95 /* MyPostViewController.swift */; };
 		9F78E1A02B1A73B700951A95 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */; };
-		BCF941DD2B1C77CB00B91DF0 /* CategoryPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF941DC2B1C77CB00B91DF0 /* CategoryPickerController.swift */; };
 		BCFA0DB82B1ACDDF003945C3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB72B1ACDDF003945C3 /* Product.swift */; };
 		BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */; };
 		BCFA0DBC2B1ADA18003945C3 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */; };
@@ -129,7 +128,6 @@
 		9F78E19B2B1A738600951A95 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		9F78E19D2B1A739800951A95 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 		9F78E19F2B1A73B700951A95 /* MyPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewCell.swift; sourceTree = "<group>"; };
-		BCF941DC2B1C77CB00B91DF0 /* CategoryPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerController.swift; sourceTree = "<group>"; };
 		BCFA0DB72B1ACDDF003945C3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoManager.swift; sourceTree = "<group>"; };
 		BCFA0DBB2B1ADA18003945C3 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 				9F78E1832B17CB2B00951A95 /* CreateProductViewController.swift */,
 				BCFA0DB92B1AD0B5003945C3 /* photoManager.swift */,
 				BCFA0DBD2B1ADBE4003945C3 /* CreateProductFirebaseManager.swift */,
-				BCF941DC2B1C77CB00B91DF0 /* CategoryPickerController.swift */,
 			);
 			path = "Post Product Screen";
 			sourceTree = "<group>";
@@ -536,7 +533,6 @@
 				9F78E1842B17CB2B00951A95 /* CreateProductViewController.swift in Sources */,
 				2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */,
 				2AFB9D6D2B0FD40600E5E7AB /* SchoolList.swift in Sources */,
-				BCF941DD2B1C77CB00B91DF0 /* CategoryPickerController.swift in Sources */,
 				2A2DC3A62B195CAA0001F164 /* GlobalData.swift in Sources */,
 				9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */,
 				9F78E1752B172F1700951A95 /* MainScreenPickerViewManager.swift in Sources */,

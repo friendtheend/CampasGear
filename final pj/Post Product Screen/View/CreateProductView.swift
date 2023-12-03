@@ -116,7 +116,7 @@ class CreateProductView: UIView {
             buttonTakePhoto.widthAnchor.constraint(equalToConstant: 100),
             buttonTakePhoto.heightAnchor.constraint(equalToConstant: 100),
             
-            textFieldTitle.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
+            textFieldTitle.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 16),
             textFieldTitle.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldTitle.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
@@ -125,7 +125,7 @@ class CreateProductView: UIView {
             pickerViewCategory.trailingAnchor.constraint(equalTo: textFieldTitle.trailingAnchor),
             pickerViewCategory.heightAnchor.constraint(equalToConstant: 150),
             
-            textFieldDescribe.topAnchor.constraint(equalTo: pickerViewCategory.bottomAnchor, constant: 10),
+            textFieldDescribe.topAnchor.constraint(equalTo: pickerViewCategory.bottomAnchor, constant: 4),
             textFieldDescribe.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldDescribe.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             textFieldDescribe.heightAnchor.constraint(equalToConstant: 100),

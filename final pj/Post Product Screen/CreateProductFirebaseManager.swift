@@ -45,6 +45,7 @@ extension CreateProductViewController{
             
             let productData: [String: Any] = [
                 "title": product.title,
+                "category": selectedCategory,
                 "describe": product.describe,
                 "price": product.price,
                 "contactInfo":product.contactInfo,
@@ -67,6 +68,7 @@ extension CreateProductViewController{
                     self.createProductScreen.textFieldPrice.text = ""
                     self.createProductScreen.textFieldContactInfo.text = ""
                     self.createProductScreen.buttonTakePhoto.setImage(UIImage(systemName: "camera.fill"), for: .normal)
+                    self.selectedCategory = categoryList[0]
                     print("Document successfully written!")
                 }
             }

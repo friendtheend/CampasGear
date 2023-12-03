@@ -10,6 +10,7 @@ import Foundation
 struct product: Codable{
     var documentID: String?
     var title: String
+    var category: String
     var describe: String
     var price:Int
     var contactInfo: String
@@ -17,8 +18,9 @@ struct product: Codable{
     var seller: String
     var hasSold: Bool
     
-    init(title: String, describe: String, price:Int, contactInfo:String, imagePath:String,seller: String, hasSold: Bool) {
+    init(title: String, category:String, describe: String, price:Int, contactInfo:String, imagePath:String,seller: String, hasSold: Bool) {
         self.title = title
+        self.category = category
         self.describe = describe
         self.price = price
         self.contactInfo = contactInfo

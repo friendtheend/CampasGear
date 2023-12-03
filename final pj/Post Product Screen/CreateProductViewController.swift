@@ -20,11 +20,13 @@ class CreateProductViewController: UIViewController {
     
     var uid : String?
     
+    var selectedSchool = schoolList[0]
+    
     let database = Firestore.firestore()
     
     let childProgressView = ProgressSpinnerViewController()
     
-    var selectedSchool = schoolList[0]
+    var selectedCategory = categoryList[0]
     
     var pickedImage:UIImage?
     
@@ -41,9 +43,9 @@ class CreateProductViewController: UIViewController {
 
         title = "Post your product"
         navigationController?.navigationBar.prefersLargeTitles = true
-//        
-//        createProductScreen.pickerViewCategory.delegate = self
-//        createProductScreen.pickerViewCategory.dataSource = self
+        
+        createProductScreen.pickerViewCategory.delegate = self
+        createProductScreen.pickerViewCategory.dataSource = self
        
         createProductScreen.buttonTakePhoto.menu = getMenuImagePicker()
         
@@ -114,9 +116,11 @@ class CreateProductViewController: UIViewController {
                 Alerts.showErrorAlert(self,  "contact info can not be empty")
             }else if(imagePath.isEmpty){
                 Alerts.showErrorAlert(self,  "image info can not be empty")
+            }else if(selectedCategory.isEmpty){
+                Alerts.showErrorAlert(self,  "category can not be empty")
             }else{
                 if let UID = self.uid{
-                    let newProduct = product(title: title, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: UID, hasSold: false)
+                    let newProduct = product(title: title, category: selectedCategory, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: UID, hasSold: false)
                     uploadProfilePhotoToStorage(product:newProduct)
                     
                 }
