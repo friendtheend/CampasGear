@@ -44,7 +44,7 @@ class MainScreenView: UIView{
     
     func setupStack(){
         stack = UIStackView()
-        stack.axis = .vertical //the stack grows horizontally...
+        stack.axis = .horizontal//the stack grows horizontally...
         //stack.alignment = .center // Useful for vertical stacks. The stack will be centrally aligned
         stack.distribution = .fillProportionally //make spaces in between UI elements proportionately and automatically...
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class MainScreenView: UIView{
         tableViewProductLists = UITableView()
         tableViewProductLists.register(ProductTableViewCell.self, forCellReuseIdentifier: Configs.tableViewProductsID) //修改为firebase里面的product id
         tableViewProductLists.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(tableViewProductLists)
+        self.addSubview(tableViewProductLists)
     }
     
     func setupPickerViewSchool() {
@@ -78,7 +78,7 @@ class MainScreenView: UIView{
         buttonAppliances.setTitle("Appliances", for: .normal)
         buttonAppliances.titleLabel?.font = .boldSystemFont(ofSize: 15)
 //        buttonAppliances.translatesAutoresizingMaskIntoConstraints = false
-        stack.addSubview(buttonAppliances)
+        stack.addArrangedSubview(buttonAppliances)
     }
     
     func setupButtonBook(){
@@ -86,7 +86,7 @@ class MainScreenView: UIView{
         buttonBook.setTitle("Books", for: .normal)
         buttonBook.titleLabel?.font = .boldSystemFont(ofSize: 15)
 //        buttonBook.translatesAutoresizingMaskIntoConstraints = false
-        stack.addSubview(buttonBook)
+        stack.addArrangedSubview(buttonBook)
     }
     
     func setupButtonBeauty(){
@@ -94,7 +94,7 @@ class MainScreenView: UIView{
         buttonBeauty.setTitle("Beautys", for: .normal)
         buttonBeauty.titleLabel?.font = .boldSystemFont(ofSize: 15)
 //        buttonBeauty.translatesAutoresizingMaskIntoConstraints = false
-        stack.addSubview(buttonBeauty)
+        stack.addArrangedSubview(buttonBeauty)
     }
     
     func setupButtonOther(){
@@ -102,7 +102,7 @@ class MainScreenView: UIView{
         buttonOther.setTitle("Others", for: .normal)
         buttonOther.titleLabel?.font = .boldSystemFont(ofSize: 15)
 //        buttonOther.translatesAutoresizingMaskIntoConstraints = false
-        stack.addSubview(buttonOther)
+        stack.addArrangedSubview(buttonOther)
     }
     
     func initConstraints(){
@@ -119,14 +119,14 @@ class MainScreenView: UIView{
             pickerSchool.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             pickerSchool.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             pickerSchool.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            pickerSchool.heightAnchor.constraint(equalToConstant: 200),
             
-            stack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
+            stack.topAnchor.constraint(equalTo: pickerSchool.bottomAnchor),
             stack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             stack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            stack.heightAnchor.constraint(equalToConstant: 50),
      
-            
             tableViewProductLists.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 10),
-            tableViewProductLists.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             tableViewProductLists.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -15),
             tableViewProductLists.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             tableViewProductLists.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),

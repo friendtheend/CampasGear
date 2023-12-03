@@ -11,15 +11,44 @@ import UIKit
 
 extension CreateProductViewController{
     
-    func storeNewProduct(product:product){
+    func uploadProfilePhotoToStorage(product: product){
+           var profilePhotoURL:URL?
+           
+           //MARK: Upload the profile photo if there is any...
+           if let image = pickedImage{
+               if let jpegData = image.jpegData(compressionQuality: 80){
+                   let storageRef = storage.reference()
+                   let imagesRepo = storageRef.child("imagesUsers")
+                   
+                   //MARK: path in storage for this image
+                   let imageRef = imagesRepo.child("\(NSUUID().uuidString).jpg")
+                   
+                   let uploadTask = imageRef.putData(jpegData, completion: {(metadata, error) in
+                       if error == nil{
+                           imageRef.downloadURL(completion: {(url, error) in
+                               if error == nil{
+                                   profilePhotoURL = url
+                                   self.storeNewProduct(product: product, photoURL: profilePhotoURL)
+                               }
+                           })
+                       }
+                   })
+               }
+           }else{
+               storeNewProduct(product: product,photoURL: profilePhotoURL)
+           }
+       }
+    
+    func storeNewProduct(product:product,photoURL: URL?){
         if let userID = self.uid {
+            let userProfilePath = photoURL?.absoluteString ?? ""
             
             let productData: [String: Any] = [
                 "title": product.title,
                 "describe": product.describe,
                 "price": product.price,
                 "contactInfo":product.contactInfo,
-                "imagePath":product.imagePath,
+                "imagePath": userProfilePath,
                 "seller":userID,
                 "hasSold":false
             ]
