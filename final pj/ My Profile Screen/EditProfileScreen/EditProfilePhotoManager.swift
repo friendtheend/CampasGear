@@ -76,6 +76,20 @@ extension EditProfileViewController{
                             if error == nil{
                                 self.profilePhotoURL = url
                                 self.updateUserInformation()
+                                self.database.collection("users").document(GlobalData.shared.userInfo!.userId).getDocument { (documentSnapshot, error) in
+                                    if let error = error {
+                                        print("Error fetching document: \(error)")
+                                    } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
+                                        // Extract user data from documentSnapshot
+                                        if let data = documentSnapshot.data() {
+                                            let userInfo = UserInfo(dictionary: data)
+                                            GlobalData.shared.userInfo = userInfo
+                                            //print("userinfo:", GlobalData.shared.userInfo)
+                                        }
+                                    } else {
+                                        print("Document does not exist")
+                                    }
+                                }
                             }
                         })
                     } else {
@@ -88,6 +102,20 @@ extension EditProfileViewController{
             }
         }else{
             updateUserInformation()
+            self.database.collection("users").document(GlobalData.shared.userInfo!.userId).getDocument { (documentSnapshot, error) in
+                if let error = error {
+                    print("Error fetching document: \(error)")
+                } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
+                    // Extract user data from documentSnapshot
+                    if let data = documentSnapshot.data() {
+                        let userInfo = UserInfo(dictionary: data)
+                        GlobalData.shared.userInfo = userInfo
+                        //print("userinfo:", GlobalData.shared.userInfo)
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
         }
     }
     
