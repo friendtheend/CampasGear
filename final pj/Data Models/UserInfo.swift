@@ -7,6 +7,7 @@
 
 import Foundation
 struct UserInfo {
+    var userId: String
     var userName: String
     var email: String
     var school: String
@@ -16,6 +17,7 @@ struct UserInfo {
 
     init?(dictionary: [String: Any]) {
         guard let userName = dictionary["userName"] as? String,
+              let userId = dictionary["userId"] as? String,
               let email = dictionary["email"] as? String,
               let school = dictionary["school"] as? String,
               let imageUrl = dictionary["imageUrl"] as? String,
@@ -25,11 +27,13 @@ struct UserInfo {
         }
 
         self.userName = userName
+        self.userId = userId
         self.email = email
         self.school = school
         self.imageUrl = imageUrl
         self.phoneNum = phoneNum
         self.address = address
+        
     }
 }
 

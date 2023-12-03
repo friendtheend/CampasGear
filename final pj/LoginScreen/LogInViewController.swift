@@ -19,9 +19,9 @@ class LogInViewController: UIViewController {
 //    
 //    let database = Firestore.firestore()
 //    
-//    var handleAuth: AuthStateDidChangeListenerHandle?
+    var handleAuth: AuthStateDidChangeListenerHandle?
 //    
-//    var currentUser:FirebaseAuth.User?
+    var currentUser:FirebaseAuth.User?
 
         
         override func loadView() {
@@ -82,8 +82,11 @@ class LogInViewController: UIViewController {
                 self.hideActivityIndicator()
                if error == nil{
                    print("sign in successful")
-                    let mainScreen = MainViewController()
-                   self.navigationController?.setViewControllers([mainScreen], animated: true)
+                   
+                   let mainScreen = MainScreenController()
+                   mainScreen.modalPresentationStyle = .fullScreen
+                   mainScreen.uid = result?.user.uid
+                   self.present(mainScreen, animated: true, completion: nil)
 
                }else{
                    self.showAlertText(text:"password or user name fail. Please try again~")

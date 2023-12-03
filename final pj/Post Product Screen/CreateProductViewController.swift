@@ -18,16 +18,19 @@ class CreateProductViewController: UIViewController {
     
     var currentUser:FirebaseAuth.User?
     
+    var uid : String?
+    
     let database = Firestore.firestore()
     
     let childProgressView = ProgressSpinnerViewController()
     
     var selectedSchool = schoolList[0]
+    
     var pickedImage:UIImage?
     
     let storage = Storage.storage()
     
-    var profilePhotoURL:URL?
+    var imageURL:URL?
     
     override func loadView() {
         view = createProductScreen
@@ -92,16 +95,35 @@ class CreateProductViewController: UIViewController {
     }
 
     @objc func onSaveTapped(){
-        //MARK: creating a new user on Firebase with photo...
-//        let title = createProductScreen.textFieldTitle.text,
-//        let describe = createProductScreen.textFieldDescribe.text,
-//        let price = createProductScreen.textFieldPrice.text,
-//        let contactInfo = createProductScreen.textFieldContactInfo,
-//        
-//        
-        
+        //MARK: creating a new product on Firebase with photo...
+        if let title = createProductScreen.textFieldTitle.text,
+        let imagePath = imageURL?.absoluteString,
+        let describe = createProductScreen.textFieldDescribe.text,
+        let price = createProductScreen.textFieldPrice.text,
+           let contactInfo = createProductScreen.textFieldContactInfo.text{
+            if title.isEmpty{
+                Alerts.showErrorAlert(self,  "title can not be empty")
+            }else if (describe.isEmpty){
+                Alerts.showErrorAlert(self,  "describe can not be empty")
+            }else if(price.isEmpty){
+                Alerts.showErrorAlert(self,  "price can not be empty")
+            }else if(contactInfo.isEmpty){
+                Alerts.showErrorAlert(self,  "contact info can not be empty")
+            }else if(imagePath.isEmpty){
+                Alerts.showErrorAlert(self,  "image info can not be empty")
+            }else{
+                print("here")
+                print("uid",uid)
+                if let UID = self.uid{
+                    let newProduct = product(title: title, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: UID, hasSold: false)
+                    storeNewProduct(product: newProduct)
+                }
+            }
+        }
         
     }
+    
+  
     
     //MARK: Hide Keyboard...
     @objc func hideKeyboardOnTap(){

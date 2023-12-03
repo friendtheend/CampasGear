@@ -15,6 +15,7 @@ extension CreateProductViewController:PHPickerViewControllerDelegate{
         dismiss(animated: true)
         
         let itemprovider = results.map(\.itemProvider)
+
         
         for item in itemprovider{
             if item.canLoadObject(ofClass: UIImage.self){
@@ -28,12 +29,26 @@ extension CreateProductViewController:PHPickerViewControllerDelegate{
                                     for: .normal
                                 )
                                 self.pickedImage = uwImage
+                                
                             }
                         }
                     }
                 )
             }
+//            下面这个是得到url
+            if item.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
+                       item.loadFileRepresentation(forTypeIdentifier: UTType.image.identifier) { (url, error) in
+                           DispatchQueue.main.async {
+                               if let url = url {
+                                   self.imageURL = url
+                                   print("Image URL: \(url)")
+                               }
+                           }
+                       }
+                   }
+
         }
+   
     }
 }
 

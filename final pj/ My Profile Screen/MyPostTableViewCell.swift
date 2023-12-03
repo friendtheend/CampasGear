@@ -1,17 +1,20 @@
 //
-//  ContactsTableViewCell.swift
-//  WA8
+//  MyPostTableViewCell.swift
+//  final pj
 //
-//  Created by 郭 on 2023/11/15.
+//  Created by 林允儿老公专属Mac on 2023/12/1.
 //
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+class MyPostTableViewCell: UITableViewCell {
 
     var wrapperCellView: UIView!
+    
+    var buttonEdit: UIButton!
+    var buttonDelete: UIButton!
     var labelProductTitle: UILabel!
-    var labelDescription: UILabel!
+    var labelStatus: UILabel!
     var labelPrice:UILabel!
     var imageProduct:UIImageView!
 
@@ -20,8 +23,11 @@ class ProductTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupWrapperCellView()
+        
+        setupButtonEdit()
+        setupButtonDelete()
         setupLabelProductTitle()
-        setupLabelDescription()
+        setupLabelStatus()
         setupLabelPrice()
         setupImageProduct()
         
@@ -33,7 +39,7 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     func setupWrapperCellView(){
-        wrapperCellView = UITableViewCell()
+        wrapperCellView = UIView()
         wrapperCellView.backgroundColor = .white
         wrapperCellView.layer.cornerRadius = 6.0
         wrapperCellView.layer.shadowColor = UIColor.gray.cgColor
@@ -44,6 +50,22 @@ class ProductTableViewCell: UITableViewCell {
         self.addSubview(wrapperCellView)
     }
     
+    func setupButtonDelete(){
+        buttonDelete = UIButton(type: .system)
+        buttonDelete.setTitle("Delete", for: .normal)
+        buttonDelete.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        buttonDelete.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(buttonDelete)
+    }
+    
+    func setupButtonEdit(){
+        buttonEdit = UIButton(type: .system)
+        buttonEdit.setTitle("Change Status", for: .normal)
+        buttonEdit.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        buttonEdit.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(buttonEdit)
+    }
+    
     func setupLabelProductTitle(){
         labelProductTitle = UILabel()
         labelProductTitle.font = UIFont.boldSystemFont(ofSize: 20)
@@ -51,11 +73,11 @@ class ProductTableViewCell: UITableViewCell {
         wrapperCellView.addSubview(labelProductTitle)
     }
     
-    func setupLabelDescription(){
-        labelDescription = UILabel()
-        labelDescription.font = UIFont.boldSystemFont(ofSize: 10)
-        labelDescription.translatesAutoresizingMaskIntoConstraints = false
-        wrapperCellView.addSubview(labelDescription)
+    func setupLabelStatus(){
+        labelStatus = UILabel()
+        labelStatus.font = UIFont.boldSystemFont(ofSize: 10)
+        labelStatus.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(labelStatus)
     }
     
     func setupLabelPrice(){
@@ -66,7 +88,7 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     func setupImageProduct(){
-        //imageProduct = UIImageView(image: UIImage(named: "Logo"))//需要修改为firebase里储存的的商品图
+        imageProduct = UIImageView(image: UIImage(named: "Logo"))//需要修改为firebase里储存的的商品图
         imageProduct.contentMode = .scaleAspectFit
         imageProduct.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(imageProduct)
@@ -85,20 +107,30 @@ class ProductTableViewCell: UITableViewCell {
             imageProduct.widthAnchor.constraint(equalToConstant: 50),
             imageProduct.heightAnchor.constraint(equalToConstant: 50),
             
-            labelProductTitle.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 10),
-            labelProductTitle.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor, constant: 16),
+            labelProductTitle.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 15),
+            labelProductTitle.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor, constant: 70),
             labelProductTitle.heightAnchor.constraint(equalToConstant: 16),
             labelProductTitle.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             
-            labelDescription.topAnchor.constraint(equalTo: labelProductTitle.bottomAnchor, constant: 10),
-            labelDescription.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor),
-            labelDescription.heightAnchor.constraint(equalToConstant: 20),
-            labelDescription.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
+            labelStatus.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 30),
+            labelStatus.leadingAnchor.constraint(equalTo: labelProductTitle.leadingAnchor),
+            labelStatus.heightAnchor.constraint(equalToConstant: 16),
+            labelStatus.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             
-            labelPrice.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 10),
-            labelPrice.leadingAnchor.constraint(equalTo: labelProductTitle.leadingAnchor),
+            labelPrice.topAnchor.constraint(equalTo: labelProductTitle.bottomAnchor, constant: 15),
+            labelPrice.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor, constant: 70),
             labelPrice.heightAnchor.constraint(equalToConstant: 16),
             labelPrice.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
+            
+            buttonEdit.topAnchor.constraint(equalTo: labelProductTitle.bottomAnchor, constant: 15),
+            buttonEdit.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor, constant: 70),
+            buttonEdit.heightAnchor.constraint(equalToConstant: 12),
+            buttonEdit.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
+            
+            buttonDelete.topAnchor.constraint(equalTo: buttonEdit.bottomAnchor, constant: 5),
+            buttonDelete.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor, constant: 70),
+            buttonDelete.heightAnchor.constraint(equalToConstant: 12),
+            buttonDelete.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             
             wrapperCellView.heightAnchor.constraint(equalToConstant: 70)
         ])
