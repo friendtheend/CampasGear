@@ -12,13 +12,16 @@ class EditProfileView: UIView {
     var contentWrapper: UIScrollView! 
     
     var buttonTakePhoto: UIButton!
+    var labelUsername: UILabel!
     var textFieldUserName: UITextField!
 //    var textFieldPassword: UITextField!
 //    var textFieldVerifyPassword:UITextField!
     var labelSelectSchool: UILabel!
     var pickerViewSchool:UIPickerView!
 //    var textFieldEmail: UITextField!
+    var labelPhone: UILabel!
     var textFieldPhone: UITextField!
+    var labelAddress: UILabel!
     var textFieldAddress: UITextField!
     var buttonRegister: UIButton!
     
@@ -28,6 +31,7 @@ class EditProfileView: UIView {
 
         setupContentWrapper()
         setupButtonTakePhoto()
+        
         setuptextFieldName()
 //        setuptextFieldEmail()
 //        setupTextFieldPassword()
@@ -37,6 +41,9 @@ class EditProfileView: UIView {
         setuptextFieldPhone()
         setupLabelSchool()
         setupPickerViewSchool()
+        setupLabelUsername()
+        setupLabelPhone()
+        setupLabelAddress()
         
         initConstraints()
     }
@@ -74,6 +81,27 @@ class EditProfileView: UIView {
         labelSelectSchool.text = "Select a School"
         labelSelectSchool.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(labelSelectSchool)
+    }
+    
+    func setupLabelAddress() {
+        labelAddress = UILabel()
+        labelAddress.text = "Address"
+        labelAddress.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelAddress)
+    }
+    
+    func setupLabelUsername() {
+        labelUsername = UILabel()
+        labelUsername.text = "Username"
+        labelUsername.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelUsername)
+    }
+    
+    func setupLabelPhone() {
+        labelPhone = UILabel()
+        labelPhone.text = "Phone"
+        labelPhone.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelPhone)
     }
     
     func setupPickerViewSchool(){
@@ -149,7 +177,11 @@ class EditProfileView: UIView {
             buttonTakePhoto.widthAnchor.constraint(equalToConstant: 100),
             buttonTakePhoto.heightAnchor.constraint(equalToConstant: 100),
             
-            textFieldUserName.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
+            labelUsername.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
+            labelUsername.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            labelUsername.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            
+            textFieldUserName.topAnchor.constraint(equalTo: labelUsername.bottomAnchor, constant: 10),
             textFieldUserName.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldUserName.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
@@ -174,12 +206,19 @@ class EditProfileView: UIView {
 //            textFieldEmail.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
 //            textFieldEmail.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldPhone.topAnchor.constraint(equalTo:pickerViewSchool.bottomAnchor, constant: 16),
+            labelPhone.topAnchor.constraint(equalTo: pickerViewSchool.bottomAnchor, constant: -5),
+            labelPhone.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            labelPhone.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            
+            textFieldPhone.topAnchor.constraint(equalTo:labelPhone.bottomAnchor, constant: 10),
             textFieldPhone.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldPhone.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldAddress.topAnchor.constraint(equalTo:
-                textFieldPhone.bottomAnchor, constant: 16),
+            labelAddress.topAnchor.constraint(equalTo: textFieldPhone.bottomAnchor, constant: 16),
+            labelAddress.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+            labelAddress.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            
+            textFieldAddress.topAnchor.constraint(equalTo:labelAddress.bottomAnchor, constant: 10),
             textFieldAddress.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldAddress.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
