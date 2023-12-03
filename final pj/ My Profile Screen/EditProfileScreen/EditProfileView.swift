@@ -13,11 +13,11 @@ class EditProfileView: UIView {
     
     var buttonTakePhoto: UIButton!
     var textFieldUserName: UITextField!
-    var textFieldPassword: UITextField!
-    var textFieldVerifyPassword:UITextField!
+//    var textFieldPassword: UITextField!
+//    var textFieldVerifyPassword:UITextField!
     var labelSelectSchool: UILabel!
     var pickerViewSchool:UIPickerView!
-    var textFieldEmail: UITextField!
+//    var textFieldEmail: UITextField!
     var textFieldPhone: UITextField!
     var textFieldAddress: UITextField!
     var buttonRegister: UIButton!
@@ -29,10 +29,10 @@ class EditProfileView: UIView {
         setupContentWrapper()
         setupButtonTakePhoto()
         setuptextFieldName()
-        setuptextFieldEmail()
-        setupTextFieldPassword()
+//        setuptextFieldEmail()
+//        setupTextFieldPassword()
         setupButtonRegister()
-        setupTextFieldVerifyPassword()
+//        setupTextFieldVerifyPassword()
         setuptextFieldAddress()
         setuptextFieldPhone()
         setupLabelSchool()
@@ -91,15 +91,15 @@ class EditProfileView: UIView {
         contentWrapper.addSubview(textFieldPhone)
     }
     
-    func setuptextFieldEmail(){
-        textFieldEmail = UITextField()
-        textFieldEmail.placeholder = "Email"
-        textFieldEmail.keyboardType = .emailAddress
-        textFieldEmail.borderStyle = .roundedRect
-        textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldEmail)
-    }
-    
+//    func setuptextFieldEmail(){
+//        textFieldEmail = UITextField()
+//        textFieldEmail.placeholder = "Email"
+//        textFieldEmail.keyboardType = .emailAddress
+//        textFieldEmail.borderStyle = .roundedRect
+//        textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
+//        contentWrapper.addSubview(textFieldEmail)
+//    }
+
     func setuptextFieldAddress(){
         textFieldAddress = UITextField()
         textFieldAddress.placeholder = "Address"
@@ -109,24 +109,24 @@ class EditProfileView: UIView {
         contentWrapper.addSubview(textFieldAddress)
     }
     
-    func setupTextFieldPassword(){
-        textFieldPassword = UITextField()
-        textFieldPassword.placeholder = "Password"
-        textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.borderStyle = .roundedRect
-        textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldPassword)
-    }
-    
-    func setupTextFieldVerifyPassword(){
-        textFieldVerifyPassword = UITextField()
-        textFieldVerifyPassword.borderStyle = .roundedRect
-//        textFieldVerifyPassword.textContentType = .password
-        textFieldVerifyPassword.isSecureTextEntry = true
-        textFieldVerifyPassword.placeholder = "Repeat Enter Password "
-        textFieldVerifyPassword.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(textFieldVerifyPassword)
-    }
+//    func setupTextFieldPassword(){
+//        textFieldPassword = UITextField()
+//        textFieldPassword.placeholder = "Password"
+//        textFieldPassword.isSecureTextEntry = true
+//        textFieldPassword.borderStyle = .roundedRect
+//        textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
+//        contentWrapper.addSubview(textFieldPassword)
+//    }
+//
+//    func setupTextFieldVerifyPassword(){
+//        textFieldVerifyPassword = UITextField()
+//        textFieldVerifyPassword.borderStyle = .roundedRect
+////        textFieldVerifyPassword.textContentType = .password
+//        textFieldVerifyPassword.isSecureTextEntry = true
+//        textFieldVerifyPassword.placeholder = "Repeat Enter Password "
+//        textFieldVerifyPassword.translatesAutoresizingMaskIntoConstraints = false
+//        contentWrapper.addSubview(textFieldVerifyPassword)
+//    }
     
     func setupButtonRegister(){
         buttonRegister = UIButton(type: .system)
@@ -153,15 +153,15 @@ class EditProfileView: UIView {
             textFieldUserName.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldUserName.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldPassword.topAnchor.constraint(equalTo: textFieldUserName.bottomAnchor, constant: 16),
-            textFieldPassword.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldPassword.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+//            textFieldPassword.topAnchor.constraint(equalTo: textFieldUserName.bottomAnchor, constant: 16),
+//            textFieldPassword.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+//            textFieldPassword.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+//
+//            textFieldVerifyPassword.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor,constant: 16),
+//            textFieldVerifyPassword.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+//            textFieldVerifyPassword.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldVerifyPassword.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor,constant: 16),
-            textFieldVerifyPassword.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldVerifyPassword.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
-            
-            labelSelectSchool.topAnchor.constraint(equalTo: textFieldVerifyPassword.bottomAnchor, constant: 16),
+            labelSelectSchool.topAnchor.constraint(equalTo: textFieldUserName.bottomAnchor, constant: 16),
             labelSelectSchool.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             labelSelectSchool.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
@@ -169,13 +169,12 @@ class EditProfileView: UIView {
             pickerViewSchool.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             pickerViewSchool.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
 
-            textFieldEmail.topAnchor.constraint(equalTo:
-                pickerViewSchool.bottomAnchor, constant: -5),
-            textFieldEmail.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            textFieldEmail.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+//            textFieldEmail.topAnchor.constraint(equalTo:
+//                pickerViewSchool.bottomAnchor, constant: -5),
+//            textFieldEmail.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+//            textFieldEmail.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldPhone.topAnchor.constraint(equalTo:
-                textFieldEmail.bottomAnchor, constant: 16),
+            textFieldPhone.topAnchor.constraint(equalTo:pickerViewSchool.bottomAnchor, constant: 16),
             textFieldPhone.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldPhone.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             

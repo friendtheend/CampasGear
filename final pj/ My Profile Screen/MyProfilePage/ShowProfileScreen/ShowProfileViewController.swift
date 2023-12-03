@@ -39,6 +39,7 @@ class ShowProfileViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         //title = "My Profile"
         
+        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         tapRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapRecognizer)
@@ -46,6 +47,23 @@ class ShowProfileViewController: UIViewController {
     
         hideKeyboardOnTapOutside()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let urlString = GlobalData.shared.userInfo?.imageUrl {
+            Utilities.downloadImage(from: urlString) { image in
+                self.showProfileScreen.imagePic.image = image
+            }
+        }
+        
+        showProfileScreen.labelUsername.text = "Name: \(GlobalData.shared.userInfo?.userName ?? "Not available")"
+        showProfileScreen.labelEmail.text = "Email: \(GlobalData.shared.userInfo?.email ?? "Not available")"
+        showProfileScreen.labelSchool.text = "School: \(GlobalData.shared.userInfo?.school ?? "Not available")"
+        showProfileScreen.labelPhone.text = "Phone: \(GlobalData.shared.userInfo?.phoneNum ?? "Not available")"
+        showProfileScreen.labelAddress.text = "Address: \(GlobalData.shared.userInfo?.address ?? "Not available")"
+
     }
     
     func hideKeyboardOnTapOutside(){

@@ -35,7 +35,36 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        if let urlString = GlobalData.shared.userInfo?.imageUrl {
+//            Utilities.downloadImage(from: urlString) { image in
+//                self.EditProfileScreen.buttonTakePhoto.image(for: <#T##UIControl.State#>) = image
+//            }
+//        }
+        
+        if let urlString = GlobalData.shared.userInfo?.imageUrl {
+            Utilities.downloadImage(from: urlString) { image in
+                // Ensure that image download is successful
+                guard let downloadedImage = image else {
+                    print("Failed to download image")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.EditProfileScreen.buttonTakePhoto.setImage(downloadedImage, for: .normal)
+                    self.EditProfileScreen.buttonTakePhoto.imageView?.tintColor = nil
+                    self.EditProfileScreen.buttonTakePhoto.adjustsImageWhenHighlighted = false
+                }
+
+            }
+        } else {
+            print("URL string is nil")
+        }
+        
         EditProfileScreen.buttonTakePhoto.menu = getMenuImagePicker()
+//        EditProfileScreen.textFieldEmail.text = GlobalData.shared.userInfo? .email
+        EditProfileScreen.textFieldAddress.text = GlobalData.shared.userInfo? .address
+        EditProfileScreen.textFieldPhone.text = GlobalData.shared.userInfo? .phoneNum
+        EditProfileScreen.textFieldUserName.text = GlobalData.shared.userInfo? .userName
         
         navigationController?.navigationBar.prefersLargeTitles = true
         EditProfileScreen.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
@@ -47,12 +76,13 @@ class EditProfileViewController: UIViewController {
         
         EditProfileScreen.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
         
-        //MyProfileScreen.pickerViewSchool.delegate = self
-       // MyProfileScreen.pickerViewSchool.dataSource = self
+        EditProfileScreen.pickerViewSchool.delegate = self
+        EditProfileScreen.pickerViewSchool.dataSource = self
         
         hideKeyboardOnTapOutside()
         
     }
+    
     
     func hideKeyboardOnTapOutside(){
             //MARK: recognizing the taps on the app screen, not the keyboard...
@@ -98,7 +128,7 @@ class EditProfileViewController: UIViewController {
 
     @objc func onRegisterTapped(){
         //MARK: creating a new user on Firebase with photo...
-      //  uploadProfilePhotoToStorage()
+        uploadProfilePhotoToStorage()
     }
     
     //MARK: Hide Keyboard...
