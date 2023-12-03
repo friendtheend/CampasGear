@@ -17,7 +17,7 @@ class MyPostView: UIView{
         super.init(frame: frame)
         self.backgroundColor = .white
 
-        setupContentWrapper()
+//        setupContentWrapper()
         
         setupTableViewProduct()
         
@@ -25,17 +25,17 @@ class MyPostView: UIView{
     }
     
 
-    func setupContentWrapper(){
-        contentWrapper = UIScrollView()
-        contentWrapper.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(contentWrapper)
-    }
+//    func setupContentWrapper(){
+//        contentWrapper = UIScrollView()
+//        contentWrapper.translatesAutoresizingMaskIntoConstraints = false
+//        self.addSubview(contentWrapper)
+//    }
     
     func setupTableViewProduct(){
         tableViewMyPost = UITableView()
-       // tableViewProductLists.register(ProductTableViewCell.self, forCellReuseIdentifier: Configs.tableViewContactsID) //修改为firebase里面的product id
+        tableViewMyPost.register(MyPostTableViewCell.self, forCellReuseIdentifier: "myPostId") //修改为firebase里面的product id
         tableViewMyPost.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(tableViewMyPost)
+        self.addSubview(tableViewMyPost)
     }
 
     
@@ -43,16 +43,21 @@ class MyPostView: UIView{
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-            contentWrapper.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            contentWrapper.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            contentWrapper.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
-            contentWrapper.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor), 
+//            contentWrapper.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+//            contentWrapper.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+//            contentWrapper.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
+//            contentWrapper.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor), 
+//            
+//            tableViewMyPost.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 30),
+//            tableViewMyPost.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
+//            tableViewMyPost.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
+//            tableViewMyPost.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            //tableViewMyPost.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,constant: -8),
             
-            tableViewMyPost.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 30),
-            tableViewMyPost.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            tableViewMyPost.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
-//            tableViewProductLists.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-//            tableViewProductLists.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,constant: -8),
+            tableViewMyPost.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
+            tableViewMyPost.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            tableViewMyPost.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            tableViewMyPost.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,constant: -8),
             
          
 

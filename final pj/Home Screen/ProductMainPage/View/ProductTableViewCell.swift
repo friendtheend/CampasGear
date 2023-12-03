@@ -66,7 +66,7 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     func setupImageProduct(){
-        //imageProduct = UIImageView(image: UIImage(named: "Logo"))//需要修改为firebase里储存的的商品图
+        imageProduct = UIImageView(image: UIImage(named: "Logo"))//需要修改为firebase里储存的的商品图
         imageProduct.contentMode = .scaleAspectFit
         imageProduct.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(imageProduct)
