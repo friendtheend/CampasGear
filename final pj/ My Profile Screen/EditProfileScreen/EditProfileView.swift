@@ -47,25 +47,51 @@ class EditProfileView: UIView {
         
         initConstraints()
     }
-    
     func setupContentWrapper(){
         contentWrapper = UIScrollView()
         contentWrapper.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(contentWrapper)
     }
     
-    func setupButtonTakePhoto(){
+//    func setupButtonTakePhoto(){
+//        buttonTakePhoto = UIButton(type: .system)
+//        buttonTakePhoto.setTitle("", for: .normal)
+//        buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal) //firebase调取当前头像
+//        //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        buttonTakePhoto.contentHorizontalAlignment = .fill
+//        buttonTakePhoto.contentVerticalAlignment = .fill
+//        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+//        buttonTakePhoto.showsMenuAsPrimaryAction = true
+//        buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
+//        contentWrapper.addSubview(buttonTakePhoto)
+//    }
+    
+    func setupButtonTakePhoto() {
         buttonTakePhoto = UIButton(type: .system)
         buttonTakePhoto.setTitle("", for: .normal)
-        buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal) //firebase调取当前头像
-        //buttonTakePhoto.setImage(UIImage(systemName: "camera.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+
+        // Check if the URL string exists and download the image
+        if let urlString = GlobalData.shared.userInfo?.imageUrl {
+            Utilities.downloadImage(from: urlString) { [weak self] image in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    // Set the downloaded image to the button
+                    self.buttonTakePhoto.setImage(image, for: .normal)
+                    self.buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+                }
+            }
+        } else {
+            // Set default image if URL is not available
+            buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal)
+        }
+
         buttonTakePhoto.contentHorizontalAlignment = .fill
         buttonTakePhoto.contentVerticalAlignment = .fill
-        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
         buttonTakePhoto.showsMenuAsPrimaryAction = true
         buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(buttonTakePhoto)
     }
+
     
     func setuptextFieldName(){
         textFieldUserName = UITextField()
