@@ -89,17 +89,17 @@ class ProductDetailView: UIView {
     }
     
     func setupCategory(){
-        labelSeller = UILabel()
-        labelSeller.text = "Category: "
-        labelSeller.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(labelSeller)
+        labelCategory = UILabel()
+        labelCategory.text = "Category: "
+        labelCategory.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelCategory)
     }
     
     func setupStatus(){
-        labelSeller = UILabel()
-        labelSeller.text = "Status: "
-        labelSeller.translatesAutoresizingMaskIntoConstraints = false
-        contentWrapper.addSubview(labelSeller)
+        labelStatus = UILabel()
+        labelStatus.text = "Status: "
+        labelStatus.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelStatus)
     }
  
     

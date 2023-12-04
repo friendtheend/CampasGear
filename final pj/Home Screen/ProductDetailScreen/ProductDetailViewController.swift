@@ -41,8 +41,7 @@ class ProductDetailViewController: UIViewController {
             detailScreen.labelDescribe.text = "Seller's Description: \(describe)";
             detailScreen.labelSeller.text = "From: \(seller)";
             detailScreen.labelStatus.text = "Status: \(hasSold)";
-//           todo: category have problem
-//            detailScreen.labelCategory.text = "Category: \(category)";
+            detailScreen.labelCategory.text = "Category: \(category)";
             
             if hasSold{
                 detailScreen.labelStatus.text = "Status: sold out";

@@ -51,7 +51,7 @@ extension CreateProductViewController{
             "price": product.price,
             "contactInfo":product.contactInfo,
             "imagePath": userProfilePath,
-            "seller": GlobalData.shared.userInfo!.userId,
+            "seller": GlobalData.shared.userInfo!.userName,
             "hasSold":false
         ]
         
