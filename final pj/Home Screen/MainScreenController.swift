@@ -22,7 +22,9 @@ class MainScreenController: UITabBarController, UITabBarControllerDelegate {
         super.viewWillAppear(animated)
         
         //MARK: setting up red tab bar...
-        let tabMainPage = UINavigationController(rootViewController: MainViewController())
+        let mainScreen = MainViewController()
+        mainScreen.uid = self.uid
+        let tabMainPage = UINavigationController(rootViewController: mainScreen)
         let tabMainBarItem = UITabBarItem(
             title: "Home",
             image: UIImage(systemName: "h.square")?.withRenderingMode(.alwaysOriginal),

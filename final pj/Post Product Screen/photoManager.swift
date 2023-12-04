@@ -68,3 +68,26 @@ extension CreateProductViewController: UINavigationControllerDelegate, UIImagePi
         }
     }
 }
+
+
+extension CreateProductViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categoryList.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryList[row]
+    }
+    
+    // Implement this method if you want to handle the event when a user selects a row
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // Use this to get the selected school
+        selectedCategory = categoryList[row]
+    }
+}
+

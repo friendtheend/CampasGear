@@ -14,6 +14,7 @@ class CreateProductView: UIView {
     var buttonTakePhoto: UIButton!
     var textFieldTitle: UITextField!
     var textFieldDescribe: UITextField!
+    var pickerViewCategory:UIPickerView!
     var textFieldPrice:UITextField!
     var textFieldContactInfo: UITextField!
     var buttonSave: UIButton!
@@ -29,6 +30,7 @@ class CreateProductView: UIView {
         setupTextFieldPrice()
         setupButtonSave()
         setupTextFieldContactInfo()
+        setupPickerViewCategory()
         
         initConstraints()
     }
@@ -95,6 +97,12 @@ class CreateProductView: UIView {
         contentWrapper.addSubview(buttonSave)
     }
     
+    func setupPickerViewCategory(){
+        pickerViewCategory = UIPickerView()
+        pickerViewCategory.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(pickerViewCategory)
+    }
+    
     func initConstraints(){
         NSLayoutConstraint.activate([
 
@@ -108,16 +116,21 @@ class CreateProductView: UIView {
             buttonTakePhoto.widthAnchor.constraint(equalToConstant: 100),
             buttonTakePhoto.heightAnchor.constraint(equalToConstant: 100),
             
-            textFieldTitle.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 32),
+            textFieldTitle.topAnchor.constraint(equalTo: buttonTakePhoto.bottomAnchor, constant: 16),
             textFieldTitle.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldTitle.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             
-            textFieldDescribe.topAnchor.constraint(equalTo: textFieldTitle.bottomAnchor, constant: 16),
+            pickerViewCategory.topAnchor.constraint(equalTo: textFieldTitle.bottomAnchor, constant: 16),
+            pickerViewCategory.leadingAnchor.constraint(equalTo: textFieldTitle.leadingAnchor),
+            pickerViewCategory.trailingAnchor.constraint(equalTo: textFieldTitle.trailingAnchor),
+            pickerViewCategory.heightAnchor.constraint(equalToConstant: 150),
+            
+            textFieldDescribe.topAnchor.constraint(equalTo: pickerViewCategory.bottomAnchor, constant: 4),
             textFieldDescribe.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldDescribe.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             textFieldDescribe.heightAnchor.constraint(equalToConstant: 100),
             
-            textFieldPrice.topAnchor.constraint(equalTo: textFieldDescribe.bottomAnchor,constant: 16),
+            textFieldPrice.topAnchor.constraint(equalTo: textFieldDescribe.bottomAnchor,constant: 10),
             textFieldPrice.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
             textFieldPrice.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             

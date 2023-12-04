@@ -53,21 +53,24 @@ class ProductTableViewCell: UITableViewCell {
     
     func setupLabelDescription(){
         labelDescription = UILabel()
-        labelDescription.font = UIFont.boldSystemFont(ofSize: 10)
+        labelDescription.font = UIFont.boldSystemFont(ofSize: 15)
+        labelDescription.textColor = .gray
         labelDescription.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(labelDescription)
     }
     
     func setupLabelPrice(){
         labelPrice = UILabel()
-        labelPrice.font = UIFont.boldSystemFont(ofSize: 10)
+        labelPrice.font = UIFont.boldSystemFont(ofSize: 15)
         labelPrice.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(labelPrice)
     }
     
     func setupImageProduct(){
-        imageProduct = UIImageView(image: UIImage(named: "Logo"))//需要修改为firebase里储存的的商品图
-        imageProduct.contentMode = .scaleAspectFit
+        imageProduct = UIImageView()
+        imageProduct.contentMode = .scaleAspectFill // 设置内容模式
+        imageProduct.layer.cornerRadius = 5 // 设置圆角为 10 像素
+        imageProduct.clipsToBounds = true
         imageProduct.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(imageProduct)
     }
@@ -81,22 +84,23 @@ class ProductTableViewCell: UITableViewCell {
             wrapperCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             imageProduct.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 10),
-            imageProduct.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            imageProduct.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 10),
             imageProduct.widthAnchor.constraint(equalToConstant: 50),
             imageProduct.heightAnchor.constraint(equalToConstant: 50),
             
             labelProductTitle.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 10),
-            labelProductTitle.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor, constant: 16),
-            labelProductTitle.heightAnchor.constraint(equalToConstant: 16),
+            labelProductTitle.leadingAnchor.constraint(equalTo: imageProduct.trailingAnchor,constant: 16),
+            labelProductTitle.heightAnchor.constraint(equalToConstant: 20),
             labelProductTitle.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             
             labelDescription.topAnchor.constraint(equalTo: labelProductTitle.bottomAnchor, constant: 10),
-            labelDescription.leadingAnchor.constraint(equalTo: imageProduct.leadingAnchor),
+            labelDescription.leadingAnchor.constraint(equalTo: imageProduct.trailingAnchor, constant: 16),
             labelDescription.heightAnchor.constraint(equalToConstant: 20),
+            labelDescription.trailingAnchor.constraint(equalTo: labelPrice.leadingAnchor, constant: -10),
             labelDescription.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             
             labelPrice.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 10),
-            labelPrice.leadingAnchor.constraint(equalTo: labelProductTitle.leadingAnchor),
+            labelPrice.trailingAnchor.constraint(equalTo: wrapperCellView.trailingAnchor, constant: -8),
             labelPrice.heightAnchor.constraint(equalToConstant: 16),
             labelPrice.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             

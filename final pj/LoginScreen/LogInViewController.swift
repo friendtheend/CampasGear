@@ -51,6 +51,9 @@ class LogInViewController: UIViewController {
         
         
         @objc func buttonSignup(){
+            if self.navigationController == nil {
+                   print("Navigation controller is nil")
+               }
             let SignUpScreen = SignUpScreenController()
             self.navigationController?.pushViewController(SignUpScreen, animated: true)
         }

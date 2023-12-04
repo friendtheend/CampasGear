@@ -103,7 +103,7 @@ class LoginScreenView: UIView {
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-            imageLogo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -50),
+            imageLogo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 28),
             imageLogo.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             imageLogo.widthAnchor.constraint(equalToConstant: 120),
             imageLogo.heightAnchor.constraint(equalToConstant: 120),
