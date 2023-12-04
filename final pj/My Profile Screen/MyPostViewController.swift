@@ -65,7 +65,6 @@ class MyPostViewController: UIViewController {
         MyPostScreen.tableViewMyPost.dataSource = self
         MyPostScreen.tableViewMyPost.separatorStyle = .none
         
-        //MyPostScreen.tableViewMyPost.isEditing = true //右滑cell删除键
     }
     
 
@@ -77,6 +76,7 @@ class MyPostViewController: UIViewController {
     func hideKeyboardOnTapOutside(){
         //MARK: recognizing the taps on the app screen, not the keyboard...
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+        tapRecognizer.delegate = self
         view.addGestureRecognizer(tapRecognizer)
     }
     
@@ -164,6 +164,7 @@ extension MyPostViewController: UITableViewDelegate, UITableViewDataSource{
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("index: \(indexPath.row)")
 //        let otherId = contactsList[indexPath.row].userId
 //        if let uwId = self.currentUser?.uid{
 ////            这里是通过sort双方的uid 创建一个独一无二的chatIdentifier，通过这个chatIdentifier可以查看双方的聊天记录
@@ -174,4 +175,10 @@ extension MyPostViewController: UITableViewDelegate, UITableViewDataSource{
 //                }
         }
  
+}
+
+extension MyPostViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return touch.view == self.view // Only recognize if tapping on the view, not on the table view cells
+    }
 }

@@ -16,14 +16,12 @@ class MainScreenController: UITabBarController, UITabBarControllerDelegate {
     
     let database = Firestore.firestore()
 
-    var uid:String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         //MARK: setting up red tab bar...
         let mainScreen = MainViewController()
-        mainScreen.uid = self.uid
         let tabMainPage = UINavigationController(rootViewController: mainScreen)
         let tabMainBarItem = UITabBarItem(
             title: "Home",
@@ -36,7 +34,6 @@ class MainScreenController: UITabBarController, UITabBarControllerDelegate {
         //MARK: setting up green tab bar...
         let postScreen = CreateProductViewController()
         let tabCreateProduct = UINavigationController(rootViewController: postScreen)
-        postScreen.uid = self.uid
         let tabGreenBarItem = UITabBarItem(
             title: "+",
             image: UIImage(systemName: "n.square")?.withRenderingMode(.alwaysOriginal),

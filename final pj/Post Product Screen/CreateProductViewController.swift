@@ -119,11 +119,9 @@ class CreateProductViewController: UIViewController {
             }else if(selectedCategory.isEmpty){
                 Alerts.showErrorAlert(self,  "category can not be empty")
             }else{
-                if let UID = self.uid{
-                    let newProduct = product(title: title, category: selectedCategory, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: UID, hasSold: false)
-                    uploadProfilePhotoToStorage(product:newProduct)
+                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userId, hasSold: false)
+                uploadProfilePhotoToStorage(product:newProduct)
                     
-                }
             }
         }
     }

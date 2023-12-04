@@ -51,53 +51,6 @@ class MainViewController: UIViewController {
         
         hideKeyboardOnTapOutside()
     }
-
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        handleAuth = Auth.auth().addStateDidChangeListener{ auth, user in
-//            if user == nil{
-//                print("user is empty")
-//
-//            }else{
-//                print("user not empty")
-//                self.currentUser = user
-//
-//                //MARK: user is logged in...
-//                let barIcon = UIBarButtonItem(
-//                    image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"),
-//                    style: .plain,
-//                    target: self,
-//                    action: #selector(self.onLogOutBarButtonTapped)
-//                )
-//                let barText = UIBarButtonItem(
-//                    title: "Logout",
-//                    style: .plain,
-//                    target: self,
-//                    action: #selector(self.onLogOutBarButtonTapped)
-//                )
-//
-//                self.navigationItem.rightBarButtonItems = [barIcon, barText]
-//
-//                self.database.collection("users").document(user!.uid).getDocument { (documentSnapshot, error) in
-//                    if let error = error {
-//                        print("Error fetching document: \(error)")
-//                    } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
-//                        // Extract user data from documentSnapshot
-//                        if let data = documentSnapshot.data() {
-//                            let userInfo = UserInfo(dictionary: data)
-//                            GlobalData.shared.userInfo = userInfo
-//                            //print("userinfo:", GlobalData.shared.userInfo)
-//                        }
-//                    } else {
-//                        print("Document does not exist")
-//                    }
-//                }
-
-//            }
-//
-//        }
-//
-//    }
     
     func getProducts(){
             let refDoc = self.database.collection("users")
@@ -148,6 +101,7 @@ class MainViewController: UIViewController {
     func hideKeyboardOnTapOutside(){
         //MARK: recognizing the taps on the app screen, not the keyboard...
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+        tapRecognizer.delegate = self
         view.addGestureRecognizer(tapRecognizer)
     }
     
@@ -176,14 +130,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let otherId = contactsList[indexPath.row].userId
-//        if let uwId = self.currentUser?.uid{
-////            这里是通过sort双方的uid 创建一个独一无二的chatIdentifier，通过这个chatIdentifier可以查看双方的聊天记录
-//            let userIds = [otherId, uwId]
-//            let sortedIds = userIds.sorted()
-//            self.chatIdentifier = sortedIds.joined(separator: "_")
-//            self.getAndReloadMessage()
-//                }
-        }
+        print("index: \(indexPath.row)")
+    }
  
+}
+
+extension MainViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return touch.view == self.view // Only recognize if tapping on the view, not on the table view cells
+    }
 }

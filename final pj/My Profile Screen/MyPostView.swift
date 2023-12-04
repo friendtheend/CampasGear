@@ -43,16 +43,6 @@ class MyPostView: UIView{
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-//            contentWrapper.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-//            contentWrapper.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-//            contentWrapper.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
-//            contentWrapper.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor), 
-//            
-//            tableViewMyPost.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: 30),
-//            tableViewMyPost.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-//            tableViewMyPost.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
-//            tableViewMyPost.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            //tableViewMyPost.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,constant: -8),
             
             tableViewMyPost.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 32),
             tableViewMyPost.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
