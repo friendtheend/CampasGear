@@ -38,7 +38,7 @@ class LoginScreenView: UIView {
     
     func setupImageLogo(){
         imageLogo = UIImageView(image: UIImage(named: "Logo"))
-        imageLogo.contentMode = .scaleAspectFit
+        imageLogo.contentMode = .scaleToFill
         imageLogo.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(imageLogo)
     }

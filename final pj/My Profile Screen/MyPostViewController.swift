@@ -92,7 +92,13 @@ extension MyPostViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "myPostId", for: indexPath) as! MyPostTableViewCell
         cell.labelProductTitle.text = myProducts[indexPath.row].title
         cell.labelStatus.text = myProducts[indexPath.row].hasSold ? "sold out" : "selling"
-        cell.labelPrice.text = String(myProducts[indexPath.row].price)
+        cell.labelStatus.textColor = myProducts[indexPath.row].hasSold ? .red : .green
+        cell.labelPrice.text = "$\(String(myProducts[indexPath.row].price))"
+        cell.labelDesc.text = "\(myProducts[indexPath.row].describe[0..<16])"
+        
+        Utilities.downloadImage(from: myProducts[indexPath.row].imagePath) { image in
+            cell.imageProduct.image = image
+        }
         
         return cell
     }

@@ -31,3 +31,18 @@ class Utilities {
     }
 
 }
+
+extension String {
+    subscript (r: Range<Int>) -> String {
+        get {
+            let startIndex = self.index(self.startIndex, offsetBy: max(0, r.lowerBound))
+            let endIndex = self.index(startIndex, offsetBy: min(self.count - r.lowerBound, r.upperBound - r.lowerBound))
+
+            return String(self[startIndex..<endIndex])
+        }
+    }
+}
+
+//let myString = "skldjfslkdjflksjfd"
+//let substring = myString[0..<10]  // This will give you 'skldjfslkd'
+

@@ -43,7 +43,7 @@ class ShowProfileView: UIView {
     
     func setupImagePic(){
         imagePic = UIImageView(image: UIImage(named: "Logo"))
-        imagePic.contentMode = .scaleAspectFit
+        imagePic.contentMode = .scaleAspectFill
         imagePic.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(imagePic)
     }

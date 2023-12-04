@@ -53,7 +53,7 @@ class SignUpScreenView: UIView {
         buttonTakePhoto.setImage(UIImage(systemName: "person.fill"), for: .normal)
         buttonTakePhoto.contentHorizontalAlignment = .fill
         buttonTakePhoto.contentVerticalAlignment = .fill
-        buttonTakePhoto.imageView?.contentMode = .scaleAspectFit
+        buttonTakePhoto.imageView?.contentMode = .scaleToFill
         buttonTakePhoto.showsMenuAsPrimaryAction = true
         buttonTakePhoto.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(buttonTakePhoto)
