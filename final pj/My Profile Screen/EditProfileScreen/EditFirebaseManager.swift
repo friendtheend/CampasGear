@@ -44,8 +44,8 @@ extension EditProfileViewController {
         if !selectedSchool.isEmpty {
             updatedUserData["school"] = selectedSchool
         }
-
-        // No need to update password here, but you can add if your app allows password change
+        
+        updatedUserData["imageUrl"] = self.profilePhotoURL?.absoluteString ?? ""
 
         // Check if there's any data to update
         guard !updatedUserData.isEmpty else {

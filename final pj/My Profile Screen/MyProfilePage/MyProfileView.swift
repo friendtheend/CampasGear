@@ -40,7 +40,9 @@ class MyProfileView: UIView {
     
     func setupImagePic(){
         imagePic = UIImageView(image: UIImage(named: "Logo"))
-        imagePic.contentMode = .scaleAspectFit
+        imagePic.contentMode = .scaleToFill
+        imagePic.layer.cornerRadius = 5 // 设置圆角为 10 像素
+        imagePic.clipsToBounds = true
         imagePic.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(imagePic)
     }
