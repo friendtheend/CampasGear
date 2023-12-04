@@ -36,23 +36,27 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
 
 //        if let urlString = GlobalData.shared.userInfo?.imageUrl {
+//            print(urlString)
 //            Utilities.downloadImage(from: urlString) { image in
 //                self.EditProfileScreen.buttonTakePhoto.image(for: <#T##UIControl.State#>) = image
 //            }
 //        }
-        
+//
         if let urlString = GlobalData.shared.userInfo?.imageUrl {
+            print(urlString)
             Utilities.downloadImage(from: urlString) { image in
+                
                 // Ensure that image download is successful
                 guard let downloadedImage = image else {
                     print("Failed to download image")
                     return
                 }
-                
+                print(downloadedImage)
+
                 DispatchQueue.main.async {
-                    self.EditProfileScreen.buttonTakePhoto.setImage(downloadedImage, for: .normal)
-                    self.EditProfileScreen.buttonTakePhoto.imageView?.tintColor = nil
-                    self.EditProfileScreen.buttonTakePhoto.adjustsImageWhenHighlighted = false
+                    self.EditProfileScreen.buttonTakePhoto.setImage(downloadedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+                    self.EditProfileScreen.buttonTakePhoto.imageView?.tintColor = UIColor.clear
+                    //self.EditProfileScreen.buttonTakePhoto.adjustsImageWhenHighlighted = false
                 }
 
             }
@@ -122,7 +126,7 @@ class EditProfileViewController: UIViewController {
         
         let photoPicker = PHPickerViewController(configuration: configuration)
         
-       // photoPicker.delegate = self
+        photoPicker.delegate = self
         present(photoPicker, animated: true, completion: nil)
     }
 
