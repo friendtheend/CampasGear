@@ -99,7 +99,6 @@ class SignUpScreenController: UIViewController {
     }
 
     @objc func onRegisterTapped(){
-        //MARK: creating a new user on Firebase with photo...
         uploadProfilePhotoToStorage()
     }
     

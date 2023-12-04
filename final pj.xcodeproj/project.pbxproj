@@ -28,6 +28,9 @@
 		2AFB9D682B0FC62D00E5E7AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D652B0FC62D00E5E7AB /* MainViewController.swift */; };
 		2AFB9D6A2B0FD2E700E5E7AB /* SignUpPickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D692B0FD2E600E5E7AB /* SignUpPickerViewManager.swift */; };
 		2AFB9D6D2B0FD40600E5E7AB /* SchoolList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB9D6C2B0FD40600E5E7AB /* SchoolList.swift */; };
+		3E224A292B1D052E003B17DC /* EditPickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E224A282B1D052E003B17DC /* EditPickerViewManager.swift */; };
+		3E224A2B2B1D0F01003B17DC /* EditFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E224A2A2B1D0F01003B17DC /* EditFirebaseManager.swift */; };
+		3E224A2D2B1D135D003B17DC /* EditProfilePhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E224A2C2B1D135D003B17DC /* EditProfilePhotoManager.swift */; };
 		3E6F4AE12B0FE05B000A0160 /* SignUpPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F4AE02B0FE05B000A0160 /* SignUpPhotoManager.swift */; };
 		9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */; };
 		9F0994AB2B0D9F0000FE2848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0994AA2B0D9F0000FE2848 /* SceneDelegate.swift */; };
@@ -96,6 +99,9 @@
 		2AFB9D652B0FC62D00E5E7AB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2AFB9D692B0FD2E600E5E7AB /* SignUpPickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPickerViewManager.swift; sourceTree = "<group>"; };
 		2AFB9D6C2B0FD40600E5E7AB /* SchoolList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolList.swift; sourceTree = "<group>"; };
+		3E224A282B1D052E003B17DC /* EditPickerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPickerViewManager.swift; sourceTree = "<group>"; };
+		3E224A2A2B1D0F01003B17DC /* EditFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFirebaseManager.swift; sourceTree = "<group>"; };
+		3E224A2C2B1D135D003B17DC /* EditProfilePhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePhotoManager.swift; sourceTree = "<group>"; };
 		3E6F4AE02B0FE05B000A0160 /* SignUpPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhotoManager.swift; sourceTree = "<group>"; };
 		9F0994A52B0D9F0000FE2848 /* final pj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "final pj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0994A82B0D9F0000FE2848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -336,6 +342,9 @@
 			children = (
 				9F78E1882B193DC900951A95 /* EditProfileView.swift */,
 				9F78E18A2B193DDB00951A95 /* EditProfileViewController.swift */,
+				3E224A282B1D052E003B17DC /* EditPickerViewManager.swift */,
+				3E224A2A2B1D0F01003B17DC /* EditFirebaseManager.swift */,
+				3E224A2C2B1D135D003B17DC /* EditProfilePhotoManager.swift */,
 			);
 			path = EditProfileScreen;
 			sourceTree = "<group>";
@@ -526,6 +535,7 @@
 				BCFA0DBC2B1ADA18003945C3 /* Alerts.swift in Sources */,
 				9F78E1802B17CAF200951A95 /* CreateProductView.swift in Sources */,
 				2A2DC3AA2B19AACE0001F164 /* Utilities.swift in Sources */,
+				3E224A2D2B1D135D003B17DC /* EditProfilePhotoManager.swift in Sources */,
 				9F0994DA2B0D9F5200FE2848 /* LoginScreenView.swift in Sources */,
 				9F78E19C2B1A738600951A95 /* MyPostView.swift in Sources */,
 				9F0994AD2B0D9F0000FE2848 /* LogInViewController.swift in Sources */,
@@ -533,6 +543,7 @@
 				9F78E1842B17CB2B00951A95 /* CreateProductViewController.swift in Sources */,
 				2AFB9D572B0EB5A300E5E7AB /* GlobalProgressSpinner.swift in Sources */,
 				2AFB9D6D2B0FD40600E5E7AB /* SchoolList.swift in Sources */,
+				3E224A2B2B1D0F01003B17DC /* EditFirebaseManager.swift in Sources */,
 				2A2DC3A62B195CAA0001F164 /* GlobalData.swift in Sources */,
 				9F0994A92B0D9F0000FE2848 /* AppDelegate.swift in Sources */,
 				9F78E1752B172F1700951A95 /* MainScreenPickerViewManager.swift in Sources */,
@@ -555,6 +566,7 @@
 				2AFB9D532B0EB3FA00E5E7AB /* ProgressSpinnerDelegate.swift in Sources */,
 				BCFA0DBA2B1AD0B5003945C3 /* photoManager.swift in Sources */,
 				9F78E1902B195ABD00951A95 /* ShowProfileViewController.swift in Sources */,
+				3E224A292B1D052E003B17DC /* EditPickerViewManager.swift in Sources */,
 				BCFA0DB82B1ACDDF003945C3 /* Product.swift in Sources */,
 				9F78E17A2B17C82A00951A95 /* MainScreenController.swift in Sources */,
 				9F78E1922B19966400951A95 /* ProductDetailView.swift in Sources */,
