@@ -131,6 +131,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("index: \(indexPath.row)")
+        let productInfo = productList[indexPath.row]
+        let productDetailScreen = ProductDetailViewController()
+        productDetailScreen.info = productInfo
+        self.navigationController?.pushViewController(productDetailScreen, animated: true)
     }
  
 }
