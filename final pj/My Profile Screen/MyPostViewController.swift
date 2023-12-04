@@ -133,6 +133,34 @@ extension MyPostViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
 
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let toggleAction = UIContextualAction(style: .normal, title: "Toggle Sold") { [weak self] (action, view, completionHandler) in
+            guard let self = self else { return }
+            
+            // Toggle the hasSold status
+            var product = self.myProducts[indexPath.row]
+            product.hasSold.toggle()
+
+            // Update the product in Firestore
+            self.database.collection("users").document(GlobalData.shared.userInfo!.userId).collection("userProducts").document(product.documentID!).updateData([
+                "hasSold": product.hasSold
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                    self.myProducts[indexPath.row] = product
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+            }
+            completionHandler(true)
+        }
+
+        toggleAction.backgroundColor = .blue // Choose your color
+
+        let configuration = UISwipeActionsConfiguration(actions: [toggleAction])
+        return configuration
+    }
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

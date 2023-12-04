@@ -16,12 +16,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+
+        // Check if a user is signed in
+        if Auth.auth().currentUser != nil {
+            // User is signed in, show MainViewController
+            let mainScreenController = MainScreenController()
+            let navigationController = UINavigationController(rootViewController: mainScreenController)
+            window.rootViewController = navigationController
+        } else {
+            // No user is signed in, show LoginViewController
             let loginViewController = LogInViewController()
             let navigationController = UINavigationController(rootViewController: loginViewController)
-            
             window.rootViewController = navigationController
-            self.window = window
-            window.makeKeyAndVisible()
+        }
+
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
 

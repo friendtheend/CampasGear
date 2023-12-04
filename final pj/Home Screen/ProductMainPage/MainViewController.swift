@@ -49,22 +49,6 @@ class MainViewController: UIViewController {
 
         getProducts()
         
-        //MARK: user is logged in...
-        let barIcon = UIBarButtonItem(
-            image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"),
-            style: .plain,
-            target: self,
-            action: #selector(self.onLogOutBarButtonTapped)
-        )
-        let barText = UIBarButtonItem(
-            title: "Logout",
-            style: .plain,
-            target: self,
-            action: #selector(self.onLogOutBarButtonTapped)
-        )
-        
-        self.navigationItem.rightBarButtonItems = [barIcon, barText]
-        
         hideKeyboardOnTapOutside()
     }
 
@@ -165,22 +149,6 @@ class MainViewController: UIViewController {
         //MARK: recognizing the taps on the app screen, not the keyboard...
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
         view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func onLogOutBarButtonTapped(){
-        let logoutAlert = UIAlertController(title: "Logging out!", message: "Are you sure want to log out?", preferredStyle: .alert)
-        logoutAlert.addAction(UIAlertAction(title: "Yes, log out!", style: .default, handler: {(_) in
-                do{
-                    try Auth.auth().signOut()
-                    self.dismiss(animated: true, completion: nil)
-                }catch{
-                    print("Error occured!")
-                }
-            })
-        )
-        logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        self.present(logoutAlert, animated: true)
     }
     
 }
