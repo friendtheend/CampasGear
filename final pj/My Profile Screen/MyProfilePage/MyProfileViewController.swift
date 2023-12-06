@@ -58,9 +58,14 @@ class MyProfileViewController: UIViewController {
         super.viewWillAppear(animated)
 
         if let urlString = GlobalData.shared.userInfo?.imageUrl {
-            Utilities.downloadImage(from: urlString) { image in
-                self.MyProfileScreen.imagePic.image = image
+            if urlString.isEmpty {
+                self.MyProfileScreen.imagePic.image = UIImage(systemName: "person.fill")
+            } else {
+                Utilities.downloadImage(from: urlString) { image in
+                    self.MyProfileScreen.imagePic.image = image
+                }
             }
+            
         }
 
         MyProfileScreen.labelUsername.text = GlobalData.shared.userInfo?.userName
