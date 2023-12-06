@@ -12,11 +12,9 @@ import UIKit
 class Alerts{
     
     static func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
+        // Adjust the regex to include only '.edu' domain emails
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.edu"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    
-        print(emailPred.evaluate(with: email))
         return emailPred.evaluate(with: email)
     }
     

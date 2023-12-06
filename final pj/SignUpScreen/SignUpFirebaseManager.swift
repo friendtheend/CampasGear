@@ -31,7 +31,7 @@ extension SignUpScreenController{
             return showAlertText(text: "Email can't be empty!")
         }
         guard isValidEmail(unwrappedEmail) else {
-            return showAlertText(text: "Invalid Email!")
+            return showAlertText(text: "Invalid edu Email!")
         }
         
         // get PhoneNum
@@ -138,7 +138,8 @@ extension SignUpScreenController{
     }
     
     func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        // Adjust the regex to include only '.edu' domain emails
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.edu"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
