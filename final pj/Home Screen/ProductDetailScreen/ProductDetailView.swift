@@ -17,6 +17,8 @@ class ProductDetailView: UIView {
     var labelDescribe: UILabel!
     var labelInfo: UILabel!
     var labelSeller: UILabel!
+    var labelCategory: UILabel!
+    var labelStatus: UILabel!
 
     
     override init(frame: CGRect){
@@ -31,6 +33,8 @@ class ProductDetailView: UIView {
         setupLabelPrice()
         setupLabelDescribe()
         setupLabelSeller()
+        setupCategory()
+        setupStatus()
         
         initConstraints()
     }
@@ -83,6 +87,20 @@ class ProductDetailView: UIView {
         labelSeller.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(labelSeller)
     }
+    
+    func setupCategory(){
+        labelCategory = UILabel()
+        labelCategory.text = "Category: "
+        labelCategory.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelCategory)
+    }
+    
+    func setupStatus(){
+        labelStatus = UILabel()
+        labelStatus.text = "Status: "
+        labelStatus.translatesAutoresizingMaskIntoConstraints = false
+        contentWrapper.addSubview(labelStatus)
+    }
  
     
     func initConstraints(){
@@ -110,7 +128,14 @@ class ProductDetailView: UIView {
             labelInfo.topAnchor.constraint(equalTo: labelDescribe.bottomAnchor, constant: 30),
             labelInfo.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor, constant: 10),
             
-            labelSeller.topAnchor.constraint(equalTo: labelInfo.bottomAnchor, constant: 50),
+            labelCategory.topAnchor.constraint(equalTo: labelInfo.bottomAnchor,constant: 30),
+            labelCategory.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 10),
+            
+            labelStatus.topAnchor.constraint(equalTo: labelCategory.bottomAnchor,constant: 30),
+            labelStatus.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor,constant: 10),
+            
+
+            labelSeller.topAnchor.constraint(equalTo: labelStatus.bottomAnchor, constant: 50),
             labelSeller.leadingAnchor.constraint(equalTo: contentWrapper.trailingAnchor, constant: 200),
             labelSeller.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -15),
             

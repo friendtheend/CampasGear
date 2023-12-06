@@ -62,7 +62,7 @@ class CreateProductViewController: UIViewController {
             //MARK: recognizing the taps on the app screen, not the keyboard...
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
             view.addGestureRecognizer(tapRecognizer)
-        }
+    }
         
     func getMenuImagePicker() -> UIMenu{
         let menuItems = [
@@ -119,7 +119,7 @@ class CreateProductViewController: UIViewController {
             }else if(selectedCategory.isEmpty){
                 Alerts.showErrorAlert(self,  "category can not be empty")
             }else{
-                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userId, hasSold: false)
+                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userName, hasSold: false)
                 uploadProfilePhotoToStorage(product:newProduct)
                     
             }

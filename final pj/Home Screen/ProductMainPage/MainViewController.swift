@@ -49,6 +49,15 @@ class MainViewController: UIViewController {
 
         getProducts()
         
+        mainScreen.buttonAppliances.addTarget(self, action: #selector(onButtonAppliancesTapped), for: .touchUpInside)
+        
+        mainScreen.buttonBeauty.addTarget(self, action: #selector(onButtonBeautyTapped), for: .touchUpInside)
+        
+        mainScreen.buttonBook.addTarget(self, action: #selector(onButtonBookTapped), for: .touchUpInside)
+        
+        mainScreen.buttonOther.addTarget(self, action: #selector(onButtonOtherTapped), for: .touchUpInside)
+        
+        
         hideKeyboardOnTapOutside()
     }
     
@@ -105,6 +114,31 @@ class MainViewController: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
     }
     
+    
+    @objc func onButtonAppliancesTapped(){
+        let categoryScreen = ClickCategoryViewController()
+        categoryScreen.categoryName = "Appliances"
+        self.navigationController?.pushViewController(categoryScreen, animated: true)
+    }
+    
+    @objc func onButtonBeautyTapped(){
+        let categoryScreen = ClickCategoryViewController()
+        categoryScreen.categoryName = "Beautys"
+        self.navigationController?.pushViewController(categoryScreen, animated: true)
+    }
+    
+    @objc func onButtonBookTapped(){
+        let categoryScreen = ClickCategoryViewController()
+        categoryScreen.categoryName = "Books"
+        self.navigationController?.pushViewController(categoryScreen, animated: true)
+    }
+    
+    @objc func onButtonOtherTapped(){
+        let categoryScreen = ClickCategoryViewController()
+        categoryScreen.categoryName = "Others"
+        self.navigationController?.pushViewController(categoryScreen, animated: true)
+    }
+    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{
@@ -116,9 +150,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewProductsID, for: indexPath) as! ProductTableViewCell
         
         let productInfo = productList[indexPath.row]
-        print(productInfo,"ainfo")
-        cell.labelDescription.text = "hello"
-        cell.labelPrice.text = String(productInfo.price)
+        cell.labelDescription.text = productInfo.describe
+        cell.labelPrice.text = "$\(productInfo.price)"
         cell.labelProductTitle.text = productInfo.title
        
         if let url = URL(string: productInfo.imagePath) {
@@ -131,6 +164,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("index: \(indexPath.row)")
+        let productInfo = productList[indexPath.row]
+        let productDetailScreen = ProductDetailViewController()
+        productDetailScreen.info = productInfo
+        self.navigationController?.pushViewController(productDetailScreen, animated: true)
     }
  
 }
