@@ -27,7 +27,6 @@ class MainScreenView: UIView{
         setupStack()
         setupLabelCampusGear()
         setupTableViewProduct()
-        setupPickerViewSchool()
         setupButtonAppliances()
         setupButtonBook()
         setupButtonBeauty()
@@ -64,12 +63,6 @@ class MainScreenView: UIView{
         tableViewProductLists.register(ProductTableViewCell.self, forCellReuseIdentifier: Configs.tableViewProductsID) //修改为firebase里面的product id
         tableViewProductLists.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(tableViewProductLists)
-    }
-    
-    func setupPickerViewSchool() {
-        pickerSchool = UIPickerView()
-        pickerSchool.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(pickerSchool)
     }
     
     func setupButtonAppliances(){
@@ -112,16 +105,10 @@ class MainScreenView: UIView{
 //            contentWrapper.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor),
 //            contentWrapper.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor),
             
-            labelCampusGear.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            labelCampusGear.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,constant:20),
             labelCampusGear.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             
-            pickerSchool.topAnchor.constraint(equalTo: labelCampusGear.bottomAnchor),
-            pickerSchool.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            pickerSchool.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            pickerSchool.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            pickerSchool.heightAnchor.constraint(equalToConstant: 200),
-            
-            stack.topAnchor.constraint(equalTo: pickerSchool.bottomAnchor),
+            stack.topAnchor.constraint(equalTo: labelCampusGear.bottomAnchor),
             stack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             stack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             stack.heightAnchor.constraint(equalToConstant: 50),

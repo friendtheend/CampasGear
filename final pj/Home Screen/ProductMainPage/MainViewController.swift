@@ -39,9 +39,6 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         
-        mainScreen.pickerSchool.delegate = self
-        mainScreen.pickerSchool.dataSource = self
-        
         mainScreen.tableViewProductLists.delegate = self
         mainScreen.tableViewProductLists.dataSource = self
         
