@@ -122,12 +122,12 @@ class CreateProductViewController: UIViewController {
                 
                 let currentTime = Date()
                 
-                guard let priceInt = Int(price) else {
+                guard let priceDouble = Double(price) else {
                     Alerts.showErrorAlert(self, "Invalid price format")
                     return
                 }
                 
-                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: priceInt, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userName, hasSold: false, creationDate: currentTime)
+                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: priceDouble, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userName, hasSold: false, creationDate: currentTime)
                 uploadProfilePhotoToStorage(product:newProduct)
                     
             }

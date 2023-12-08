@@ -12,14 +12,14 @@ struct product: Codable{
     var title: String
     var category: String
     var describe: String
-    var price:Int
+    var price:Double
     var contactInfo: String
     var imagePath: String
     var seller: String
     var hasSold: Bool
     var creationDate: Date?
     
-    init(title: String, category:String, describe: String, price:Int, contactInfo:String, imagePath:String,seller: String, hasSold: Bool, creationDate:Date?) {
+    init(title: String, category:String, describe: String, price:Double, contactInfo:String, imagePath:String,seller: String, hasSold: Bool, creationDate:Date?) {
         self.title = title
         self.category = category
         self.describe = describe
