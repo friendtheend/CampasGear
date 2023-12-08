@@ -9,4 +9,4 @@
 import Foundation
 
 let schoolList = ["NEU SV & SJSU", "NEU Boston", "NEU Van"]
-let categoryList = ["Appliances", "books" , "Beautys" , "Others"]
+let categoryList = ["Appliances", "Books" , "Beautys" , "Others"]

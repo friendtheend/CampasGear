@@ -48,7 +48,7 @@ class ProductDetailViewController: UIViewController {
             if hasSold{
                 detailScreen.labelStatus.text = "Status: sold out";
             }else{
-                detailScreen.labelStatus.text = "Status: sell";
+                detailScreen.labelStatus.text = "Status: selling";
             }
             
             if let url = URL(string: imagePath) {
