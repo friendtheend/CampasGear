@@ -81,6 +81,8 @@ class MainViewController: UIViewController {
                                                 // 这里处理每个产品的信息
                                                 let productInfo = try productDocument.data(as: product.self)
                                                 self.productList.append(productInfo)
+                                                self.productList.sort { ($0.creationDate ?? Date.distantPast) > ($1.creationDate ?? Date.distantPast) }
+
                                                 self.mainScreen.tableViewProductLists.reloadData()
                                                 print(self.productList,"have this in product list")
                                                 

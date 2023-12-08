@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
+
 
 
 extension CreateProductViewController{
@@ -43,7 +45,8 @@ extension CreateProductViewController{
     
     func storeNewProduct(product:product,photoURL: URL?){
         let userProfilePath = photoURL?.absoluteString ?? ""
-        
+        let creationTimestamp = Timestamp(date: product.creationDate ?? Date())
+
         let productData: [String: Any] = [
             "title": product.title,
             "category": selectedCategory,
@@ -52,7 +55,8 @@ extension CreateProductViewController{
             "contactInfo":product.contactInfo,
             "imagePath": userProfilePath,
             "seller": GlobalData.shared.userInfo!.userName,
-            "hasSold":false
+            "hasSold":false,
+            "createTime":creationTimestamp
         ]
         
         let refDoc = self.database.collection("users").document(GlobalData.shared.userInfo!.userId)

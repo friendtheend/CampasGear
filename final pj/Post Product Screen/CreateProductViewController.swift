@@ -119,7 +119,15 @@ class CreateProductViewController: UIViewController {
             }else if(selectedCategory.isEmpty){
                 Alerts.showErrorAlert(self,  "category can not be empty")
             }else{
-                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: Int(price)!, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userName, hasSold: false)
+                
+                let currentTime = Date()
+                
+                guard let priceInt = Int(price) else {
+                    Alerts.showErrorAlert(self, "Invalid price format")
+                    return
+                }
+                
+                let newProduct = product(title: title, category: selectedCategory, describe: describe, price: priceInt, contactInfo: contactInfo, imagePath: imagePath,seller: GlobalData.shared.userInfo!.userName, hasSold: false, creationDate: currentTime)
                 uploadProfilePhotoToStorage(product:newProduct)
                     
             }
