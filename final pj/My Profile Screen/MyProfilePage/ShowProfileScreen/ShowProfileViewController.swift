@@ -53,8 +53,12 @@ class ShowProfileViewController: UIViewController {
         super.viewWillAppear(animated)
 
         if let urlString = GlobalData.shared.userInfo?.imageUrl {
-            Utilities.downloadImage(from: urlString) { image in
-                self.showProfileScreen.imagePic.image = image
+            if urlString.isEmpty {
+                self.showProfileScreen.imagePic.image = UIImage(systemName: "person.fill")
+            } else {
+                Utilities.downloadImage(from: urlString) { image in
+                    self.showProfileScreen.imagePic.image = image
+                }
             }
         }
         
