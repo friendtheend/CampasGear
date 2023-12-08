@@ -32,11 +32,13 @@ class ProductDetailViewController: UIViewController {
         if let title = info?.title,
            let price = info?.price,
            let describe = info?.describe,
+           let contactInfo = info?.contactInfo,
            let seller = info?.seller,
            let category = info?.category,
            let imagePath = info?.imagePath,
            let hasSold = info?.hasSold{
             detailScreen.labelTitle.text = title;
+            detailScreen.labelInfo.text = "Contact Info: \(contactInfo)";
             detailScreen.labelPrice.text = "$\(price)";
             detailScreen.labelDescribe.text = "Seller's Description: \(describe)";
             detailScreen.labelSeller.text = "From: \(seller)";
