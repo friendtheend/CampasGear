@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
         
         mainScreen.tableViewProductLists.separatorStyle = .none
 
-        getProducts()
+        
         
         mainScreen.buttonAppliances.addTarget(self, action: #selector(onButtonAppliancesTapped), for: .touchUpInside)
         
@@ -57,6 +57,12 @@ class MainViewController: UIViewController {
         
         hideKeyboardOnTapOutside()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // each time enter the view, update productsList
+        getProducts()
+    }
     
     func getProducts(){
             let refDoc = self.database.collection("users")
@@ -65,6 +71,7 @@ class MainViewController: UIViewController {
                     print("Error getting documents: \(error)")
                 } else {
                     if let userSnapshot = userSnapshot {
+                        self.productList = [product]()
                         for userDocument in userSnapshot.documents {
                             // 获取用户 ID
                             let userId = userDocument.documentID

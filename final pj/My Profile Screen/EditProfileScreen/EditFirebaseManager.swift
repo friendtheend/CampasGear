@@ -64,6 +64,22 @@ extension EditProfileViewController {
             } else {
                 print("Document successfully updated")
                 self.showSuccessText(text: "Profile updated successfully")
+                
+                // update userInfo
+                self.database.collection("users").document(currentUserID).getDocument { (documentSnapshot, error) in
+                    if let error = error {
+                        print("Error fetching document: \(error)")
+                    } else if let documentSnapshot = documentSnapshot, documentSnapshot.exists {
+                        // Extract user data from documentSnapshot
+                        if let data = documentSnapshot.data() {
+                            let userInfo = UserInfo(dictionary: data)
+                            GlobalData.shared.userInfo = userInfo
+                            //print("userinfo:", GlobalData.shared.userInfo)
+                        }
+                    } else {
+                        print("Document does not exist")
+                    }
+                }
             }
         }
     }

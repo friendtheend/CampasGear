@@ -41,6 +41,15 @@ class MyPostViewController: UIViewController {
         
         hideKeyboardOnTapOutside()
         
+        //Cell实现
+        MyPostScreen.tableViewMyPost.delegate = self
+        MyPostScreen.tableViewMyPost.dataSource = self
+        MyPostScreen.tableViewMyPost.separatorStyle = .none
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.database.collection("users").document(GlobalData.shared.userInfo!.userId).collection("userProducts").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -57,16 +66,7 @@ class MyPostViewController: UIViewController {
                 self.MyPostScreen.tableViewMyPost.reloadData()
             }
         }
-
-
-        
-        //Cell实现
-        MyPostScreen.tableViewMyPost.delegate = self
-        MyPostScreen.tableViewMyPost.dataSource = self
-        MyPostScreen.tableViewMyPost.separatorStyle = .none
-        
     }
-    
 
     @objc func hideKeyboardOnTap(){
         //MARK: removing the keyboard from screen...

@@ -42,7 +42,7 @@ class ShowProfileView: UIView {
     }
     
     func setupImagePic(){
-        imagePic = UIImageView(image: UIImage(named: "Logo"))
+        imagePic = UIImageView(image: UIImage(systemName: "person.fill"))
         imagePic.contentMode = .scaleAspectFill
         imagePic.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(imagePic)
@@ -92,10 +92,10 @@ class ShowProfileView: UIView {
             
             imagePic.topAnchor.constraint(equalTo: contentWrapper.topAnchor, constant: -15),
             imagePic.centerXAnchor.constraint(equalTo: contentWrapper.centerXAnchor),
-            imagePic.widthAnchor.constraint(equalToConstant: 120),
-            imagePic.heightAnchor.constraint(equalToConstant: 120),
+            imagePic.widthAnchor.constraint(equalToConstant: 100),
+            imagePic.heightAnchor.constraint(equalToConstant: 100),
             
-            labelUsername.topAnchor.constraint(equalTo: imagePic.bottomAnchor, constant: 28),
+            labelUsername.topAnchor.constraint(equalTo: imagePic.bottomAnchor, constant: 50),
             labelUsername.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor, constant: 20),
             labelUsername.widthAnchor.constraint(equalTo: contentWrapper.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
             

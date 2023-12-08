@@ -43,23 +43,25 @@ class EditProfileViewController: UIViewController {
 //        }
 //
         if let urlString = GlobalData.shared.userInfo?.imageUrl {
-            print(urlString)
-            Utilities.downloadImage(from: urlString) { image in
-                
-                // Ensure that image download is successful
-                guard let downloadedImage = image else {
-                    print("Failed to download image")
-                    return
-                }
-                print(downloadedImage)
+            if !urlString.isEmpty {
+                Utilities.downloadImage(from: urlString) { image in
+                    
+                    // Ensure that image download is successful
+                    guard let downloadedImage = image else {
+                        print("Failed to download image")
+                        return
+                    }
+                    print(downloadedImage)
 
-                DispatchQueue.main.async {
-                    self.EditProfileScreen.buttonTakePhoto.setImage(downloadedImage.withRenderingMode(.alwaysOriginal), for: .normal)
-                    self.EditProfileScreen.buttonTakePhoto.imageView?.tintColor = UIColor.clear
-                    //self.EditProfileScreen.buttonTakePhoto.adjustsImageWhenHighlighted = false
-                }
+                    DispatchQueue.main.async {
+                        self.EditProfileScreen.buttonTakePhoto.setImage(downloadedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+                        self.EditProfileScreen.buttonTakePhoto.imageView?.tintColor = UIColor.clear
+                        //self.EditProfileScreen.buttonTakePhoto.adjustsImageWhenHighlighted = false
+                    }
 
+                }
             }
+            
         } else {
             print("URL string is nil")
         }
